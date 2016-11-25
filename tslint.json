@@ -1,0 +1,227 @@
+{
+  /* https://palantir.github.io/tslint/rules/ */
+  "rules": {
+
+    /*
+     * TypeScript Specific
+     * These rules find errors related to TypeScript features
+     */
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          /* static fields */
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+
+          /* static methods */
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+
+          /* instance fields */
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+
+          "constructor",
+
+          /* instance methods */
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-any": false,
+    "no-inferrable-types": false,
+    "no-internal-module": true,
+    "no-namespace": true,
+    "no-reference": true,
+    "no-var-requires": false,
+    "only-arrow-functions": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "arrow-parameter",
+      "arrow-call-signature",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+
+    /*
+     * Functionality
+     * These rules catch common errors in JS programming or otherwise
+     * confusing constructs that are prone to producing bugs
+     */
+    "ban": [
+      true,
+      [
+        "_",
+        "forEach"
+      ],
+      [
+        "_",
+        "each"
+      ],
+      [
+        "$",
+        "each"
+      ]
+    ],
+    "curly": true,
+    "forin": false,
+    "label-position": true,
+    "label-undefined": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-key": true,
+    "no-duplicate-variable": true,
+    "no-empty": false,
+    "no-eval": true,
+    "no-for-in-array": false,
+    "no-invalid-this": true,
+    "no-null-keyword": false,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-switch-case-fall-through": true,
+    "no-unreachable": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": true,
+    "no-unused-new": true,
+    "no-unused-variable": false,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "radix": true,
+    "restrict-plus-operands": false,
+    "switch-default": false,
+    "triple-equals": [
+      true,
+      "allow-null-check",
+      "allow-undefined-check"
+    ],
+    "use-isnan": true,
+    "use-strict": false,
+
+    /*
+     * Maintainability
+     * These rules make code maintenance easier
+     */
+    "eofline": true,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "linebreak-style": false,
+    "max-file-line-count": [
+      true,
+      1000
+    ],
+    "max-line-length": [
+      true,
+      120
+    ],
+    "no-default-export": true,
+    "no-mergeable-namespace": true,
+    "no-require-imports": false,
+    "no-trailing-whitespace": true,
+    "object-literal-sort-keys": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+
+    /*
+     * Style
+     * These rules enforce consistent style across your codebase
+     */
+    "align": false,
+    "arrow-parens": true,
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "interface-name": false,
+    "jsdoc-format": true,
+    "no-angle-bracket-type-assertion": true,
+    "no-consecutive-blank-lines": true,
+    "no-constructor-vars": true,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-finally",
+      "check-whitespace"
+    ],
+    "one-variable-per-declaration": [
+      true,
+      "ignore-for-loop"
+    ],
+    "ordered-imports": false,
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "ban-keywords"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ]
+  }
+}

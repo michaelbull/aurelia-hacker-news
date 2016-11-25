@@ -1,0 +1,14 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "webpack.config.js"
+  ]
+}

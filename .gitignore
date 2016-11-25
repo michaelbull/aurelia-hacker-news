@@ -1,0 +1,30 @@
+# Hidden files
+.*
+
+# Temporary files
+*~
+
+# Git
+!.git*
+
+# EditorConfig
+!.editorconfig
+
+# IntelliJ Idea
+*.iml
+*.ipr
+*.iws
+
+# npm
+!.npm*
+node_modules/
+npm-debug.log*
+
+# Distribution
+dist/
+
+# Reports
+reports/
+
+# Generated Documentation
+docs/
