@@ -24,6 +24,8 @@ export abstract class StoryList {
     }
 
     activate(params: any): void {
+        window.scrollTo(0, 0);
+
         if (params.page === undefined || isNaN(params.page) || params.page < 1) {
             this.currentPage = 1;
         } else {
