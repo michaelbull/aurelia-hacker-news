@@ -11,6 +11,14 @@ $sans-serif-font-stack: (
   sans-serif
 );
 
+$monospace-font-stack: (
+  Menlo,
+  Monaco,
+  Courier New,
+  monospace,
+);
+
+
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
@@ -24,4 +32,49 @@ body {
   font-size: 1rem;
   font-family: $sans-serif-font-stack;
   color: $cod-gray;
+}
+
+pre, code, kbd, samp {
+  font-family: $monospace-font-stack;
+}
+
+// inline code blocks
+code {
+  border-radius: 4px;
+  background-color: $alabaster-white;
+  padding: 2px 4px;
+  word-wrap: break-word;
+}
+
+// fenced code blocks
+pre {
+  display: block;
+  margin: 0 0 1em;
+  padding: 1em;
+
+  background-color: $alabaster-white;
+
+  line-height: 1.4;
+
+  white-space: pre;
+
+  color: $scorpion;
+
+  word-wrap: normal;
+  overflow-x: auto;
+
+  tab-size: 4;
+
+  code {
+    display: block;
+    position: relative;
+    border-radius: 0;
+    padding: 0;
+    font-size: 1em;
+    word-wrap: normal;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
