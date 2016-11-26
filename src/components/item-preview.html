@@ -1,7 +1,7 @@
 <template>
   <div class="item-preview">
     <template if.bind="item.url">
-      <a class="item-preview__link" href.bind="item.url">${item.title}</a>
+      <a class="item-preview__link" href.bind="item.url" target="_blank">${item.title}</a>
     </template>
     <template if.bind="!item.url">
       <a class="item-preview__link" route-href="route: item; params.bind: { id: item.id}">${item.title}</a>
