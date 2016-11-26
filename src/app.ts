@@ -43,6 +43,12 @@ export class App {
             nav: true,
             title: 'Ask'
         }).mapRoute({
+            route: 'jobs',
+            moduleId: './pages/jobs/index',
+            name: 'jobstories',
+            nav: true,
+            title: 'Jobs'
+        }).mapRoute({
             route: 'item/:id',
             moduleId: './pages/item/index',
             name: 'item'
