@@ -9,6 +9,8 @@
 }
 
 .news-list__item {
+  position: relative;
+  padding-left: 3em;
   margin-bottom: 0.75em;
 
   &:last-child {
@@ -17,18 +19,14 @@
 }
 
 .news-list__index {
-  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  width: 1.5em;
-  padding-right: 0.25em;
+  width: 2em;
 
   color: $gray;
   text-align: right;
-  vertical-align: top;
-}
-
-.news-list__description {
-  display: inline-block;
 }
 
 .news-list__story-link {
