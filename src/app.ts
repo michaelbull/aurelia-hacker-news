@@ -37,6 +37,12 @@ export class App {
             nav: true,
             title: 'Show'
         }).mapRoute({
+            route: 'ask',
+            moduleId: './pages/ask/index',
+            name: 'askstories',
+            nav: true,
+            title: 'Ask'
+        }).mapRoute({
             route: 'item/:id',
             moduleId: './pages/item/index',
             name: 'item'
