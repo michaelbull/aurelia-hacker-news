@@ -2,29 +2,6 @@
   padding-left: 2em;
 }
 
-.news-item__title {
-  font-size: 0.875rem;
-  text-decoration: none;
-  color: $cod-gray;
-
-  &:visited {
-    color: $gray;
-  }
-}
-
-.news-item__site-link {
-  color: $gray;
-  font-size: 0.625rem;
-}
-
-.news-item__info {
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-
-  color: $gray;
-  font-size: 0.5625rem;
-}
-
 .news-item__text {
   padding: 0;
   margin: 0;

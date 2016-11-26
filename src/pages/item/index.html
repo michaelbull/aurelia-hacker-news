@@ -1,17 +1,6 @@
 <template>
   <div class="news-item">
-    <template if.bind="item.url">
-      <a class="news-item__title" href.bind="item.url">${item.title}</a>
-    </template>
-    <template if.bind="!item.url">
-      <a class="news-item__title" route-href="route: item; params.bind: { id: item.id}">${item.title}</a>
-    </template>
-
-    <a class="news-item__site-link">${item.url | hostname}</a>
-
-    <p class="news-item__info">
-      ${item.score} points by ${item.by} at ${item.time | dateFormat: 'h:mma on D MMM'}
-    </p>
+    <hn-item-preview item.bind="item"></hn-item-preview>
 
     <p class="news-item__text" if.bind="item.text" innerhtml.bind="item.text"></p>
 
@@ -25,5 +14,4 @@
       </template>
     </ul>
   </div>
-
 </template>

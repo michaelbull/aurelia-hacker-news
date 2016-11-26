@@ -32,34 +32,3 @@
   color: $gray;
   text-align: right;
 }
-
-.news-list__story-link {
-  color: $cod-gray;
-  text-decoration: none;
-
-  &:visited {
-    color: $gray;
-  }
-}
-
-.news-list__site-link {
-  color: $gray;
-  font-size: 0.625rem;
-}
-
-.news-list__info {
-  margin-top: 0.4em;
-  margin-bottom: 0;
-
-  color: $gray;
-  font-size: 0.625rem;
-}
-
-.news-list__comments-link {
-  color: $gray;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}

@@ -5,21 +5,7 @@
         ${$index + offset + 1}.
       </span>
 
-      <template if.bind="story.url">
-        <a class="news-list__story-link" href.bind="story.url">${story.title}</a>
-      </template>
-      <template if.bind="!story.url">
-        <a class="news-list__story-link" route-href="route: item; params.bind: { id: story.id}">${story.title}</a>
-      </template>
-
-      <a class="news-list__site-link">${story.url | hostname}</a>
-
-      <p class="news-list__info">
-        ${story.score} points by ${story.by} at ${story.time | dateFormat: 'h:mma on D MMM'} |
-        <a class="news-list__comments-link" route-href="route: item; params.bind: { id: story.id}">
-          ${story.descendants < 1 ? 'discuss' : story.descendants + ' comments'}
-        </a>
-      </p>
+      <hn-item-preview item.bind="story"></hn-item-preview>
     </div>
   </div>
 </template>

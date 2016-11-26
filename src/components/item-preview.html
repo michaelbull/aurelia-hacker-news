@@ -1,0 +1,19 @@
+<template>
+  <div class="item-preview">
+    <template if.bind="item.url">
+      <a class="item-preview__link" href.bind="item.url">${item.title}</a>
+    </template>
+    <template if.bind="!item.url">
+      <a class="item-preview__link" route-href="route: item; params.bind: { id: item.id}">${item.title}</a>
+    </template>
+
+    <a class="item-preview__hostname-link">${item.url | hostname}</a>
+
+    <p class="item-preview__info">
+      ${item.score} points by ${item.by} at ${item.time | dateFormat: 'h:mma on D MMM'} |
+      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
+        ${item.descendants < 1 ? 'discuss' : item.descendants + ' comments'}
+      </a>
+    </p>
+  </div>
+</template>
