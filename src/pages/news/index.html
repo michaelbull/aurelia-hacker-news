@@ -1,12 +1,12 @@
 <template>
   <hn-news-list
-    stories.bind="pageStories"
+    stories.bind="stories"
     offset.bind="offset">
   </hn-news-list>
 
   <hn-paginator
-    if.bind="pageStories.length > 0"
-    current.bind="pageNumber"
+    if.bind="stories.length > 0"
+    current.bind="currentPage"
     total.bind="totalPages"
     route="topstories">
   </hn-paginator>

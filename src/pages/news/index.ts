@@ -5,10 +5,10 @@ import { activationStrategy } from 'aurelia-router';
 @inject(HackerNewsApi)
 export class TopStories {
     @observable() private topStories: number[] = [];
-    @observable() private pageNumber: number;
+    @observable() private currentPage: number;
 
     private totalPages: number;
-    private pageStories: any[] = [];
+    private stories: any[] = [];
     private offset: number;
 
     private readonly api: HackerNewsApi;
@@ -24,9 +24,9 @@ export class TopStories {
 
     activate(params: any): Promise<void> {
         if (params.page === undefined || isNaN(params.page) || params.page < 1) {
-            this.pageNumber = 1;
+            this.currentPage = 1;
         } else {
-            this.pageNumber = Number(params.page);
+            this.currentPage = Number(params.page);
         }
 
         return this.api.fetchTopStories().then(
@@ -41,9 +41,9 @@ export class TopStories {
             return;
         }
 
-        this.api.fetchItemsOnPage(this.topStories, this.pageNumber).then(
+        this.api.fetchItemsOnPage(this.topStories, this.currentPage).then(
             (value: any) => {
-                this.pageStories = value;
+                this.stories = value;
                 this.totalPages = Math.ceil(this.topStories.length / STORIES_PER_PAGE);
             }
         );
