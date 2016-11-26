@@ -6,9 +6,23 @@
   font-size: 0.875rem;
 }
 
+.nav-bar__left {
+  display: inline-block;
+}
+
+.nav-bar__right {
+  display: inline-block;
+  float: right;
+  margin: 0 1em 0 0;
+
+  color: $white;
+  font-size: 0.6875rem;
+}
+
 .nav-bar__ycombinator {
   border: 1px $white solid;
   vertical-align: middle;
+  margin-right: 0.25em;
 }
 
 .nav-bar__title {
@@ -20,4 +34,14 @@
   font-weight: bold;
   vertical-align: middle;
   text-decoration: none;
+}
+
+.nav-bar__author-heart {
+  font-size: 1rem;
+  color: $carnation-pink;
+}
+
+.nav-bar__author-url {
+  color: $white;
+  text-decoration: underline;
 }
