@@ -55,6 +55,17 @@
   color: $cod-gray;
   text-decoration: none;
   vertical-align: middle;
+
+  &::after {
+    content: '|';
+    color: $cod-gray;
+  }
+
+  &:last-child {
+    &::after {
+      content: '';
+    }
+  }
 }
 
 .nav-bar__link--active {

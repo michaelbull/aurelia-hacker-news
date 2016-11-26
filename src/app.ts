@@ -25,6 +25,12 @@ export class App {
             nav: true,
             title: 'New'
         }).mapRoute({
+            route: 'best',
+            moduleId: './pages/best/index',
+            name: 'beststories',
+            nav: true,
+            title: 'Best'
+        }).mapRoute({
             route: 'item/:id',
             moduleId: './pages/item/index',
             name: 'item'
