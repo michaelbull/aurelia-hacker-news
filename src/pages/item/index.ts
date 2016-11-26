@@ -27,6 +27,10 @@ export class Item {
             (item: any) => {
                 this.item = item;
 
+                if (this.item.kids === undefined || this.item.kids.length < 1) {
+                    return;
+                }
+
                 return this.api.fetchItems(this.item.kids).then(
                     (comments: any[]) => {
                         this.comments = comments;

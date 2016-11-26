@@ -1,6 +1,6 @@
 .news-list {
   margin: 0;
-  padding: 0 0 0.75em;
+  padding: 0 0 1em;
 
   font-size: 0.8125rem;
 
@@ -32,7 +32,12 @@
 }
 
 .news-list__story-link {
+  color: $cod-gray;
   text-decoration: none;
+
+  &:visited {
+    color: $gray;
+  }
 }
 
 .news-list__info {

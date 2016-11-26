@@ -13,24 +13,3 @@ body {
   font-family: $sans-serif-font-stack;
   color: $cod-gray;
 }
-
-p {
-  margin-top: 0.75em;
-  margin-bottom: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 3em;
-  margin-bottom: 0.3em;
-
-  line-height: 1.2;
-}
-
-a {
-  color: $scorpion;
-  text-decoration: underline;
-
-  &:visited {
-    color: $gray;
-  }
-}

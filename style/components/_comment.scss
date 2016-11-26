@@ -20,15 +20,30 @@
 
 .comment__author {
   display: inline-block;
-  margin-bottom: 0.35em;
+  margin: 0 0 0.35em;
+  padding: 0;
 
   color: $gray;
   font-size: 0.625rem;
 }
 
 .comment__text {
-  padding-left: 1.75em;
-  margin-bottom: 1em;
+  padding: 0 0 0 1.5em;
+  margin: 0 0 1.5em;
+
+  p {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $scorpion;
+    text-decoration: underline;
+
+    &:visited {
+      color: $gray;
+    }
+  }
 }
 
 .comment__reply {

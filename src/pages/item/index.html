@@ -5,7 +5,11 @@
       ${item.score} points by ${item.by}
     </p>
 
-    <ul class="news-item__comments">
+    <p class="news-item__no-comments" if.bind="!comments">
+      No comments yet.
+    </p>
+
+    <ul class="news-item__comments" if.bind="comments">
       <template repeat.for="comment of comments">
         <hn-comment comment.bind="comment"></hn-comment>
       </template>
