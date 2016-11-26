@@ -15,9 +15,9 @@ export class HackerNewsApi {
         this.db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
     }
 
-    fetchTopStories(): Promise<number[]> {
+    fetchStories(path: string): Promise<number[]> {
         return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child('topstories').on('value', (snapshot: firebase.database.DataSnapshot) => {
+            this.db.child(path).on('value', (snapshot: firebase.database.DataSnapshot) => {
                 resolve(snapshot.val());
             }, reject);
         });
