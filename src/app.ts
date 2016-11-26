@@ -17,11 +17,11 @@ export class App {
         }).mapRoute({
             route: 'news',
             moduleId: './pages/news/index',
-            name: 'news'
+            name: 'topstories'
         }).mapRoute({
             route: 'newest',
             moduleId: './pages/newest/index',
-            name: 'newest',
+            name: 'newstories',
             nav: true,
             title: 'New'
         }).mapRoute({

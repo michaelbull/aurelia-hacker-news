@@ -1,0 +1,13 @@
+<template>
+  <div class="paginator">
+    <a class="paginator__selector ${current > 1 ? '' : 'paginator__selector--disabled'}"
+       route-href="route.bind: route; params.bind: { page: current > 1 ? current - 1 : 1 }">
+      &laquo;</a>
+
+    <div class="paginator__current">Page ${current} of ${total}</div>
+
+    <a class="paginator__selector ${current < total ? '' : 'paginator__selector--disabled'}"
+       route-href="route.bind: route; params.bind: { page: current < total ? current + 1 : total }">
+      &raquo;</a>
+  </div>
+</template>

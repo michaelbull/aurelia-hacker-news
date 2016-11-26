@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 
 const API_URL: string = 'https://hacker-news.firebaseio.com';
 const API_VERSION: string = '/v0';
-const STORIES_PER_PAGE: number = 30;
+export const STORIES_PER_PAGE: number = 30;
 
 @autoinject()
 export class HackerNewsApi {

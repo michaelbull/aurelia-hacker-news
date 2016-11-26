@@ -2,7 +2,7 @@
   <div class="news-list">
     <div class="news-list__item" repeat.for="story of stories">
       <span class="news-list__index">
-        ${$index + 1}.
+        ${$index + offset + 1}.
       </span>
 
       <a class="news-list__story-link" href.bind="story.url">${story.title} </a>

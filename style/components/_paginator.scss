@@ -1,0 +1,45 @@
+.paginator {
+  border-top: 2px solid $blaze;
+  padding: 1em;
+  user-select: none;
+}
+
+.paginator__selector {
+  padding: 0.25em 1em;
+
+  border: 1px solid $quill-gray;
+  border-radius: 2px;
+
+  color: $gray;
+  background-color: $spring-wood;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $white;
+  }
+
+  &:active {
+    box-shadow: inset 0 3px 6px 0 $gray-nickel;
+  }
+}
+
+.paginator__selector--disabled {
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: $spring-wood;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.paginator__current {
+  display: inline-block;
+  min-width: 7em;
+
+  color: $gray;
+  font-size: 0.875rem;
+  text-align: center;
+}

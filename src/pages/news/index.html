@@ -1,3 +1,13 @@
 <template>
-  <hn-news-list stories.bind="pageStories"></hn-news-list>
+  <hn-news-list
+    stories.bind="pageStories"
+    offset.bind="offset">
+  </hn-news-list>
+
+  <hn-paginator
+    if.bind="pageStories.length > 0"
+    current.bind="pageNumber"
+    total.bind="totalPages"
+    route="topstories">
+  </hn-paginator>
 </template>

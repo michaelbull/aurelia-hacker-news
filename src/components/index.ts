@@ -4,6 +4,7 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources([
         './comment',
         './nav-bar',
-        './news-list'
+        './news-list',
+        './paginator'
     ]);
 }
