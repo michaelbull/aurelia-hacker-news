@@ -46,6 +46,10 @@ export class HackerNewsApi {
                 this.db.child('item/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
                     this.cache[id] = snapshot.val();
                     resolve(this.cache[id]);
+
+                    if (id === 13045413) {
+                        console.log(JSON.stringify(this.cache[id]));
+                    }
                 }, reject);
             }
         });

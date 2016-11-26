@@ -1,9 +1,19 @@
 <template>
   <div class="news-item">
-    <a class="news-item__title" href.bind="item.url" target="_blank">${item.title}</a>
+    <template if.bind="item.url">
+      <a class="news-item__title" href.bind="item.url">${item.title}</a>
+    </template>
+    <template if.bind="!item.url">
+      <a class="news-item__title" route-href="route: item; params.bind: { id: item.id}">${item.title}</a>
+    </template>
+
+    <a class="news-item__site-link">${item.url | hostname}</a>
+
     <p class="news-item__info">
       ${item.score} points by ${item.by} at ${item.time | dateFormat: 'h:mma on D MMM'}
     </p>
+
+    <p class="news-item__text" if.bind="item.text" innerhtml.bind="item.text"></p>
 
     <p class="news-item__no-comments" if.bind="!comments">
       No comments yet.
