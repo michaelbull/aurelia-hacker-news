@@ -14,10 +14,6 @@ export class Comment {
     }
 
     bind(): Promise<void> {
-        if (this.comment.id === 13043014) {
-            console.log(JSON.stringify(this.comment));
-        }
-
         if (this.comment.kids === undefined || this.comment.kids.length < 1) {
             return Promise.resolve();
         }
