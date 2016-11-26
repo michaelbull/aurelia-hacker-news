@@ -6,6 +6,10 @@
 
   list-style: none outside;
   counter-reset: item;
+
+  @media (max-width: $tablet-breakpoint) {
+    padding-bottom: 5em;
+  }
 }
 
 .news-list__item {

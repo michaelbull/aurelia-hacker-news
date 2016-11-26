@@ -1,18 +1,37 @@
 .paginator {
-  border-top: 2px solid $blaze;
   padding: 1em;
   user-select: none;
+  border-top: 2px solid $blaze;
+  background-color: $spring-wood;
+
+  @media (max-width: $tablet-breakpoint) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    padding: 0.75em 0;
+    width: 100%;
+    text-align: center;
+
+    box-shadow: 0 2px 16px $cod-gray;
+  }
 }
 
 .paginator__selector {
-  padding: 0.25em 1em;
-
   border: 1px solid $quill-gray;
   border-radius: 2px;
 
   color: $gray;
   background-color: $spring-wood;
   text-decoration: none;
+
+  font-size: 1rem;
+  padding: 0.25em 1em;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 1rem;
+    padding: 0.125em 0.75em;
+  }
 
   &:hover {
     background-color: $white;
@@ -37,9 +56,13 @@
 
 .paginator__current {
   display: inline-block;
-  min-width: 7em;
+  width: 8em;
 
   color: $gray;
   font-size: 0.875rem;
   text-align: center;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 0.75rem;
+  }
 }

@@ -5,6 +5,8 @@
   background-color: $blaze;
   font-size: 0.875rem;
   line-height: 1;
+
+  border-bottom: 1px solid darken($blaze, 10%);
 }
 
 .nav-bar__left {
