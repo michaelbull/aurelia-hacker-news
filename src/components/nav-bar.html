@@ -7,8 +7,13 @@
     </div>
 
     <div class="nav-bar__left">
-      <a href="http://www.ycombinator.com" target="_blank"><img class="nav-bar__ycombinator" src="../../assets/y18.gif" alt="YCombinator" width="18" height="18" /></a>
+      <a href="http://www.ycombinator.com" target="_blank">
+        <img
+          class="nav-bar__ycombinator" src="../../assets/y18.gif"
+          alt="YCombinator" width="18" height="18" /></a>
+
       <a class="nav-bar__title" href="#">Hacker News</a>
+
       <div class="nav-bar__links">
         <a repeat.for="nav of navigation"
            href.bind="nav.href"

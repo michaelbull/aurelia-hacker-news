@@ -10,7 +10,7 @@
     <a class="item-preview__site-link">${item.url | hostname}</a>
 
     <p class="item-preview__info">
-      ${item.score} points by ${item.by} at ${item.time | dateFormat: 'h:mma on D MMM'} |
+      ${item.score} points by ${item.by} at ${item.time | dateFormat} |
       <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
         ${item.descendants < 1 ? 'discuss' : item.descendants + ' comments'}
       </a>

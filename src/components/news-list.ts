@@ -1,4 +1,4 @@
-import {bindable, customElement} from 'aurelia-framework';
+import { bindable, customElement } from 'aurelia-framework';
 
 @customElement('hn-news-list')
 export class NewsList {
