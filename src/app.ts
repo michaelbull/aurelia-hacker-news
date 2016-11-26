@@ -9,7 +9,7 @@ export class App {
     configureRouter(config: RouterConfiguration, router: Router): void {
         this.navigation = router.navigation;
 
-        config.title = 'Hacker News';
+        config.title = 'Aurelia HN';
 
         config.mapRoute({
             route: '',

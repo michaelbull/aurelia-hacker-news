@@ -8,7 +8,7 @@ describe('homepage', () => {
     });
 
     it('should have the correct page title', () => {
-        expect(pageTitle()).toBe('Hacker News');
+        expect(pageTitle()).toBe('Aurelia HN');
     });
 
     it('should have the correct page heading', () => {

@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: $sans-serif-font-stack;
-  color: $text-color;
+  color: $scorpion;
 }
 
 p {
@@ -26,5 +26,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.3em;
 
   line-height: 1.2;
-  color: $header-color;
+  color: $cod-gray;
+}
+
+a {
+  color: $scorpion;
+  text-decoration: underline;
+
+  &:visited {
+    color: $gray;
+  }
 }

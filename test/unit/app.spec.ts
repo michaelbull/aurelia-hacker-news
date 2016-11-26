@@ -33,8 +33,8 @@ describe('App', () => {
             expect(config.unknownRoute).toBe('./pages/not-found');
         });
 
-        it('should set the title to Hacker News', () => {
-            expect(config.title).toBe('Hacker News');
+        it('should set the title to Aurelia HN', () => {
+            expect(config.title).toBe('Aurelia HN');
         });
     });
 });

@@ -1,9 +1,19 @@
 <template>
-  <ol>
-    <li repeat.for="story of pageStories">
-      (${story.score})
-      <a href.bind="story.url">${story.title}</a> by ${story.by}
-      <a route-href="route: item; params.bind: { id: story.id}">${story.descendants} comments</a>
-    </li>
-  </ol>
+  <div class="news-list">
+    <div class="news-list__item" repeat.for="story of pageStories">
+      <div class="news-list__index">
+        ${$index + 1}.
+      </div>
+
+      <div class="news-list__description">
+        <a class="news-list__story-link" href.bind="story.url">${story.title}</a>
+
+        <p class="news-list__info">
+          ${story.score} points by ${story.by} |
+          <a class="news-list__comments-link" route-href="route: item; params.bind: { id: story.id}">${story.descendants} comments</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
 </template>
