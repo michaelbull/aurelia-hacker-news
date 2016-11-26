@@ -117,15 +117,7 @@ module.exports = {
     },
 
     devServer: {
-        stats: 'errors-only',
-        proxy: {
-            '/api': {
-                target: 'https://hacker-news.firebaseio.com/v0/',
-                pathRewrite: {
-                    '^/api': ''
-                }
-            }
-        }
+        stats: 'errors-only'
     },
 
     plugins: [
