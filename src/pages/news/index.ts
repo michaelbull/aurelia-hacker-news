@@ -2,12 +2,11 @@ import { inject, observable } from 'aurelia-framework';
 import { HackerNewsApi } from '../../services/api';
 
 @inject(HackerNewsApi)
-export class NewsList {
+export class TopStories {
     @observable() topStories: number[] = [];
     pageStories: any[] = [];
     pageNumber: number = 1;
 
-    private readonly anchor: HTMLAnchorElement = document.createElement('a');
     private readonly api: HackerNewsApi;
 
     constructor(api: HackerNewsApi) {
@@ -32,10 +31,5 @@ export class NewsList {
                 this.pageStories = value;
             }
         );
-    }
-
-    hostnameFrom(url: string): string {
-        this.anchor.href = url;
-        return this.anchor.hostname.replace('www.', '');
     }
 }

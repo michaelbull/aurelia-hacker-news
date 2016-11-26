@@ -1,0 +1,19 @@
+<template>
+  <div class="news-list">
+    <div class="news-list__item" repeat.for="story of stories">
+      <span class="news-list__index">
+        ${$index + 1}.
+      </span>
+
+      <a class="news-list__story-link" href.bind="story.url">${story.title} </a>
+      <a class="news-list__site-link">(${hostnameFrom(story.url)})</a>
+
+      <p class="news-list__info">
+        ${story.score} points by ${story.by} at ${story.time | dateFormat: 'h:mma on D MMM'} |
+        <a class="news-list__comments-link" route-href="route: item; params.bind: { id: story.id}">
+          ${story.descendants < 1 ? 'discuss' : story.descendants + ' comments'}
+        </a>
+      </p>
+    </div>
+  </div>
+</template>
