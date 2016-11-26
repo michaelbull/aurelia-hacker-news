@@ -17,6 +17,10 @@
 
   color: $white;
   font-size: 0.6875rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    float: none;
+  }
 }
 
 .nav-bar__ycombinator {

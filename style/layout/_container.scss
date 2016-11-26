@@ -3,7 +3,7 @@
   margin: 1em auto 1em;
   background-color: $spring-wood;
 
-  @media (max-width: 700px) {
+  @media (max-width: $tablet-breakpoint) {
     margin: 0;
     width: 100%;
   }

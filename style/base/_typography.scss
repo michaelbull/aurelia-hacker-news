@@ -1,15 +1,27 @@
 $sans-serif-font-stack: (
+  Corbel,
+  Lucida Grande,
+  Lucida Sans Unicode,
+  Lucida Sans,
+  DejaVu Sans,
+  Bitstream Vera Sans,
+  Liberation Sans,
   Verdana,
-  Geneva,
+  Verdana Ref,
   sans-serif
 );
 
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 17px;
+  }
 }
 
 body {
+  font-size: 1rem;
   font-family: $sans-serif-font-stack;
   color: $cod-gray;
 }

@@ -16,6 +16,10 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-bottom: 1.25em;
+  }
 }
 
 .news-list__index {
@@ -44,11 +48,11 @@
 }
 
 .news-list__info {
-  margin-top: 0.5em;
+  margin-top: 0.4em;
   margin-bottom: 0;
 
   color: $gray;
-  font-size: 0.5625rem;
+  font-size: 0.625rem;
 }
 
 .news-list__comments-link {
