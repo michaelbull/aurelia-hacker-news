@@ -49,7 +49,7 @@ export class TopStories {
         );
     }
 
-    pageNumberChanged(newValue: number, oldValue: number): void {
+    currentPageChanged(newValue: number, oldValue: number): void {
         if (newValue === oldValue) {
             return;
         }
