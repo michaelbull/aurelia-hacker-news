@@ -1,0 +1,10 @@
+<template>
+  <h1><a href.bind="item.url" target="_blank">${item.title}</a></h1>
+  <p>By ${item.by}, ${item.score} Score</p>
+
+  <ul class="comments">
+    <template repeat.for="comment of comments">
+      <hn-comment comment.bind="comment"></hn-comment>
+    </template>
+  </ul>
+</template>

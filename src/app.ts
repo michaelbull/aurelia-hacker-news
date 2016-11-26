@@ -17,7 +17,12 @@ export class App {
         }).mapRoute({
             route: 'news',
             moduleId: './pages/news/index',
+            name: 'news',
             nav: true
+        }).mapRoute({
+            route: 'item/:id',
+            moduleId: './pages/item/index',
+            name: 'item'
         }).mapUnknownRoutes('./pages/not-found');
     }
 }
