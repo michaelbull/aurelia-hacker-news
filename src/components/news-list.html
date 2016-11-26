@@ -2,6 +2,8 @@
   <require from="./item-preview"></require>
 
   <div class="news-list">
+    <p class="news-list__loading" if.bind="!stories">Loading...</p>
+
     <div class="news-list__item" repeat.for="story of stories">
       <span class="news-list__index">
         ${$index + offset + 1}.

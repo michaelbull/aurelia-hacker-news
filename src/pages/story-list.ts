@@ -7,7 +7,7 @@ export abstract class StoryList {
     @observable() private currentPage: number;
 
     private totalPages: number;
-    private stories: any[] = [];
+    private stories: any[];
     private offset: number;
 
     private readonly api: HackerNewsApi;
@@ -23,14 +23,14 @@ export abstract class StoryList {
         return activationStrategy.invokeLifecycle;
     }
 
-    activate(params: any): Promise<void> {
+    activate(params: any): void {
         if (params.page === undefined || isNaN(params.page) || params.page < 1) {
             this.currentPage = 1;
         } else {
             this.currentPage = Number(params.page);
         }
 
-        return this.api.fetchStories(this.path).then(
+        this.api.fetchStories(this.path).then(
             (stories: number[]) => {
                 this.allStories = stories;
             }

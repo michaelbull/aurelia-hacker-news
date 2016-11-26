@@ -1,6 +1,6 @@
 import { browser } from 'protractor';
 import { URL, pageTitle } from '../common.page';
-import { heading } from './home.page';
+import { navBarTitle } from './home.page';
 
 describe('homepage', () => {
     beforeEach(() => {
@@ -11,7 +11,7 @@ describe('homepage', () => {
         expect(pageTitle()).toBe('Aurelia HN');
     });
 
-    it('should have the correct page heading', () => {
-        expect(heading()).toBe('Home');
+    it('should have the correct nav bar title', () => {
+        expect(navBarTitle()).toBe('Hacker News');
     });
 });
