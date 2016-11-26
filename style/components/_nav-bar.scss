@@ -53,6 +53,7 @@
 .nav-bar__links {
   display: inline;
   padding-left: 0.5em;
+  vertical-align: middle;
 
   @media (max-width: 640px) {
     display: block;
@@ -69,7 +70,6 @@
   text-transform: lowercase;
   color: $cod-gray;
   text-decoration: none;
-  vertical-align: middle;
 
   &::after {
     content: '|';
