@@ -1,9 +1,10 @@
 <template>
   <h1>Home</h1>
 
-  <ul>
-    <li repeat.for="story of stories">
-      ${story}
+  <ol>
+    <li repeat.for="story of pageStories">
+      (${story.score})
+      <a href.bind="story.url">${story.title}</a> by ${story.by}
     </li>
-  </ul>
+  </ol>
 </template>

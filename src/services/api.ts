@@ -1,5 +1,4 @@
-import { autoinject, inject } from 'aurelia-framework';
-import { EventAggregator } from 'aurelia-event-aggregator';
+import { autoinject } from 'aurelia-framework';
 import * as firebase from 'firebase';
 
 const API_URL: string = 'https://hacker-news.firebaseio.com';
@@ -7,31 +6,27 @@ const API_VERSION: string = '/v0';
 const STORIES_PER_PAGE: number = 30;
 
 @autoinject()
-@inject(EventAggregator)
 export class HackerNewsApi {
-    private topStories: number[] = [];
     private cache: any[] = [];
 
-    private readonly events: EventAggregator;
     private readonly db: firebase.database.Reference;
 
-    constructor(events: EventAggregator) {
-        this.events = events;
+    constructor() {
         this.db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
     }
 
-    listen(): void {
-        /* listen for updates to the top stories */
-        this.db.child('topstories').on('value', (snapshot: firebase.database.DataSnapshot) => {
-            this.topStories = snapshot.val();
-            this.events.publish('topstories:updated', this.topStories);
+    fetchTopStories(): Promise<number[]> {
+        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
+            this.db.child('topstories').on('value', (snapshot: firebase.database.DataSnapshot) => {
+                resolve(snapshot.val());
+            }, reject);
         });
     }
 
-    fetchItemsOnPage(page: number): Promise<any[]> {
+    fetchItemsOnPage(topStories: number[], page: number): Promise<any[]> {
         let firstStory: number = (page - 1) * STORIES_PER_PAGE;
         let lastStory: number = page * STORIES_PER_PAGE;
-        let stories: number[] = this.topStories.slice(firstStory, lastStory);
+        let stories: number[] = topStories.slice(firstStory, lastStory);
         return this.fetchItems(stories);
     }
 

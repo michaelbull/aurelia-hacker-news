@@ -1,26 +1,36 @@
-import { inject } from 'aurelia-framework';
-import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
+import { inject, observable } from 'aurelia-framework';
+import { HackerNewsApi } from '../../services/api';
 
-@inject(EventAggregator)
+@inject(HackerNewsApi)
 export class Index {
-    stories: number[] = [];
+    @observable() topStories: number[] = [];
+    pageStories: any[] = [];
+    pageNumber: number = 1;
 
-    private readonly events: EventAggregator;
-    private subscription: Subscription;
+    private readonly api: HackerNewsApi;
 
-    constructor(events: EventAggregator) {
-        this.events = events;
+    constructor(api: HackerNewsApi) {
+        this.api = api;
     }
 
-    activate(): void {
-        this.subscription = this.events.subscribe('topstories:updated', this.topStoriesListener);
+    activate(): Promise<void> {
+        return this.api.fetchTopStories().then(
+            (stories: number[]) => {
+                this.topStories = stories;
+            }
+        );
     }
 
-    deactivate(): void {
-        this.subscription.dispose();
-    }
+    topStoriesChanged(newValue: number[], oldValue: number[]): void {
+        if (newValue === oldValue || this.api === undefined) {
+            return;
+        }
 
-    private topStoriesListener = (stories: number[]): void => {
-        this.stories = stories;
+        this.api.fetchItemsOnPage(this.topStories, this.pageNumber).then(
+            (value: any) => {
+                this.pageStories = value;
+                console.log(JSON.stringify(value));
+            }
+        );
     }
 }
