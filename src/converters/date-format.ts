@@ -21,8 +21,6 @@ export class DateFormatValueConverter {
     toView(timestamp: number): string {
         let date: Date = new Date(timestamp * 1000);
 
-        console.log('converting date: ' + timestamp);
-
         let hour: number = date.getHours();
         let period: string = 'am';
 
