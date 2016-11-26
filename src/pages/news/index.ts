@@ -2,7 +2,7 @@ import { inject, observable } from 'aurelia-framework';
 import { HackerNewsApi } from '../../services/api';
 
 @inject(HackerNewsApi)
-export class Index {
+export class NewsList {
     @observable() topStories: number[] = [];
     pageStories: any[] = [];
     pageNumber: number = 1;
