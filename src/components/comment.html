@@ -1,11 +1,12 @@
 <template>
   <li class="comment" if.bind="!comment.deleted">
-    <span class="comment__toggle">[-]</span>
+    <span click.delegate="toggle()" class="comment__toggle">[${expanded ? '-' : '+' + replies.length}]</span>
     <p class="comment__author">${comment.by}</p>
-    <p class="comment__text" innerhtml.bind="comment.text"></p>
+
+    <p class="comment__text" innerhtml.bind="comment.text" if.bind="expanded"></p>
   </li>
 
-  <ul class="comment__reply" repeat.for="reply of replies">
+  <ul class="comment__reply" repeat.for="reply of replies" if.bind="expanded">
     <hn-comment comment.bind="reply"></hn-comment>
   </ul>
 </template>

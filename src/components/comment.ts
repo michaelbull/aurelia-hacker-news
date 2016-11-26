@@ -5,6 +5,7 @@ import { HackerNewsApi } from '../services/api';
 @inject(HackerNewsApi)
 export class Comment {
     private replies: any[];
+    private expanded: boolean = true;
 
     @bindable() private readonly comment: any;
     private readonly api: HackerNewsApi;
@@ -23,5 +24,9 @@ export class Comment {
                 this.replies = replies;
             }
         );
+    }
+
+    toggle(): void {
+        this.expanded = !this.expanded;
     }
 }

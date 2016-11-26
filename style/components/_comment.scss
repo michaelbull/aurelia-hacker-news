@@ -10,6 +10,12 @@
 
   font-size: 0.625rem;
   color: $gray;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .comment__author {
@@ -21,7 +27,7 @@
 }
 
 .comment__text {
-  padding-left: 1.5em;
+  padding-left: 1.75em;
   margin-bottom: 1em;
 }
 
