@@ -1,10 +1,11 @@
 <template>
-  <h1>Home</h1>
+  <h1>Hacker News</h1>
 
   <ol>
     <li repeat.for="story of pageStories">
       (${story.score})
       <a href.bind="story.url">${story.title}</a> by ${story.by}
+      ${story.descendants} comments
     </li>
   </ol>
 </template>
