@@ -31,6 +31,12 @@ export class App {
             nav: true,
             title: 'Best'
         }).mapRoute({
+            route: 'show',
+            moduleId: './pages/show/index',
+            name: 'showstories',
+            nav: true,
+            title: 'Show'
+        }).mapRoute({
             route: 'item/:id',
             moduleId: './pages/item/index',
             name: 'item'
