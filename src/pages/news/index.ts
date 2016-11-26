@@ -7,6 +7,7 @@ export class NewsList {
     pageStories: any[] = [];
     pageNumber: number = 1;
 
+    private readonly anchor: HTMLAnchorElement = document.createElement('a');
     private readonly api: HackerNewsApi;
 
     constructor(api: HackerNewsApi) {
@@ -31,5 +32,10 @@ export class NewsList {
                 this.pageStories = value;
             }
         );
+    }
+
+    hostnameFrom(url: string): string {
+        this.anchor.href = url;
+        return this.anchor.hostname.replace('www.', '');
     }
 }

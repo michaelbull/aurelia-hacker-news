@@ -6,7 +6,8 @@
       </div>
 
       <div class="news-list__description">
-        <a class="news-list__story-link" href.bind="story.url">${story.title}</a>
+        <a class="news-list__story-link" href.bind="story.url">${story.title} </a>
+        <a class="news-list__site-link">(${hostnameFrom(story.url)})</a>
 
         <p class="news-list__info">
           ${story.score} points by ${story.by} |
