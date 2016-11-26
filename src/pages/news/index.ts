@@ -29,7 +29,6 @@ export class NewsList {
         this.api.fetchItemsOnPage(this.topStories, this.pageNumber).then(
             (value: any) => {
                 this.pageStories = value;
-                console.log(JSON.stringify(value));
             }
         );
     }

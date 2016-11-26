@@ -1,0 +1,14 @@
+$sans-serif-font-stack: (
+  Verdana,
+  Geneva,
+  sans-serif
+);
+
+html {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $sans-serif-font-stack;
+}

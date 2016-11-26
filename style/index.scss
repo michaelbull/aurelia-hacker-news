@@ -1,12 +1,16 @@
 // http://sass-guidelin.es/#the-7-1-pattern
 
 // 1. Abstracts
+@import 'abstracts/colors';
 
 // 2. Vendors
+@import '~normalize.css';
 
 // 3. Base
+@import 'base/typography';
 
 // 4. Layout
+@import 'layout/container';
 
 // 5. Components
 
