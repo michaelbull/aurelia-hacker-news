@@ -63,7 +63,7 @@ module.exports = {
 
     output: {
         path: './dist',
-        publicPath: '/dist/',
+        publicPath: 'dist/',
         filename: '[name].js'
     },
 
@@ -108,7 +108,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'file-loader?name=images/[name].[ext]'
+                loader: 'file?name=images/[name].[ext]'
             },
             {
                 test: /\.(eot|svg|ttf|otf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
