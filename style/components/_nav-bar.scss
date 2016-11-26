@@ -4,6 +4,7 @@
 
   background-color: $blaze;
   font-size: 0.875rem;
+  line-height: 1;
 }
 
 .nav-bar__left {
@@ -17,6 +18,7 @@
 
   color: $white;
   font-size: 0.6875rem;
+  line-height: 1.2;
 
   @media (max-width: $mobile-breakpoint) {
     float: none;
@@ -24,9 +26,10 @@
 }
 
 .nav-bar__ycombinator {
+  box-sizing: content-box;
   border: 1px $white solid;
-  vertical-align: middle;
   margin-right: 0.25em;
+  vertical-align: middle;
 }
 
 .nav-bar__title {
@@ -36,8 +39,24 @@
 
   color: $cod-gray;
   font-weight: bold;
-  vertical-align: middle;
   text-decoration: none;
+  vertical-align: middle;
+}
+
+.nav-bar__link {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+
+  font-size: 0.8125rem;
+  text-transform: lowercase;
+  color: $cod-gray;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.nav-bar__link--active {
+  color: $white;
 }
 
 .nav-bar__author-heart {

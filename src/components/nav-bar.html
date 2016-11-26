@@ -1,8 +1,13 @@
 <template>
   <nav class="nav-bar">
     <div class="nav-bar__left">
-      <a href="http://www.ycombinator.com" target="_blank"><img class="nav-bar__ycombinator" src="../../assets/y18.gif" alt="YCombinator" /></a>
+      <a href="http://www.ycombinator.com" target="_blank"><img class="nav-bar__ycombinator" src="../../assets/y18.gif" alt="YCombinator" width="18" height="18" /></a>
       <a class="nav-bar__title" href="#">Hacker News</a>
+      <a repeat.for="nav of navigation"
+         href.bind="nav.href"
+         class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}">
+        ${nav.title}
+      </a>
     </div>
     <div class="nav-bar__right">
       Built with <a class="nav-bar__author-url" href="http://aurelia.io/" target="_blank"> Aurelia</a> |
