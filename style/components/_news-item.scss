@@ -1,0 +1,22 @@
+.news-item {
+  padding-left: 2em;
+}
+
+.news-item__title {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: $cod-gray;
+}
+
+.news-item__info {
+  margin-top: 0.5em;
+  margin-bottom: 4em;
+
+  color: $gray;
+  font-size: 0.5625rem;
+}
+
+.news-item__comments {
+  padding: 0 0 1em;
+  margin: 0;
+}

@@ -1,0 +1,30 @@
+.comment {
+  max-width: 1215px;
+
+  font-size: 0.75rem;
+  list-style-type: none;
+}
+
+.comment__toggle {
+  padding-right: 0.25em;
+
+  font-size: 0.625rem;
+  color: $gray;
+}
+
+.comment__author {
+  display: inline-block;
+  margin-bottom: 0.35em;
+
+  color: $gray;
+  font-size: 0.625rem;
+}
+
+.comment__text {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.comment__reply {
+  list-style-type: none;
+}

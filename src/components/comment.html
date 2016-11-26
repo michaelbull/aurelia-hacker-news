@@ -1,13 +1,11 @@
 <template>
-  <li class="comment">
-    ${comment.id}
-
-    <p if.bind="comment.deleted">Deleted</p>
-    <p if.bind="!comment.deleted">by ${comment.by}</p>
-    <p if.bind="!comment.deleted" innerhtml.bind="comment.text"></p>
+  <li class="comment" if.bind="!comment.deleted">
+    <span class="comment__toggle">[-]</span>
+    <p class="comment__author">${comment.by}</p>
+    <p class="comment__text" innerhtml.bind="comment.text"></p>
   </li>
 
-  <ul class="replies" repeat.for="reply of replies">
+  <ul class="comment__reply" repeat.for="reply of replies">
     <hn-comment comment.bind="reply"></hn-comment>
   </ul>
 </template>

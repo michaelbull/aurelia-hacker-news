@@ -1,10 +1,15 @@
 <template>
-  <h1><a href.bind="item.url" target="_blank">${item.title}</a></h1>
-  <p>By ${item.by}, ${item.score} Score</p>
+  <div class="news-item">
+    <a class="news-item__title" href.bind="item.url" target="_blank">${item.title}</a>
+    <p class="news-item__info">
+      ${item.score} points by ${item.by}
+    </p>
 
-  <ul class="comments">
-    <template repeat.for="comment of comments">
-      <hn-comment comment.bind="comment"></hn-comment>
-    </template>
-  </ul>
+    <ul class="news-item__comments">
+      <template repeat.for="comment of comments">
+        <hn-comment comment.bind="comment"></hn-comment>
+      </template>
+    </ul>
+  </div>
+
 </template>

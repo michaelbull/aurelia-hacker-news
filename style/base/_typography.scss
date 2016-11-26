@@ -4,8 +4,6 @@ $sans-serif-font-stack: (
   sans-serif
 );
 
-$vertical-rhythm: 1.5rem;
-
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
@@ -13,20 +11,19 @@ html {
 
 body {
   font-family: $sans-serif-font-stack;
-  color: $scorpion;
+  color: $cod-gray;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: $vertical-rhythm;
+  margin-top: 0.75em;
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: $vertical-rhythm * 3;
+  margin-top: 3em;
   margin-bottom: 0.3em;
 
   line-height: 1.2;
-  color: $cod-gray;
 }
 
 a {
