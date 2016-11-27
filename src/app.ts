@@ -56,6 +56,9 @@ export class App {
             route: 'user/:id',
             moduleId: './pages/user/index',
             name: 'user'
-        }).mapUnknownRoutes('./pages/not-found');
+        }).mapUnknownRoutes({
+            route: '',
+            redirect: 'news'
+        });
     }
 }
