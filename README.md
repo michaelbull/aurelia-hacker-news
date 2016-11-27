@@ -28,7 +28,7 @@ A running demonstration can be found [here][demo].
 - [Aurelia][aurelia] as the client framework.
 - [TypeScript][ts] as the primary programming language.
 - [Sassy CSS][scss] as the stylesheet language, following the [7-1 pattern][7-1]
-  the [Block Element Modifier" methodology][bem].
+  the ["Block Element Modifier" methodology][bem].
 - [Firebase][firebase] as a data store for the [Hacker News API][hn-api].
 
 ## Documentation
