@@ -1,17 +1,13 @@
 .news-item {
-  padding-left: 2em;
+  padding-left: 1em;
   padding-right: 1em;
-
-  @media (max-width: $tablet-breakpoint) {
-    padding-left: 0.5em;
-  }
 }
 
 .news-item__text {
   padding: 0;
   margin: 1em 0 0;
 
-  overflow: auto;
+  overflow-x: auto;
 
   color: $gray;
   font-size: 0.8125rem;
