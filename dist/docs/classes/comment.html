@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>User | aurelia-hacker-news</title>
+	<title>Comment | aurelia-hacker-news</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="user.html">User</a>
+					<a href="comment.html">Comment</a>
 				</li>
 			</ul>
-			<h1>Class User</h1>
+			<h1>Class Comment</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">User</span>
+						<span class="target">Comment</span>
 					</li>
 				</ul>
 			</section>
@@ -82,22 +82,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="user.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="comment.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="user.html#api" class="tsd-kind-icon">api</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="user.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="user.html#router" class="tsd-kind-icon">router</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="user.html#user-1" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comment.html#api" class="tsd-kind-icon">api</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comment.html#comment-1" class="tsd-kind-icon">comment</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comment.html#expanded" class="tsd-kind-icon">expanded</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comment.html#replies" class="tsd-kind-icon">replies</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="user.html#activate" class="tsd-kind-icon">activate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comment.html#bind" class="tsd-kind-icon">bind</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comment.html#toggle" class="tsd-kind-icon">toggle</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,25 +110,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>User<span class="tsd-signature-symbol">(</span>router<span class="tsd-signature-symbol">: </span><a href="router.html" class="tsd-signature-type">Router</a>, api<span class="tsd-signature-symbol">: </span><a href="hackernewsapi.html" class="tsd-signature-type">HackerNewsApi</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="user.html" class="tsd-signature-type">User</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Comment<span class="tsd-signature-symbol">(</span>api<span class="tsd-signature-symbol">: </span><a href="hackernewsapi.html" class="tsd-signature-type">HackerNewsApi</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="comment.html" class="tsd-signature-type">Comment</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L10">src/pages/user/index.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L11">src/components/comment.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>router: <a href="router.html" class="tsd-signature-type">Router</a></h5>
-								</li>
-								<li>
 									<h5>api: <a href="hackernewsapi.html" class="tsd-signature-type">HackerNewsApi</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="user.html" class="tsd-signature-type">User</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="comment.html" class="tsd-signature-type">Comment</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -140,37 +138,37 @@
 					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <a href="hackernewsapi.html" class="tsd-signature-type">HackerNewsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L8">src/pages/user/index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L11">src/components/comment.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="comment-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> comment</h3>
+					<div class="tsd-signature tsd-kind-icon">comment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L9">src/pages/user/index.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L10">src/components/comment.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="router" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> router</h3>
-					<div class="tsd-signature tsd-kind-icon">router<span class="tsd-signature-symbol">:</span> <a href="router.html" class="tsd-signature-type">Router</a></div>
+					<a name="expanded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> expanded</h3>
+					<div class="tsd-signature tsd-kind-icon">expanded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L7">src/pages/user/index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L8">src/components/comment.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="user-1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="replies" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> replies</h3>
+					<div class="tsd-signature tsd-kind-icon">replies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L10">src/pages/user/index.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L7">src/components/comment.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,25 +176,36 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="activate" class="tsd-anchor"></a>
-					<h3>activate</h3>
+					<a name="bind" class="tsd-anchor"></a>
+					<h3>bind</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">bind<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/34641c2/src/pages/user/index.ts#L17">src/pages/user/index.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L17">src/components/comment.ts:17</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toggle" class="tsd-anchor"></a>
+					<h3>toggle</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toggle<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/9cf4776/src/components/comment.ts#L29">src/components/comment.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -215,25 +224,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="user.html" class="tsd-kind-icon">User</a>
+						<a href="comment.html" class="tsd-kind-icon">Comment</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="user.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="comment.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="user.html#api" class="tsd-kind-icon">api</a>
+								<a href="comment.html#api" class="tsd-kind-icon">api</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="user.html#id" class="tsd-kind-icon">id</a>
+								<a href="comment.html#comment-1" class="tsd-kind-icon">comment</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="user.html#router" class="tsd-kind-icon">router</a>
+								<a href="comment.html#expanded" class="tsd-kind-icon">expanded</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="user.html#user-1" class="tsd-kind-icon">user</a>
+								<a href="comment.html#replies" class="tsd-kind-icon">replies</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="user.html#activate" class="tsd-kind-icon">activate</a>
+								<a href="comment.html#bind" class="tsd-kind-icon">bind</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comment.html#toggle" class="tsd-kind-icon">toggle</a>
 							</li>
 						</ul>
 					</li>

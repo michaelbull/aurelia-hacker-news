@@ -26,12 +26,12 @@
   "scripts": {
     "start": "npm run server:dev",
     "server:dev": "webpack-dev-server --inline --hot --open",
-    "server:prod": "ws --port 8080 --spa index.html --rewrite '/api/* -> http://djangoservice:9997/$1'",
+    "server:prod": "ws --port 8080 --spa index.html",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun true ",
     "test:watch": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun false --reporters spec",
-    "docs": "typedoc --out docs/ --mode file --includeDeclarations --target es6 --name aurelia-hacker-news --readme none --moduleResolution node src/",
-    "clean": "rm -rf dist/* && rm -rf reports/* && rm -rf docs/*"
+    "docs": "typedoc --out dist/docs/ --mode file --includeDeclarations --target es6 --name aurelia-hacker-news --readme none --moduleResolution node src/",
+    "clean": "rm -rf dist/* && rm -rf reports/*"
   },
   "dependencies": {
     "aurelia-bootstrapper-webpack": "1.0.0",
