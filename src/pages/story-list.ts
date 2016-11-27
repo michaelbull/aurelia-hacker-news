@@ -3,6 +3,8 @@ import { activationStrategy } from 'aurelia-router';
 import { HackerNewsApi, STORIES_PER_PAGE } from '../services/api';
 
 export abstract class StoryList {
+    readonly api: HackerNewsApi;
+
     @observable() private allStories: number[] = [];
     @observable() private currentPage: number;
 
@@ -10,13 +12,11 @@ export abstract class StoryList {
     private stories: any[];
     private offset: number;
 
-    private readonly api: HackerNewsApi;
-    private readonly path: string;
-
-    constructor(api: HackerNewsApi, path: string) {
+    constructor(api: HackerNewsApi) {
         this.api = api;
-        this.path = path;
     }
+
+    abstract fetchIds(): Promise<number[]>;
 
     determineActivationStrategy(): string {
         // don't forcefully refresh the page, just invoke our activate method
@@ -32,7 +32,7 @@ export abstract class StoryList {
             this.currentPage = Number(params.page);
         }
 
-        this.api.fetchStories(this.path).then(
+        this.fetchIds().then(
             (stories: number[]) => {
                 this.allStories = stories;
             }

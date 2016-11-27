@@ -5,6 +5,10 @@ import { StoryList } from '../story-list';
 @inject(HackerNewsApi)
 export class BestStories extends StoryList {
     constructor(api: HackerNewsApi) {
-        super(api, 'beststories');
+        super(api);
+    }
+
+    fetchIds(): Promise<number[]> {
+        return this.api.fetchStories('beststories');
     }
 }
