@@ -1,6 +1,4 @@
 .comment {
-  max-width: 1215px;
-
   font-size: 0.75rem;
   list-style-type: none;
 }
@@ -31,7 +29,8 @@
   padding: 0 0 0 1.5em;
   margin: 0 0 1.5em;
 
-  overflow-x: auto;
+  max-width: 1215px;
+  overflow: auto;
 
   p {
     margin-top: 0.75em;
