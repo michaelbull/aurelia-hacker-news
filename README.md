@@ -17,7 +17,7 @@ A running demonstration can be found [here][demo].
 
 - News list with filters for the
   [top][topstories]/[newest][newstories]/[best][beststories] stories.
-- Topic view with collapsible comments.
+- Topic view with collapsible comment threads.
 - Responsive design for tablet and mobile platforms.
 - User profile pages.
 - Improved pagination.
