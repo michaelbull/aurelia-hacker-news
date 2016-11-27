@@ -1,6 +1,8 @@
 body {
   min-width: 270px;
 
+  background-color: $white;
+
   overflow-x: hidden; // Stop content overflow creating an unnecessary horizontal scroll-bar in IE
   overflow-y: scroll; // Force vertical scroll-bar to always appear
 }
