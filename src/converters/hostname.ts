@@ -4,12 +4,10 @@ export class HostnameValueConverter {
     toView(url: string): string | undefined {
         this.anchor.href = url;
 
-        let result: string = this.anchor.hostname.replace('www.', '');
-
-        if (result === 'localhost') {
+        if (this.anchor.hostname === location.hostname) {
             return undefined;
-        } else {
-            return '(' + result + ')';
         }
+
+        return '(' + this.anchor.hostname.replace('www.', '') + ')';
     }
 }
