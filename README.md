@@ -16,6 +16,15 @@ A running demonstration can be found [here][demo].
 - User profile pages.
 - Improved pagination.
 
+## Components
+
+- [Webpack][webpack] as the build system.
+- [Aurelia][aurelia] as the client framework.
+- [TypeScript][ts] as the primary programming language.
+- [Sassy CSS][scss] as the stylesheet language, following the [7-1 pattern][7-1]
+  the [Block Element Modifier" methodology][bem].
+- [Firebase][firebase] as a data store for the [Hacker News API][hn-api].
+
 ## Documentation
 
 Documentation is generated in the `./dist/docs` directory by [TypeDoc][typedoc]
@@ -52,6 +61,7 @@ Unit tests are written using [Jasmine][jasmine] and ran with [Karma][karma].
 Bug reports and pull requests are welcome on [GitHub][github].
 
 ## License
+
 This project is available under the terms of the ISC license. See the
 [`LICENSE`][license] file for the copyright information and licensing terms.
 
@@ -63,6 +73,11 @@ This project is available under the terms of the ISC license. See the
 [topstories]: https://mikebull94.github.io/aurelia-hacker-news/#/news
 [beststories]: https://mikebull94.github.io/aurelia-hacker-news/#/best
 [newstories]: https://mikebull94.github.io/aurelia-hacker-news/#/newest
+[scss]: http://sass-lang.com/
+[7-1]: https://sass-guidelin.es/#the-7-1-pattern
+[bem]: http://getbem.com/
+[firebase]: https://www.npmjs.com/package/firebase
+[hn-api]: https://github.com/HackerNews/API
 [typedoc]: https://github.com/TypeStrong/typedoc
 [docs]: https://mikebull94.github.io/aurelia-hacker-news/dist/docs/
 [npm]: https://www.npmjs.com/
