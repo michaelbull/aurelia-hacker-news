@@ -29,6 +29,10 @@ export class DateFormatValueConverter {
             period = 'pm';
         }
 
+        if (hour === 0) {
+            hour = 12;
+        }
+
         return hour + ':' + pad(date.getMinutes()) + period
             + ' on ' + date.getDate() + ' ' + MONTHS[date.getMonth()] + (includeYear ? ' ' + date.getFullYear() : '');
     }
