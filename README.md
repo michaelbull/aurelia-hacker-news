@@ -42,7 +42,7 @@ The following scripts are configured to run via [npm][npm]:
     directory.
 - `npm run server:prod`
   - Starts a local-web-server listening on [`http://localhost:8080`][localhost]
-  - that serves the `./dist` directory.
+    that serves the `./dist` directory.
 - `npm test`
   - Runs the unit tests then generates success and coverage reports under the
     `./reports` directory.
@@ -54,7 +54,8 @@ The following scripts are configured to run via [npm][npm]:
 
 ## Testing
 
-Unit tests are written using [Jasmine][jasmine] and ran with [Karma][karma].
+Unit tests are written using the [Jasmine][jasmine] framework and ran with the
+[Karma][karma] test runner.
 
 ## Contributing
 
