@@ -1,11 +1,7 @@
 .story-list {
   margin: 0;
   padding: 0 1em 1em 0;
-
   font-size: 0.8125rem;
-
-  list-style: none outside;
-  counter-reset: item;
 
   @media (max-width: $tablet-breakpoint) {
     padding-bottom: 5em;
