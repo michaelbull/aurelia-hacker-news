@@ -1,0 +1,18 @@
+<template>
+  <require from="../converters/date-format"></require>
+
+  <table class="user-profile">
+    <tr>
+      <td>user:</td>
+      <td>${user.id}</td>
+    </tr>
+    <tr>
+      <td>created:</td>
+      <td>${user.created | dateFormat: true}</td>
+    </tr>
+    <tr>
+      <td>karma:</td>
+      <td>${user.karma}</td>
+    </tr>
+  </table>
+</template>

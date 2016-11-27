@@ -18,7 +18,7 @@ const MONTHS: string[] = [
 ];
 
 export class DateFormatValueConverter {
-    toView(timestamp: number): string {
+    toView(timestamp: number, includeYear: boolean = false): string {
         let date: Date = new Date(timestamp * 1000);
 
         let hour: number = date.getHours();
@@ -29,6 +29,7 @@ export class DateFormatValueConverter {
             period = 'pm';
         }
 
-        return hour + ':' + pad(date.getMinutes()) + period + ' on ' + date.getDate() + ' ' + MONTHS[date.getMonth()];
+        return hour + ':' + pad(date.getMinutes()) + period
+            + ' on ' + date.getDate() + ' ' + MONTHS[date.getMonth()] + (includeYear ? ' ' + date.getFullYear() : '');
     }
 }

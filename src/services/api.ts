@@ -23,10 +23,10 @@ export class HackerNewsApi {
         });
     }
 
-    fetchItemsOnPage(topStories: number[], page: number): Promise<any[]> {
-        let firstStory: number = (page - 1) * STORIES_PER_PAGE;
-        let lastStory: number = page * STORIES_PER_PAGE;
-        let stories: number[] = topStories.slice(firstStory, lastStory);
+    fetchItemsOnPage(ids: number[], page: number): Promise<any[]> {
+        let start: number = (page - 1) * STORIES_PER_PAGE;
+        let end: number = page * STORIES_PER_PAGE;
+        let stories: number[] = ids.slice(start, end);
         return this.fetchItems(stories);
     }
 
@@ -46,12 +46,16 @@ export class HackerNewsApi {
                 this.db.child('item/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
                     this.cache[id] = snapshot.val();
                     resolve(this.cache[id]);
-
-                    if (id === 13045413) {
-                        console.log(JSON.stringify(this.cache[id]));
-                    }
                 }, reject);
             }
+        });
+    }
+
+    fetchUser(id: string): Promise<any> {
+        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
+            this.db.child('user/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
+                resolve(snapshot.val());
+            }, reject);
         });
     }
 }

@@ -52,6 +52,10 @@ export class App {
             route: 'item/:id',
             moduleId: './pages/item/index',
             name: 'item'
+        }).mapRoute({
+            route: 'user/:id',
+            moduleId: './pages/user/index',
+            name: 'user'
         }).mapUnknownRoutes('./pages/not-found');
     }
 }
