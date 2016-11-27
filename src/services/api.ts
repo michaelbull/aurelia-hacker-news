@@ -26,8 +26,7 @@ export class HackerNewsApi {
     fetchItemsOnPage(ids: number[], page: number): Promise<any[]> {
         let start: number = (page - 1) * STORIES_PER_PAGE;
         let end: number = page * STORIES_PER_PAGE;
-        let stories: number[] = ids.slice(start, end);
-        return this.fetchItems(stories);
+        return this.fetchItems(ids.slice(start, end));
     }
 
     fetchItems(ids: number[]): Promise<any[]> {
