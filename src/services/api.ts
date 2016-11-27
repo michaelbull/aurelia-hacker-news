@@ -15,14 +15,6 @@ export class HackerNewsApi {
         this.db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
     }
 
-    fetchStories(path: string): Promise<number[]> {
-        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child(path).on('value', (snapshot: firebase.database.DataSnapshot) => {
-                resolve(snapshot.val());
-            }, reject);
-        });
-    }
-
     fetchItemsOnPage(ids: number[], page: number): Promise<any[]> {
         let start: number = (page - 1) * STORIES_PER_PAGE;
         let end: number = page * STORIES_PER_PAGE;
@@ -47,6 +39,14 @@ export class HackerNewsApi {
                     resolve(this.cache[id]);
                 }, reject);
             }
+        });
+    }
+
+    fetchStories(path: string): Promise<number[]> {
+        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
+            this.db.child(path).on('value', (snapshot: firebase.database.DataSnapshot) => {
+                resolve(snapshot.val());
+            }, reject);
         });
     }
 
