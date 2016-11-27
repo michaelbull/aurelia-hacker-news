@@ -1,8 +1,28 @@
 {
   "name": "aurelia-hacker-news",
   "version": "1.0.0",
-  "description": "HackerNews clone written using Aurelia",
+  "description": "Hacker News clone built with Aurelia",
   "private": true,
+  "license": "ISC",
+  "author": {
+    "name": "Michael Bull",
+    "url": "https://www.michael-bull.com"
+  },
+  "keywords": [
+    "aurelia",
+    "typescript",
+    "webpack",
+    "hacker",
+    "news",
+    "clone"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeBull94/aurelia-hacker-news.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MikeBull94/aurelia-hacker-news/issues"
+  },
   "scripts": {
     "start": "npm run server:dev",
     "server:dev": "webpack-dev-server --inline --hot --open",
@@ -12,10 +32,6 @@
     "test:watch": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun false --reporters spec",
     "docs": "typedoc --out docs/ --mode file --includeDeclarations --target es6 --name aurelia-hacker-news --readme none --moduleResolution node src/",
     "clean": "rm -rf dist/* && rm -rf reports/* && rm -rf docs/*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/MikeBull94/aurelia-hacker-news.git"
   },
   "dependencies": {
     "aurelia-bootstrapper-webpack": "1.0.0",
