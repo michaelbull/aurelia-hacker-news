@@ -1,5 +1,11 @@
 # Aurelia Hacker News Clone
 
+<p align="center">
+  <a href="#readme">
+    <img src="./assets/preview.png" />
+  </a>
+</p>
+
 A recreation of the [Hacker News][hn] website written in [TypeScript][ts] and
 [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
 
