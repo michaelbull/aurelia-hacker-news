@@ -1,0 +1,15 @@
+<template>
+  <require from="./item-preview"></require>
+
+  <div class="story-list">
+    <p class="story-list__loading" if.bind="!stories">Loading...</p>
+
+    <div class="story-list__item" repeat.for="story of stories">
+      <span class="story-list__index">
+        ${$index + offset + 1}.
+      </span>
+
+      <hn-item-preview item.bind="story"></hn-item-preview>
+    </div>
+  </div>
+</template>

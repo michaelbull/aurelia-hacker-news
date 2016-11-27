@@ -1,11 +1,11 @@
 <template>
-  <require from="../../components/news-list"></require>
+  <require from="../../components/story-list"></require>
   <require from="../../components/paginator"></require>
 
-  <hn-news-list
+  <hn-story-list
     stories.bind="stories"
     offset.bind="offset">
-  </hn-news-list>
+  </hn-story-list>
 
   <hn-paginator
     if.bind="stories"

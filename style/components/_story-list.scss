@@ -1,4 +1,4 @@
-.news-list {
+.story-list {
   margin: 0;
   padding: 0 0 1em;
 
@@ -12,12 +12,12 @@
   }
 }
 
-.news-list__loading {
+.story-list__loading {
   margin: 0;
   padding: 0 0 0 1em;
 }
 
-.news-list__item {
+.story-list__item {
   position: relative;
   padding-left: 3em;
   margin-bottom: 0.75em;
@@ -31,7 +31,7 @@
   }
 }
 
-.news-list__index {
+.story-list__index {
   position: absolute;
   top: 0;
   left: 0;
