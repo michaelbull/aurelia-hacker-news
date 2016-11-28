@@ -1,3 +1,4 @@
+declare let require: any;
 const timeago: any = require('../../node_modules/timeago.js/dist/timeago.js');
 
 export class DateFormatValueConverter {
