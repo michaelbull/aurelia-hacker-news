@@ -8,6 +8,13 @@
   background-image: none, linear-gradient(to left, $fuchsia-blue 1%, $wild-strawberry 50%, $fuchsia-blue 100%);
 }
 
+.item-preview__title {
+  display: inline;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .item-preview__link {
   color: $cod-gray;
   text-decoration: none;
