@@ -16,6 +16,8 @@ export class Item {
     }
 
     activate(params: any): Promise<void> {
+        window.scrollTo(0, 0);
+
         if (params.id === undefined || isNaN(params.id) || params.id < 0) {
             this.router.navigateToRoute('news');
             return Promise.resolve();
