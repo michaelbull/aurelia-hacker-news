@@ -15,7 +15,7 @@
     <p class="item-preview__info">
       ${item.score} points by
       <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
-      at ${item.time | dateFormat} |
+      ${item.time | dateFormat} |
       <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
         <template if.bind="item.descendants < 1">discuss</template>
         <template if.bind="item.descendants >= 1">${item.descendants} comments</template>

@@ -80,6 +80,7 @@
     "sass-loader": "4.0.2",
     "sasslint-webpack-plugin": "1.0.4",
     "style-loader": "0.13.1",
+    "timeago.js": "2.0.3",
     "ts-node": "1.7.0",
     "tslint": "3.14.0",
     "tslint-loader": "2.1.5",
