@@ -22,7 +22,9 @@
       <template if.bind="item.descendants">
         | <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
             <template if.bind="item.descendants < 1">discuss</template>
-            <template if.bind="item.descendants >= 1">${item.descendants} comments</template>
+            <template if.bind="item.descendants >= 1">
+              ${item.descendants} ${item.descendants > 1 ? 'comments' : 'comment'}
+            </template>
           </a>
       </template>
     </p>
