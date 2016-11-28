@@ -1,9 +1,9 @@
 .story-list {
   margin: 0;
-  padding: 0 1em 1em 0;
-  font-size: 0.8125rem;
+  padding: 0 3em 1em 0;
 
   @media (max-width: $tablet-breakpoint) {
+    padding-right: 1em;
     padding-bottom: 5em;
   }
 }
@@ -16,7 +16,6 @@
 .story-list__item {
   position: relative;
   padding-left: 3em;
-  margin-bottom: 0.75em;
 
   &:last-child {
     margin-bottom: 0;
@@ -29,11 +28,12 @@
 
 .story-list__index {
   position: absolute;
-  top: 0;
+  top: 0.3em;
   left: 0;
 
   width: 2em;
 
+  font-size: 0.875rem;
   color: $gray;
   text-align: right;
 }

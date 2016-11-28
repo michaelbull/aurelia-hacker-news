@@ -1,6 +1,11 @@
 .item-preview {
-  margin: 0;
-  padding: 0;
+  margin: 0 0 1em;
+  padding: 0 0 1em;
+
+  background-size: 100% 1px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  background-image: none, linear-gradient(to left, $fuchsia-blue 1%, $wild-strawberry 50%, $fuchsia-blue 100%);
 }
 
 .item-preview__link {
@@ -14,7 +19,7 @@
 
 .item-preview__site-link {
   color: $gray;
-  font-size: 0.625rem;
+  font-size: 0.875rem;
 }
 
 .item-preview__info {
@@ -22,12 +27,12 @@
   margin-bottom: 0;
 
   color: $gray;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
 }
 
 .item-preview__author-link,
 .item-preview__comments-link {
-  color: $gray;
+  color: $fuchsia-blue;
   text-decoration: none;
 
   &:hover {

@@ -1,7 +1,8 @@
 .paginator {
-  padding: 1em;
+  padding-left: 1em;
+  padding-bottom: 1.5em;
+
   user-select: none;
-  border-top: 2px solid $blaze;
   background-color: $spring-wood;
 
   @media (max-width: $tablet-breakpoint) {
@@ -9,11 +10,16 @@
     bottom: 0;
     left: 0;
 
-    padding: 0.75em 0;
+    padding: 1em 0;
     width: 100%;
     text-align: center;
 
     box-shadow: 0 2px 16px $cod-gray;
+
+    background-size: 100% 2px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to left, $fuchsia-blue 1%, $wild-strawberry 50%, $fuchsia-blue 100%), none;
   }
 }
 
