@@ -1,13 +1,19 @@
 # Aurelia Hacker News Clone
 
+A recreation of the [Hacker News][hn] website written in [TypeScript][ts] and
+built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
+
+<br />
+
 <p align="center">
   <a href="#readme">
-    <img src="./assets/preview.png" />
+    <img src="./assets/example.png" alt="Example" />
   </a>
 </p>
 
-A recreation of the [Hacker News][hn] website written in [TypeScript][ts] and
-built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
+<br />
+<br />
+<br />
 
 ## Demo
 
