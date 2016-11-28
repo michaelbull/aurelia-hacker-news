@@ -2,16 +2,13 @@
   <require from="../converters/date-format"></require>
 
   <li class="comment" if.bind="!comment.deleted">
-    <span click.delegate="toggle()" class="comment__toggle">[${expanded ? '-' : '+' + replies.length}]</span>
+    <p class="comment__author">
+      <span click.delegate="toggle()" class="comment__toggle">[${expanded ? '-' : '+' + replies.length}]</span>
+      <a class="comment__author-link" route-href="route: user; params.bind: { id: comment.by }">${comment.by}</a>
+      ${comment.time | dateFormat}
+    </p>
 
-    <div class="comment__body">
-      <p class="comment__author">
-        <a class="comment__author-link" route-href="route: user; params.bind: { id: comment.by }">${comment.by}</a>
-        ${comment.time | dateFormat}
-      </p>
-
-      <p class="comment__text" innerhtml.bind="comment.text" if.bind="expanded"></p>
-    </div>
+    <p class="comment__text" innerhtml.bind="comment.text" if.bind="expanded"></p>
   </li>
 
   <ul class="comment__reply" repeat.for="reply of replies" if.bind="expanded">

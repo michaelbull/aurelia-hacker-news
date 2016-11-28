@@ -1,6 +1,9 @@
 .news-item {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0 3em;
+
+  @media(max-width: $tablet-breakpoint) {
+    padding: 0 1em;
+  }
 }
 
 .news-item__deleted {
@@ -14,13 +17,13 @@
 }
 
 .news-item__no-comments {
-  margin: 4em 0 0;
+  margin: 2em 0 0;
   padding: 0 0 2em;
   font-size: 0.875rem;
 }
 
 .news-item__comments {
-  margin: 4em 0 0;
+  margin: 2em 0 0;
   padding: 0 0 1em;
   list-style-type: none;
 }

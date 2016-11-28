@@ -5,26 +5,7 @@
   font-size: 0.875rem;
 }
 
-.comment__toggle {
-  padding-right: 0.25em;
-
-  font-size: 0.75rem;
-  color: $gray;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: top;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.comment__body {
-  display: inline-block;
-}
-
 .comment__author {
-  display: inline-block;
   margin: 0 0 0.35em;
   padding: 0;
 
@@ -32,8 +13,22 @@
   font-size: 0.75rem;
 }
 
-.comment__author-link {
+.comment__toggle {
+  padding-right: 0.25em;
+
   color: $gray;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.comment__author-link {
+  padding-right: 0.25em;
+
+  color: $fuchsia-blue;
   text-decoration: none;
 
   &:hover {
@@ -43,6 +38,7 @@
 
 .comment__text {
   @include post-text();
+  padding-left: 1.2em;
 }
 
 .comment__reply {
