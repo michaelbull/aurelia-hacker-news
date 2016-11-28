@@ -3,27 +3,14 @@
   padding-right: 1em;
 }
 
+.news-item__deleted {
+  margin: 0;
+  padding: 0 1em 1em;
+}
+
 .news-item__text {
-  padding: 0;
-  margin: 1em 0 0;
-
-  color: $gray;
-  font-size: 0.8125rem;
-  word-wrap: break-word;
-
-  p {
-    margin-top: 1em;
-    margin-bottom: 0;
-  }
-
-  a {
-    color: $scorpion;
-    text-decoration: underline;
-
-    &:visited {
-      color: $gray;
-    }
-  }
+  @include post-text();
+  padding-left: 1em;
 }
 
 .news-item__no-comments {

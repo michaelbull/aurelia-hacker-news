@@ -2,7 +2,11 @@
   <require from="../../components/comment"></require>
   <require from="../../components/item-preview"></require>
 
-  <div class="news-item">
+  <p class="news-item__deleted" if.bind="item.deleted">
+    Item ${item.id} has been deleted.
+  </p>
+
+  <div class="news-item" if.bind="!item.deleted">
     <hn-item-preview item.bind="item"></hn-item-preview>
 
     <p class="news-item__text" if.bind="item.text" innerhtml.bind="item.text"></p>
