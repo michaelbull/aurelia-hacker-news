@@ -1,27 +1,22 @@
 <template>
   <nav class="nav-bar">
+    <a href="#"><img class="nav-bar__logo" src="../../assets/aurelia-logo.png" alt="Aurelia Hacker News Clone" /></a>
+
+    <div class="nav-bar__left">
+      <a class="nav-bar__title" href="#">Aurelia HN</a>
+
+      <div class="nav-bar__links">
+        <a repeat.for="nav of navigation"
+           href.bind="nav.href"
+           class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}">${nav.title}</a>
+      </div>
+    </div>
+
     <div class="nav-bar__right">
       Built with <a class="nav-bar__url" href="http://aurelia.io/" target="_blank"> Aurelia</a> |
       Made with <span class="nav-bar__author-heart">♥</span>
       by <a class="nav-bar__url" href="https://www.michael-bull.com/" target="_blank">Mike</a> |
       <a class="nav-bar__url" href="https://github.com/MikeBull94/aurelia-hacker-news">Source</a>
-    </div>
-
-    <div class="nav-bar__left">
-      <a href="http://www.ycombinator.com" target="_blank">
-        <img
-          class="nav-bar__ycombinator" src="../../assets/y18.gif"
-          alt="YCombinator" width="18" height="18" /></a>
-
-      <a class="nav-bar__title" href="#">Hacker News</a>
-
-      <div class="nav-bar__links">
-        <a repeat.for="nav of navigation"
-           href.bind="nav.href"
-           class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}">
-          ${nav.title}
-        </a>
-      </div>
     </div>
   </nav>
 </template>
