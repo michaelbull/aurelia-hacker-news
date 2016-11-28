@@ -7,7 +7,7 @@ built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
 
 <p align="center">
   <a href="#readme">
-    <img src="./assets/preview-mobile.png" alt="Preview" />
+    <img src="./assets/preview.png" alt="Preview" />
   </a>
 </p>
 
