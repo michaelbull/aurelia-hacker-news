@@ -38,7 +38,8 @@ module.exports = {
             'aurelia-templating-binding',
             'aurelia-templating-router',
             'aurelia-templating-resources',
-            'firebase'
+            'firebase',
+            'timeago.js'
         ]
     },
 

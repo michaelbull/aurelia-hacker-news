@@ -1,6 +1,7 @@
 <template>
   <require from="../converters/hostname"></require>
   <require from="../converters/date-format"></require>
+  <require from="../converters/pluralise"></require>
 
   <div class="item-preview">
     <h1 class="item-preview__title" if.bind="item.url">
@@ -14,7 +15,7 @@
     <a class="item-preview__site-link">${item.url | hostname}</a>
 
     <p class="item-preview__info">
-      ${item.score} points by
+      ${item.score} ${item.score | pluralise: 'point'} by
       <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
 
       ${item.time | dateFormat}
@@ -23,7 +24,7 @@
         | <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
             <template if.bind="item.descendants < 1">discuss</template>
             <template if.bind="item.descendants >= 1">
-              ${item.descendants} ${item.descendants > 1 ? 'comments' : 'comment'}
+              ${item.descendants} ${item.descendants | pluralise: 'comment'}
             </template>
           </a>
       </template>
