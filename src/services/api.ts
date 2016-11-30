@@ -7,8 +7,6 @@ export const STORIES_PER_PAGE: number = 25;
 
 @autoinject()
 export class HackerNewsApi {
-    private cache: any[] = [];
-
     private readonly db: firebase.database.Reference;
 
     constructor() {
@@ -31,14 +29,9 @@ export class HackerNewsApi {
 
     fetchItem(id: number): Promise<any> {
         return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            if (this.cache[id]) {
-                resolve(this.cache[id]);
-            } else {
-                this.db.child('item/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
-                    this.cache[id] = snapshot.val();
-                    resolve(this.cache[id]);
-                }, reject);
-            }
+            this.db.child('item/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
+                resolve(snapshot.val());
+            }, reject);
         });
     }
 
