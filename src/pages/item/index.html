@@ -13,7 +13,7 @@
 
     <hn-item-preview item.bind="item"></hn-item-preview>
 
-    <p class="news-item__text" if.bind="item.text" innerhtml.bind="item.text"></p>
+    <p class="news-item__text" if.bind="item.text" innerhtml.one-way="item.text"></p>
 
     <p class="news-item__no-comments" if.bind="item.type === 'story' && !comments">
       No comments yet.

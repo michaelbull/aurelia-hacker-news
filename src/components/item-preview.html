@@ -5,11 +5,15 @@
 
   <div class="item-preview item-preview--${item.type}">
     <h1 class="item-preview__title" if.bind="item.url">
-      <a class="item-preview__link" href.bind="item.url" target="_blank">${item.title}</a>
+      <a class="item-preview__link" href.bind="item.url" target="_blank">
+        ${item.title}
+      </a>
     </h1>
 
     <h1 class="item-preview__title" if.bind="!item.url">
-      <a class="item-preview__link" route-href="route: item; params.bind: { id: item.id}">${item.title}</a>
+      <a class="item-preview__link" route-href="route: item; params.bind: { id: item.id}">
+        ${item.title}
+      </a>
     </h1>
 
     <a class="item-preview__site-link">${item.url | hostname}</a>
