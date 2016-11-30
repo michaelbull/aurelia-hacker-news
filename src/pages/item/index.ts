@@ -24,6 +24,7 @@ export class Item {
         }
 
         this.id = params.id;
+        this.comments = [];
 
         return this.api.fetchItem(this.id).then(
             (item: any) => {
