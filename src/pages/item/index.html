@@ -7,17 +7,21 @@
   </p>
 
   <div class="news-item" if.bind="!item.deleted">
+    <a class="news-item__parent" route-href="route: item; params.bind: { id: item.parent}" if.bind="item.parent">
+      View Parent &raquo;
+    </a>
+
     <hn-item-preview item.bind="item"></hn-item-preview>
 
     <p class="news-item__text" if.bind="item.text" innerhtml.bind="item.text"></p>
 
-    <p class="news-item__no-comments" if.bind="!comments">
+    <p class="news-item__no-comments" if.bind="item.type === 'story' && !comments">
       No comments yet.
     </p>
 
     <ul class="news-item__comments" if.bind="comments">
       <template repeat.for="comment of comments">
-        <hn-comment comment.bind="comment"></hn-comment>
+        <hn-comment comment.bind="comment" depth.bind="1"></hn-comment>
       </template>
     </ul>
   </div>

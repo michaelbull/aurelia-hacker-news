@@ -3,7 +3,7 @@
   <require from="../converters/date-format"></require>
   <require from="../converters/pluralise"></require>
 
-  <div class="item-preview">
+  <div class="item-preview item-preview--${item.type}">
     <h1 class="item-preview__title" if.bind="item.url">
       <a class="item-preview__link" href.bind="item.url" target="_blank">${item.title}</a>
     </h1>
@@ -15,18 +15,27 @@
     <a class="item-preview__site-link">${item.url | hostname}</a>
 
     <p class="item-preview__info">
-      ${item.score} ${item.score | pluralise: 'point'} by
-      <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
+      <template if.bind="item.score">
+        ${item.score} ${item.score | pluralise: 'point'} by
+      </template>
 
-      ${item.time | dateFormat} |
-
-      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="item.descendants">
-        ${item.descendants} ${item.descendants | pluralise: 'comment'}
+      <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">
+        ${item.by}
       </a>
 
-      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="!item.descendants">
-        discuss
-      </a>
+      ${item.time | dateFormat}
+
+      <template if.bind="item.type === 'story'">
+        |
+
+        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="item.descendants">
+          ${item.descendants} ${item.descendants | pluralise: 'comment'}
+        </a>
+
+        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="!item.descendants">
+          discuss
+        </a>
+      </template>
     </p>
   </div>
 </template>

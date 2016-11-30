@@ -7,7 +7,11 @@ export class Comment {
     private replies: any[];
     private expanded: boolean = true;
 
+    private readonly MAX_DEPTH: number = 8;
+
     @bindable() private readonly comment: any;
+    @bindable() private readonly depth: number;
+
     private readonly api: HackerNewsApi;
 
     constructor(api: HackerNewsApi) {

@@ -1,8 +1,9 @@
 .news-item {
-  padding: 0 3em;
+  padding: 0 3em 1em;
+  margin: 0;
 
   @media(max-width: $tablet-breakpoint) {
-    padding: 0 1em;
+    padding: 0 1em 1em;
   }
 }
 
@@ -11,9 +12,23 @@
   padding: 0 1em 1em;
 }
 
+.news-item__parent {
+  display: inline-block;
+  margin: 1em 0 2em;
+  padding: 0.5em 1em;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: $brick-red;
+  background-color: $white;
+  box-shadow: 0 3px 6px 0 $gray-nickel;
+  border: 1px solid $vivid-violet;
+  border-radius: 2px;
+}
+
 .news-item__text {
   @include post-text();
-  padding-left: 1em;
 }
 
 .news-item__no-comments {

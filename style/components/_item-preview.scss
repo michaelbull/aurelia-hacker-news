@@ -1,7 +1,16 @@
 .item-preview {
+  padding: 0;
+  margin: 0;
+}
+
+.item-preview--comment {
+  font-size: 0.75rem;
+  margin-bottom: 0.35em;
+}
+
+.item-preview--story {
   margin: 0 0 1em;
   padding: 0 0 1em;
-
   background-size: 100% 1px;
   background-position: 0 0, 0 100%;
   background-repeat: no-repeat;

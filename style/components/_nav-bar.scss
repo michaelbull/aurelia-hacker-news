@@ -8,7 +8,6 @@
   min-height: 4em;
 
   background-image: linear-gradient(to left, $vivid-violet, $brick-red);
-  //background-image: linear-gradient(to top, $fuchsia-blue, #cc2b5e);
   font-size: 0.875rem;
   line-height: 1;
 
@@ -40,7 +39,7 @@
 }
 
 .nav-bar__title {
-  padding-right: 1.5em;
+  margin-right: 1.5em;
 
   font-size: 1.125rem;
   font-weight: 700;

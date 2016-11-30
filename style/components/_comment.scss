@@ -36,6 +36,17 @@
   }
 }
 
+.comment__link {
+  padding-right: 0.25em;
+
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .comment__text {
   @include post-text();
   padding-left: 1.2em;
@@ -52,5 +63,17 @@
   .comment {
     border-left: 4px solid $spring-wood;
     padding-left: 0.5em;
+  }
+}
+
+.comment__more-link {
+  display: block;
+  margin: 0 2em 2em 2em;
+
+  font-size: 1rem;
+  color: $brick-red;
+
+  &:visited {
+    color: $vivid-violet;
   }
 }
