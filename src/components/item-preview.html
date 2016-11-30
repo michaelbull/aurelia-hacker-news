@@ -18,16 +18,15 @@
       ${item.score} ${item.score | pluralise: 'point'} by
       <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
 
-      ${item.time | dateFormat}
+      ${item.time | dateFormat} |
 
-      <template if.bind="item.descendants">
-        | <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}">
-            <template if.bind="item.descendants < 1">discuss</template>
-            <template if.bind="item.descendants >= 1">
-              ${item.descendants} ${item.descendants | pluralise: 'comment'}
-            </template>
-          </a>
-      </template>
+      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="item.descendants">
+        ${item.descendants} ${item.descendants | pluralise: 'comment'}
+      </a>
+
+      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="!item.descendants">
+        discuss
+      </a>
     </p>
   </div>
 </template>
