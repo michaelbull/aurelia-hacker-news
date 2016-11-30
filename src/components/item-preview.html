@@ -32,11 +32,15 @@
       <template if.bind="item.type === 'story'">
         |
 
-        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="item.descendants">
+        <a class="item-preview__comments-link"
+           route-href="route: item; params.bind: { id: item.id}"
+           if.bind="item.descendants">
           ${item.descendants} ${item.descendants | pluralise: 'comment'}
         </a>
 
-        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id}" if.bind="!item.descendants">
+        <a class="item-preview__comments-link"
+           route-href="route: item; params.bind: { id: item.id}"
+           if.bind="!item.descendants">
           discuss
         </a>
       </template>

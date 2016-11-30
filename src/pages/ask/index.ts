@@ -9,6 +9,6 @@ export class AskStories extends StoryList {
     }
 
     fetchIds(): Promise<number[]> {
-        return this.api.fetchStories('askstories');
+        return this.api.fetch('askstories');
     }
 }

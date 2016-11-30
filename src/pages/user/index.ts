@@ -22,7 +22,7 @@ export class User {
 
         this.id = params.id;
 
-        return this.api.fetchUser(this.id).then(
+        return this.api.fetch('user/' + this.id).then(
             (user: any) => {
                 this.user = user;
             }

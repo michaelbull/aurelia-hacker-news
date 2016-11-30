@@ -6,6 +6,7 @@ import { HackerNewsApi } from '../../services/api';
 export class Item {
     private readonly router: Router;
     private readonly api: HackerNewsApi;
+
     private id: number;
     private item: any;
     private comments: any[];

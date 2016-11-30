@@ -28,24 +28,12 @@ export class HackerNewsApi {
     }
 
     fetchItem(id: number): Promise<any> {
-        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child('item/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
-                resolve(snapshot.val());
-            }, reject);
-        });
+        return this.fetch('item/' + id);
     }
 
-    fetchStories(path: string): Promise<number[]> {
+    fetch(path: string): Promise<any> {
         return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child(path).on('value', (snapshot: firebase.database.DataSnapshot) => {
-                resolve(snapshot.val());
-            }, reject);
-        });
-    }
-
-    fetchUser(id: string): Promise<any> {
-        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child('user/' + id).once('value', (snapshot: firebase.database.DataSnapshot) => {
+            this.db.child(path).once('value', (snapshot: firebase.database.DataSnapshot) => {
                 resolve(snapshot.val());
             }, reject);
         });
