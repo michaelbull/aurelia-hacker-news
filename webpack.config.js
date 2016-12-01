@@ -64,7 +64,7 @@ module.exports = {
 
     output: {
         path: './dist',
-        publicPath: 'dist/',
+        publicPath: '/aurelia-hacker-news/dist/',
         filename: '[name].js'
     },
 
