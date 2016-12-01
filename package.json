@@ -26,7 +26,7 @@
   "scripts": {
     "start": "npm run server:dev",
     "server:dev": "webpack-dev-server --inline --hot --open",
-    "server:prod": "ws --port 8080 --spa index.html",
+    "server:prod": "ws --port 8080 --spa index.html --rewrite '/aurelia-hacker-news/* -> /$1'",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun true ",
     "test:watch": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun false --reporters spec",
