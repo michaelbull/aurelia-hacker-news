@@ -88,18 +88,16 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="hackernewsapi.html#cache" class="tsd-kind-icon">cache</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="hackernewsapi.html#db" class="tsd-kind-icon">db</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetch" class="tsd-kind-icon">fetch</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetchitem" class="tsd-kind-icon">fetch<wbr>Item</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetchitems" class="tsd-kind-icon">fetch<wbr>Items</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetchitemsonpage" class="tsd-kind-icon">fetch<wbr>Items<wbr>OnPage</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetchstories" class="tsd-kind-icon">fetch<wbr>Stories</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hackernewsapi.html#fetchuser" class="tsd-kind-icon">fetch<wbr>User</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,7 +115,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L12">src/services/api.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L10">src/services/api.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="hackernewsapi.html" class="tsd-signature-type">HackerNewsApi</a></h4>
@@ -128,28 +126,41 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="cache" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> cache</h3>
-					<div class="tsd-signature tsd-kind-icon">cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L10">src/services/api.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="db" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> db</h3>
 					<div class="tsd-signature tsd-kind-icon">db<span class="tsd-signature-symbol">:</span> <a href="../interfaces/firebase.database.reference.html" class="tsd-signature-type">Reference</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L12">src/services/api.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L10">src/services/api.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fetch" class="tsd-anchor"></a>
+					<h3>fetch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fetch<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L34">src/services/api.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="fetchitem" class="tsd-anchor"></a>
 					<h3>fetch<wbr>Item</h3>
@@ -160,7 +171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L32">src/services/api.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L30">src/services/api.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -183,7 +194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L24">src/services/api.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L22">src/services/api.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -206,7 +217,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L18">src/services/api.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/d099c04/src/services/api.ts#L16">src/services/api.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -219,52 +230,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fetchstories" class="tsd-anchor"></a>
-					<h3>fetch<wbr>Stories</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Stories<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L45">src/services/api.ts:45</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fetchuser" class="tsd-anchor"></a>
-					<h3>fetch<wbr>User</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fetch<wbr>User<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/MikeBull94/aurelia-hacker-news/blob/ddcd51d/src/services/api.ts#L53">src/services/api.ts:53</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>id: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -289,10 +254,10 @@
 								<a href="hackernewsapi.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="hackernewsapi.html#cache" class="tsd-kind-icon">cache</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="hackernewsapi.html#db" class="tsd-kind-icon">db</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hackernewsapi.html#fetch" class="tsd-kind-icon">fetch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="hackernewsapi.html#fetchitem" class="tsd-kind-icon">fetch<wbr>Item</a>
@@ -302,12 +267,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="hackernewsapi.html#fetchitemsonpage" class="tsd-kind-icon">fetch<wbr>Items<wbr>OnPage</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="hackernewsapi.html#fetchstories" class="tsd-kind-icon">fetch<wbr>Stories</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="hackernewsapi.html#fetchuser" class="tsd-kind-icon">fetch<wbr>User</a>
 							</li>
 						</ul>
 					</li>
