@@ -3,7 +3,9 @@
 
   <li class="comment" if.bind="!comment.deleted">
     <p class="comment__author">
-      <span click.delegate="toggle()" class="comment__toggle">[${expanded ? '-' : '+' + replies.length}]</span>
+      <span click.delegate="toggle()" class="comment__toggle">
+        [${expanded ? '-' : '+' + replies.length}]
+      </span>
 
       <a class="comment__author-link" route-href="route: user; params.bind: { id: comment.by }">
         ${comment.by}
@@ -14,7 +16,7 @@
       </a>
     </p>
 
-    <p class="comment__text" innerhtml.one-way="comment.text" if.bind="expanded"></p>
+    <p class="comment__text" innerhtml.one-way="text()" if.bind="expanded"></p>
   </li>
 
   <template if.bind="depth === MAX_DEPTH">
