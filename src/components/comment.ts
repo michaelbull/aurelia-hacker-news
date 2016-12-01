@@ -48,6 +48,7 @@ export class Comment {
             return raw;
         }
 
+        // TODO: avoid hardcoding this href
         let replacement: string = `<a
           href="https://mikebull94.github.io/aurelia-hacker-news/#/item/${match[1]}" 
           rel="nofollow">#${match[1]}</a>`;
