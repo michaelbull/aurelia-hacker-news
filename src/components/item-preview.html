@@ -1,8 +1,4 @@
 <template>
-  <require from="../converters/hostname"></require>
-  <require from="../converters/date-format"></require>
-  <require from="../converters/pluralise"></require>
-
   <div class="item-preview item-preview--${item.type}">
     <h1 class="item-preview__title" if.bind="item.url">
       <a class="item-preview__link" href.bind="item.url" target="_blank">
