@@ -18,6 +18,12 @@ $monospace-font-stack: (
   monospace,
 );
 
+::selection {
+  background-color: $pattens-blue;
+  text-shadow: inherit;
+  color: inherit;
+}
+
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
