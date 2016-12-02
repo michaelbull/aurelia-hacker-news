@@ -12,11 +12,11 @@
 
     <p class="news-item__text" if.bind="item.text" innerhtml.one-way="item.text"></p>
 
-    <p class="news-item__no-comments" if.bind="item.type === 'story' && !comments">
+    <p class="news-item__no-comments" if.bind="item.type === 'story' && comments.length < 1">
       No comments yet.
     </p>
 
-    <ul class="news-item__comments" if.bind="comments">
+    <ul class="news-item__comments" if.bind="comments.length > 0">
       <template repeat.for="comment of comments">
         <hn-comment comment.bind="comment" depth.bind="1"></hn-comment>
       </template>

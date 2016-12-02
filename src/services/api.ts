@@ -34,6 +34,7 @@ export class HackerNewsApi {
     fetch(path: string): Promise<any> {
         return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
             this.db.child(path).once('value', (snapshot: firebase.database.DataSnapshot) => {
+                console.log(snapshot.val());
                 resolve(snapshot.val());
             }, reject);
         });
