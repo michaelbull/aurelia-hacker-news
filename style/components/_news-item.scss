@@ -1,5 +1,5 @@
 .news-item {
-  padding: 0 3em;
+  padding: 0 3em 1em;
   margin: 0;
 
   @media(max-width: $tablet-breakpoint) {
@@ -9,7 +9,7 @@
 
 .news-item__deleted {
   margin: 0;
-  padding: 0 1em 1em;
+  padding: 0 1em;
 }
 
 .news-item__parent {
@@ -37,12 +37,12 @@
 
 .news-item__no-comments {
   margin: 2em 0 0;
-  padding: 0 0 1em;
+  padding: 0;
   font-size: 0.875rem;
 }
 
 .news-item__comments {
   margin: 2em 0 0;
-  padding: 0 0 1em;
+  padding: 0;
   list-style-type: none;
 }
