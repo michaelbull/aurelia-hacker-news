@@ -53,8 +53,8 @@ The following scripts are configured to run via [npm][npm]:
   - Builds the production distribution and places it under the `./dist`
     directory.
 - `npm run server:prod`
-  - Starts a local-web-server listening on [`http://localhost:8080`][localhost]
-    that serves the `./dist` directory.
+  - Starts a local-web-server at [`http://localhost:8080`][localhost] that
+    serves the `./dist` directory.
 - `npm test`
   - Runs the unit tests then generates success and coverage reports under the
     `./reports` directory.
