@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MikeBull94/aurelia-hacker-news.git"
+    "url": "git+https://github.com/michaelbull/aurelia-hacker-news.git"
   },
   "bugs": {
-    "url": "https://github.com/MikeBull94/aurelia-hacker-news/issues"
+    "url": "https://github.com/michaelbull/aurelia-hacker-news/issues"
   },
   "scripts": {
     "start": "npm run server:dev",

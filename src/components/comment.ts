@@ -50,7 +50,7 @@ export class Comment {
 
         // TODO: avoid hardcoding this href
         let replacement: string = `<a
-          href="https://mikebull94.github.io/aurelia-hacker-news/#/item/${match[1]}" 
+          href="https://michaelbull.github.io/aurelia-hacker-news/#/item/${match[1]}" 
           rel="nofollow">#${match[1]}</a>`;
 
         return raw.replace(url, replacement);
