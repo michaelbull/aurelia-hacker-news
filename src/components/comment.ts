@@ -1,4 +1,8 @@
-import { bindable, customElement, inject } from 'aurelia-framework';
+import {
+    bindable,
+    customElement,
+    inject
+} from 'aurelia-framework';
 import { HackerNewsApi } from '../services/api';
 
 @customElement('hn-comment')

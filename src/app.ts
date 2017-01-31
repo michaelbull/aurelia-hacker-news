@@ -1,8 +1,9 @@
-import { inject } from 'aurelia-framework';
-import { Router, RouterConfiguration, NavModel } from 'aurelia-router';
-import { HackerNewsApi } from './services/api';
+import {
+    Router,
+    RouterConfiguration,
+    NavModel
+} from 'aurelia-router';
 
-@inject(HackerNewsApi)
 export class App {
     private navigation: NavModel[];
 

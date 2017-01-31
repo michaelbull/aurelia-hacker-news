@@ -1,6 +1,9 @@
 import { observable } from 'aurelia-framework';
 import { activationStrategy } from 'aurelia-router';
-import { HackerNewsApi, STORIES_PER_PAGE } from '../services/api';
+import {
+    HackerNewsApi,
+    STORIES_PER_PAGE
+} from '../services/api';
 
 export abstract class StoryList {
     readonly api: HackerNewsApi;
