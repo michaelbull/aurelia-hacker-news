@@ -37,11 +37,6 @@ A running demonstration can be found [here][demo].
   and the [“Block Element Modifier” methodology][bem].
 - [Firebase][firebase] as a data store for the [Hacker News API][hn-api].
 
-## Documentation
-
-Documentation is generated in the `./dist/docs` directory by [TypeDoc][typedoc]
-and can be viewed online [here][docs].
-
 ## Building
 
 The following scripts are configured to run via [npm][npm]:
@@ -58,9 +53,6 @@ The following scripts are configured to run via [npm][npm]:
 - `npm test`
   - Runs the unit tests then generates success and coverage reports under the
     `./reports` directory.
-- `npm run docs`
-  - Generates source code documentation under the `./dist/docs` directory using
-    [TypeDoc][typedoc].
 - `npm run clean`
   - Cleans the `./dist` and `./reports` directories.
 
@@ -91,8 +83,6 @@ This project is available under the terms of the ISC license. See the
 [bem]: http://getbem.com/
 [firebase]: https://www.npmjs.com/package/firebase
 [hn-api]: https://github.com/HackerNews/API
-[typedoc]: https://github.com/TypeStrong/typedoc
-[docs]: https://michaelbull.github.io/aurelia-hacker-news/dist/docs/
 [npm]: https://www.npmjs.com/
 [localhost]: http://localhost:8080
 [dev-server]: https://github.com/webpack/webpack-dev-server

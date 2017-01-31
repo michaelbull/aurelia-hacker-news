@@ -1,4 +1,5 @@
-var webpack = require('webpack'),
+var path = require('path'),
+    webpack = require('webpack'),
     cssnano = require('cssnano'),
     SassLintPlugin = require('sasslint-webpack-plugin'),
     AureliaWebPackPlugin = require('aurelia-webpack-plugin'),
@@ -48,14 +49,13 @@ module.exports = {
     },
 
     output: {
-        path: './dist',
+        path: path.join(__dirname, 'dist'),
         publicPath: '/aurelia-hacker-news/dist/',
         filename: '[name].js'
     },
 
     resolve: {
         extensions: [
-            '',
             '.webpack.js',
             '.web.js',
             '.js',
@@ -66,39 +66,38 @@ module.exports = {
     },
 
     module: {
-        preLoaders: [
+        rules: [
             {
                 test: /\.ts$/,
-                loader: 'tslint'
-            }
-        ],
-        loaders: [
+                enforce: 'pre',
+                loader: 'tslint-loader'
+            },
             {
                 test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                query: {
-                    target: 'es5'
-                }
+                loader: 'awesome-typescript-loader'
             },
             {
                 test: /\.html$/,
-                loader: 'html'
-            },
-            {
-                test: /\.json$/,
-                loader: 'json'
+                loader: 'html-loader'
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [
+                        { loader: 'css-loader' },
+                        { loader: 'resolve-url-loader' },
+                        { loader: 'sass-loader?sourceMap' }
+                    ]
+                })
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'file?name=images/[name].[ext]'
+                loader: 'file-loader?name=images/[name].[ext]'
             },
             {
                 test: /\.(eot|svg|ttf|otf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file?name=fonts/[name].[ext]'
+                loader: 'file-loader?name=fonts/[name].[ext]'
             }
         ]
     },
@@ -111,6 +110,22 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname,
+                output: {
+                    path: './'
+                },
+                tslint: {
+                    emitErrors: true,
+                    failOnHint: true,
+                    fileOutput: {
+                        dir: 'reports/tslint',
+                        clean: true
+                    }
+                }
             }
         }),
         new AureliaWebPackPlugin(),
@@ -135,31 +150,17 @@ module.exports = {
                 discardUnused: false
             }
         })
-    ],
-
-    tslint: {
-        emitErrors: true,
-        failOnHint: true,
-        fileOutput: {
-            dir: 'reports/tslint',
-            clean: true
-        }
-    }
+    ]
 };
 
 if (!testEnv) {
-    module.exports.plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
+    module.exports.plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor'));
 }
 
 if (prodEnv) {
     module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.DedupePlugin()
     );
 } else {
     module.exports.devtool = '#source-map';
