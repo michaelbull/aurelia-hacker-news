@@ -1,6 +1,7 @@
 var path = require('path'),
     webpack = require('webpack'),
     cssnano = require('cssnano'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
     SassLintPlugin = require('sasslint-webpack-plugin'),
     AureliaWebPackPlugin = require('aurelia-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -50,7 +51,6 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/aurelia-hacker-news/dist/',
         filename: '[name].js'
     },
 
@@ -75,6 +75,10 @@ module.exports = {
             {
                 test: /\.ts$/,
                 loader: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.hbs$/,
+                loader: 'handlebars-loader'
             },
             {
                 test: /\.html$/,
@@ -127,6 +131,11 @@ module.exports = {
                     }
                 }
             }
+        }),
+        new HtmlWebpackPlugin({
+            inject: true,
+            filename: 'index.html',
+            template: path.join(__dirname, 'index.hbs')
         }),
         new AureliaWebPackPlugin(),
         new SassLintPlugin({
