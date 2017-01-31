@@ -8,13 +8,13 @@ import { HackerNewsApi } from '../services/api';
 @customElement('hn-comment')
 @inject(HackerNewsApi)
 export class Comment {
-    private replies: any[];
-    private expanded: boolean = true;
+    readonly MAX_DEPTH: number = 8;
 
-    private readonly MAX_DEPTH: number = 8;
+    replies: any[];
+    expanded: boolean = true;
 
-    @bindable() private readonly comment: any;
-    @bindable() private readonly depth: number;
+    @bindable() readonly comment: any;
+    @bindable() readonly depth: number;
 
     private readonly api: HackerNewsApi;
 

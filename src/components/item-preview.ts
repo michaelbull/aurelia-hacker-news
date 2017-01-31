@@ -5,5 +5,5 @@ import {
 
 @customElement('hn-item-preview')
 export class ItemPreview {
-    @bindable() item: any;
+    @bindable() readonly item: any;
 }

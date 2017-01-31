@@ -6,5 +6,5 @@ import { NavModel } from 'aurelia-router';
 
 @customElement('hn-nav-bar')
 export class NavBar {
-    @bindable() private readonly navigation: NavModel[];
+    @bindable() readonly navigation: NavModel[];
 }

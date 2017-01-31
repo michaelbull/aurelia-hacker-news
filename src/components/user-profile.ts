@@ -5,5 +5,5 @@ import {
 
 @customElement('hn-user-profile')
 export class UserProfile {
-    @bindable() private readonly user: any;
+    @bindable() readonly user: any;
 }

@@ -5,9 +5,9 @@ import {
 
 @customElement('hn-paginator')
 export class Paginator {
-    @bindable() private readonly current: number;
-    @bindable() private readonly total: number;
-    @bindable() private readonly route: string;
+    @bindable() readonly current: number;
+    @bindable() readonly total: number;
+    @bindable() readonly route: string;
 
     prev(): number {
         return this.current > 1 ? this.current - 1 : 1;

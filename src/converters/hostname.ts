@@ -1,3 +1,6 @@
+import { valueConverter } from 'aurelia-framework';
+
+@valueConverter('hostname')
 export class HostnameValueConverter {
     private readonly anchor: HTMLAnchorElement = document.createElement('a');
 

@@ -8,9 +8,9 @@ import {
 export abstract class StoryList {
     readonly api: HackerNewsApi;
 
-    @observable() private allStories: number[] = [];
     @observable() private currentPage: number;
 
+    private allStories: number[] = [];
     private totalPages: number;
     private stories: any[];
     private offset: number;
@@ -36,13 +36,6 @@ export abstract class StoryList {
         }
 
         this.allStories = await this.fetchIds();
-    }
-
-    async allStoriesChanged(newValue: number[], oldValue: number[]): Promise<void> {
-        if (newValue === oldValue || this.api === undefined) {
-            return;
-        }
-
         this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
     }
