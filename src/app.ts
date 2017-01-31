@@ -1,14 +1,49 @@
+import { inject } from 'aurelia-framework';
 import {
     Router,
-    RouterConfiguration,
-    NavModel
+    RouterConfiguration
 } from 'aurelia-router';
+import {
+    EventAggregator,
+    Subscription
+} from 'aurelia-event-aggregator';
+import * as NProgress from 'nprogress';
 
+const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
+
+@inject(EventAggregator)
 export class App {
-    private navigation: NavModel[];
+    private processingSubscription: Subscription;
+    private completeSubscription: Subscription;
+    private router: Router;
+
+    private readonly events: EventAggregator;
+
+    constructor(events: EventAggregator) {
+        this.events = events;
+    }
+
+    activate(): void {
+        this.processingSubscription = this.events.subscribe('router:navigation:processing', () => {
+            setTimeout(() => {
+                if (this.router.isNavigating) {
+                    NProgress.start();
+                }
+            }, MS_FOR_LOADER_BAR_TO_APPEAR);
+        });
+
+        this.completeSubscription = this.events.subscribe('router:navigation:complete', () => {
+            NProgress.done();
+        });
+    }
+
+    deactivate(): void {
+        this.processingSubscription.dispose();
+        this.completeSubscription.dispose();
+    }
 
     configureRouter(config: RouterConfiguration, router: Router): void {
-        this.navigation = router.navigation;
+        this.router = router;
 
         config.title = 'Aurelia HN';
 

@@ -44,12 +44,14 @@
     "aurelia-templating-resources": "1.2.0",
     "aurelia-templating-router": "1.0.1",
     "firebase": "3.6.1",
+    "nprogress": "0.2.0",
     "timeago.js": "2.0.3"
   },
   "devDependencies": {
     "@types/core-js": "0.9.34",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.51",
+    "@types/nprogress": "0.0.29",
     "@types/webpack": "2.2.2",
     "@types/webpack-env": "1.13.0",
     "aurelia-webpack-plugin": "1.0.0-beta.4.0.1",

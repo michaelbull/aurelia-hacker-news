@@ -25,6 +25,7 @@ module.exports = {
             'aurelia-templating-router',
             'aurelia-templating-resources',
             'firebase',
+            'nprogress',
             'timeago.js'
         ]
     },
