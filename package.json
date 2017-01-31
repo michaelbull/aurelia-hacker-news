@@ -2,7 +2,9 @@
   "name": "aurelia-hacker-news",
   "version": "1.0.0",
   "description": "Hacker News clone built with Aurelia",
+  "homepage": "https://github.com/michaelbull/aurelia-hacker-news#readme",
   "private": true,
+  "main": "src/main.ts",
   "license": "ISC",
   "author": {
     "name": "Michael Bull",
@@ -30,6 +32,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun true ",
     "test:watch": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun false --reporters spec",
+    "deploy": "npm run clean && npm run build && push-dir --dir=dist --branch=gh-pages",
     "clean": "rm -rf dist/* && rm -rf reports/*"
   },
   "dependencies": {
@@ -77,6 +80,7 @@
     "node-sass": "3.13.0",
     "normalize.css": "5.0.0",
     "optimize-css-assets-webpack-plugin": "1.3.0",
+    "push-dir": "0.4.1",
     "resolve-url-loader": "1.6.0",
     "sass-lint": "1.9.1",
     "sass-loader": "4.0.2",
