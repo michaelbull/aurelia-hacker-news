@@ -1,7 +1,6 @@
 var path = require('path'),
     webpackConfig = require('../webpack.config.js');
 
-webpackConfig.entry = {};
 webpackConfig.devtool = 'inline-source-map';
 
 /* enable inline source maps for coverage reports */
@@ -9,7 +8,6 @@ var loaders = webpackConfig.module.loaders;
 for (var i = 0; i < loaders.length; i++) {
     if (loaders[i].loader === 'awesome-typescript-loader') {
         loaders[i].query = {
-            target: 'es5',
             sourceMap: false,
             inlineSourceMap: true
         }
