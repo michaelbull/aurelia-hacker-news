@@ -8,7 +8,6 @@ var path = require('path'),
     OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var prodEnv = (process.env.NODE_ENV === 'production');
-var testEnv = (process.env.NODE_ENV === 'test');
 
 module.exports = {
     entry: {
@@ -158,13 +157,10 @@ module.exports = {
                 },
                 discardUnused: false
             }
-        })
+        }),
+        new webpack.optimize.CommonsChunkPlugin('vendor')
     ]
 };
-
-if (!testEnv) {
-    module.exports.plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor'));
-}
 
 if (prodEnv) {
     module.exports.plugins.push(

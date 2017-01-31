@@ -50,16 +50,8 @@ The following scripts are configured to run via [npm][npm]:
 - `npm run server:prod`
   - Starts a local-web-server at [`http://localhost:8080`][localhost] that
     serves the `./dist` directory.
-- `npm test`
-  - Runs the unit tests then generates success and coverage reports under the
-    `./reports` directory.
 - `npm run clean`
-  - Cleans the `./dist` and `./reports` directories.
-
-## Testing
-
-Unit tests are written using the [Jasmine][jasmine] framework and ran with the
-[Karma][karma] test runner.
+  - Cleans the `./dist` directory.
 
 ## Contributing
 
@@ -86,7 +78,5 @@ This project is available under the terms of the ISC license. See the
 [npm]: https://www.npmjs.com/
 [localhost]: http://localhost:8080
 [dev-server]: https://github.com/webpack/webpack-dev-server
-[jasmine]: https://jasmine.github.io/
-[karma]: https://karma-runner.github.io/
 [github]: https://github.com/michaelbull/aurelia-hacker-news
 [license]: LICENSE
