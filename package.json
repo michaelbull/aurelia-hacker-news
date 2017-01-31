@@ -32,7 +32,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun true ",
     "test:watch": "cross-env NODE_ENV=test karma start test/karma.conf.js --singleRun false --reporters spec",
-    "deploy": "npm run clean && npm run build && push-dir --dir=dist --branch=gh-pages",
+    "deploy": "npm run clean && npm run test && npm run build && push-dir --dir=dist --branch=gh-pages",
     "clean": "rm -rf dist/* && rm -rf reports/*"
   },
   "dependencies": {
