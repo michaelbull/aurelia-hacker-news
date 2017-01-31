@@ -132,9 +132,9 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            inject: true,
             filename: 'index.html',
-            template: path.join(__dirname, 'index.hbs')
+            template: path.join(__dirname, 'index.hbs'),
+            favicon: './assets/favicon.ico'
         }),
         new AureliaWebPackPlugin(),
         new SassLintPlugin({
