@@ -16,31 +16,21 @@ export class Item {
         this.api = api;
     }
 
-    activate(params: any): Promise<void> {
+    async activate(params: any): Promise<void> {
         window.scrollTo(0, 0);
 
         if (params.id === undefined || isNaN(params.id) || params.id < 0) {
             this.router.navigateToRoute('news');
-            return Promise.resolve();
+            return;
         }
 
         this.id = params.id;
         this.comments = [];
 
-        return this.api.fetchItem(this.id).then(
-            (item: any) => {
-                this.item = item;
+        this.item = await this.api.fetchItem(this.id);
 
-                if (this.item.kids === undefined || this.item.kids.length < 1) {
-                    return;
-                }
-
-                return this.api.fetchItems(this.item.kids).then(
-                    (comments: any[]) => {
-                        this.comments = comments;
-                    }
-                );
-            }
-        );
+        if (this.item.kids !== undefined && this.item.kids.length >= 1) {
+            this.comments = await this.api.fetchItems(this.item.kids);
+        }
     }
 }

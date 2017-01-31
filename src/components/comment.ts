@@ -22,16 +22,12 @@ export class Comment {
         this.api = api;
     }
 
-    bind(): Promise<void> {
+    async bind(): Promise<void> {
         if (this.comment.kids === undefined || this.comment.kids.length < 1) {
-            return Promise.resolve();
+            return;
         }
 
-        return this.api.fetchItems(this.comment.kids).then(
-            (replies: any[]) => {
-                this.replies = replies;
-            }
-        );
+        this.replies = await this.api.fetchItems(this.comment.kids);
     }
 
     toggle(): void {

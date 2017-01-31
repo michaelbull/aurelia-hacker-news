@@ -26,7 +26,7 @@ export abstract class StoryList {
         return activationStrategy.invokeLifecycle;
     }
 
-    activate(params: any): void {
+    async activate(params: any): Promise<void> {
         window.scrollTo(0, 0);
 
         if (params.page === undefined || isNaN(params.page) || params.page < 1) {
@@ -35,24 +35,16 @@ export abstract class StoryList {
             this.currentPage = Number(params.page);
         }
 
-        this.fetchIds().then(
-            (stories: number[]) => {
-                this.allStories = stories;
-            }
-        );
+        this.allStories = await this.fetchIds();
     }
 
-    allStoriesChanged(newValue: number[], oldValue: number[]): void {
+    async allStoriesChanged(newValue: number[], oldValue: number[]): Promise<void> {
         if (newValue === oldValue || this.api === undefined) {
             return;
         }
 
-        this.api.fetchItemsOnPage(this.allStories, this.currentPage).then(
-            (value: any) => {
-                this.stories = value;
-                this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
-            }
-        );
+        this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
+        this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
     }
 
     currentPageChanged(newValue: number, oldValue: number): void {

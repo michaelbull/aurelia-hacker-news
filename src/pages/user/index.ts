@@ -14,18 +14,13 @@ export class User {
         this.api = api;
     }
 
-    activate(params: any): Promise<void> {
+    async activate(params: any): Promise<void> {
         if (params.id === undefined) {
             this.router.navigateToRoute('news');
-            return Promise.resolve();
+            return;
         }
 
         this.id = params.id;
-
-        return this.api.fetch('user/' + this.id).then(
-            (user: any) => {
-                this.user = user;
-            }
-        );
+        this.user = await this.api.fetch('user/' + this.id);
     }
 }
