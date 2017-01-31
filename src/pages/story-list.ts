@@ -6,14 +6,14 @@ import {
 } from '../services/api';
 
 export abstract class StoryList {
+    stories: any[];
+    offset: number;
+    @observable() currentPage: number;
+    totalPages: number;
+
     readonly api: HackerNewsApi;
 
-    @observable() private currentPage: number;
-
     private allStories: number[] = [];
-    private totalPages: number;
-    private stories: any[];
-    private offset: number;
 
     constructor(api: HackerNewsApi) {
         this.api = api;
