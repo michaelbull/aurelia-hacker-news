@@ -30,25 +30,6 @@ module.exports = {
         ]
     },
 
-    stats: {
-        hash: true,
-        version: true,
-        timings: true,
-        assets: false,
-        entrypoints: false,
-        chunks: false,
-        modules: false,
-        reasons: false,
-        usedExports: false,
-        providedExports: false,
-        children: false,
-        source: false,
-        errors: true,
-        errorDetails: true,
-        warnings: false,
-        publicPath: false
-    },
-
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].js'

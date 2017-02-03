@@ -29,7 +29,7 @@
     "start": "npm run server:dev",
     "server:dev": "webpack-dev-server --inline --hot --open",
     "server:prod": "ws --port 8080 --spa index.html --rewrite '/aurelia-hacker-news/* -> /$1'",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --hide-modules",
     "deploy": "npm run clean && npm run build && push-dir --dir=dist --branch=gh-pages",
     "clean": "rm -rf dist/* && rm -rf reports/*"
   },
