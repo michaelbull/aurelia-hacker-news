@@ -146,8 +146,7 @@ module.exports = {
 
 if (prodEnv) {
     module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.optimize.DedupePlugin()
+        new webpack.optimize.UglifyJsPlugin()
     );
 } else {
     module.exports.devtool = '#source-map';
