@@ -4,8 +4,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     SassLintPlugin = require('sasslint-webpack-plugin'),
     AureliaWebPackPlugin = require('aurelia-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var prodEnv = (process.env.NODE_ENV === 'production');
 
@@ -70,8 +69,9 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
                     loader: [
-                        { loader: 'css-loader' },
-                        { loader: 'resolve-url-loader' },
+                        { loader: 'css-loader?sourceMap&importLoaders=1' },
+                        { loader: 'postcss-loader?sourceMap' },
+                        { loader: 'resolve-url-loader?sourceMap' },
                         { loader: 'sass-loader?sourceMap' }
                     ]
                 })
@@ -110,7 +110,21 @@ module.exports = {
                         dir: 'reports/tslint',
                         clean: true
                     }
-                }
+                },
+                postcss: [
+                    /* merge media queries */
+                    require('css-mqpacker')({
+                        sort: true
+                    }),
+
+                    /* optimize css */
+                    require('cssnano')({
+                        autoprefixer: {
+                            add: true,
+                            remove: false
+                        }
+                    })
+                ]
             }
         }),
         new HtmlWebpackPlugin({
@@ -129,17 +143,6 @@ module.exports = {
             ]
         }),
         new ExtractTextPlugin('[name].css'),
-        new OptimizeCssAssetsPlugin({
-            canPrint: false,
-            cssProcessor: cssnano,
-            cssProcessorOptions: {
-                autoprefixer: {
-                    add: true,
-                    remove: false
-                },
-                discardUnused: false
-            }
-        }),
         new webpack.optimize.CommonsChunkPlugin('vendor')
     ]
 };
