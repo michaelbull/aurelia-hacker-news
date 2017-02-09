@@ -3,6 +3,8 @@
 A recreation of the [Hacker News][hn] website written in [TypeScript][ts] and
 built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
 
+A running demonstration can be found [here][demo].
+
 <br />
 
 <p align="center">
@@ -14,10 +16,6 @@ built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
 <br />
 <br />
 <br />
-
-## Demo
-
-A running demonstration can be found [here][demo].
 
 ## Features
 
