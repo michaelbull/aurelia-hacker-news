@@ -5,6 +5,6 @@ import {
 
 @customElement('hn-story-list')
 export class StoryList {
-    @bindable() private readonly stories: any[];
-    @bindable() private readonly offset: number;
+    @bindable() readonly stories: any[];
+    @bindable() readonly offset: number;
 }
