@@ -28,7 +28,7 @@ export class HackerNewsApi {
     }
 
     fetchItem(id: number): Promise<any> {
-        return this.fetch('item/' + id);
+        return this.fetch(`item/${id}`);
     }
 
     fetch(path: string): Promise<any> {
