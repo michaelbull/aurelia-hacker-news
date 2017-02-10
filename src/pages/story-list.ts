@@ -10,8 +10,7 @@ export abstract class StoryList {
     @observable() currentPage: number;
     totalPages: number;
 
-    readonly api: HackerNewsApi;
-
+    protected readonly api: HackerNewsApi;
     private allStories: number[] = [];
 
     constructor(api: HackerNewsApi) {
