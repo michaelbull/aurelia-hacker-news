@@ -11,6 +11,6 @@ export class HostnameValueConverter {
             return undefined;
         }
 
-        return '(' + this.anchor.hostname.replace('www.', '') + ')';
+        return this.anchor.hostname.replace('www.', '');
     }
 }
