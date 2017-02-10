@@ -4,7 +4,6 @@ import { HackerNewsApi } from '../../services/api';
 
 @inject(Router, HackerNewsApi)
 export class Item {
-    id: number;
     item: any;
     comments: any[];
 
@@ -24,10 +23,8 @@ export class Item {
             return;
         }
 
-        this.id = params.id;
         this.comments = [];
-
-        this.item = await this.api.fetchItem(this.id);
+        this.item = await this.api.fetchItem(params.id);
 
         if (this.item.kids !== undefined && this.item.kids.length >= 1) {
             this.comments = await this.api.fetchItems(this.item.kids);
