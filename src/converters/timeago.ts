@@ -1,6 +1,6 @@
 import { valueConverter } from 'aurelia-framework';
 
-const timeago: any = require('../../node_modules/timeago.js/dist/timeago.js');
+const timeago: any = require('timeago.js/dist/timeago.js');
 
 @valueConverter('timeago')
 export class TimeagoValueConverter {
