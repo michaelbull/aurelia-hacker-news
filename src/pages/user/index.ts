@@ -22,6 +22,6 @@ export class User {
         }
 
         this.id = params.id;
-        this.user = await this.api.fetch('user/' + this.id);
+        this.user = await this.api.fetch(`user/${this.id}`);
     }
 }
