@@ -4,12 +4,12 @@ import { HackerNewsApi } from '../../services/api';
 
 @inject(Router, HackerNewsApi)
 export class Item {
+    id: number;
+    item: any;
+    comments: any[];
+
     private readonly router: Router;
     private readonly api: HackerNewsApi;
-
-    private id: number;
-    private item: any;
-    private comments: any[];
 
     constructor(router: Router, api: HackerNewsApi) {
         this.router = router;
