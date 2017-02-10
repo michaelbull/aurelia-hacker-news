@@ -8,7 +8,6 @@ export class User {
 
     private readonly router: Router;
     private readonly api: HackerNewsApi;
-    private id: string;
 
     constructor(router: Router, api: HackerNewsApi) {
         this.router = router;
@@ -21,7 +20,6 @@ export class User {
             return;
         }
 
-        this.id = params.id;
-        this.user = await this.api.fetch(`user/${this.id}`);
+        this.user = await this.api.fetch(`user/${params.id}`);
     }
 }
