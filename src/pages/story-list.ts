@@ -1,5 +1,4 @@
 import { observable } from 'aurelia-framework';
-import { activationStrategy } from 'aurelia-router';
 import {
     HackerNewsApi,
     STORIES_PER_PAGE
@@ -22,8 +21,7 @@ export abstract class StoryList {
     abstract fetchIds(): Promise<number[]>;
 
     determineActivationStrategy(): string {
-        // don't forcefully refresh the page, just invoke our activate method
-        return activationStrategy.invokeLifecycle;
+        return 'replace';
     }
 
     async activate(params: any): Promise<void> {
