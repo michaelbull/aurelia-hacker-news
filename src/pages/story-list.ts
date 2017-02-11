@@ -38,10 +38,8 @@ export abstract class StoryList {
     }
 
     currentPageChanged(newValue: number, oldValue: number): void {
-        if (newValue === oldValue) {
-            return;
+        if (newValue !== oldValue) {
+            this.offset = STORIES_PER_PAGE * (newValue - 1);
         }
-
-        this.offset = STORIES_PER_PAGE * (newValue - 1);
     }
 }
