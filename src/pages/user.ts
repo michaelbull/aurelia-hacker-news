@@ -1,6 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
-import { HackerNewsApi } from '../../services/api';
+import { HackerNewsApi } from '../services/api';
 
 @inject(Router, HackerNewsApi)
 export class User {

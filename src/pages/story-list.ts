@@ -9,15 +9,15 @@ export abstract class StoryList {
     offset: number;
     @observable() currentPage: number;
     totalPages: number;
+    readonly route: string;
 
     protected readonly api: HackerNewsApi;
     private allStories: number[] = [];
 
-    constructor(api: HackerNewsApi) {
+    constructor(api: HackerNewsApi, route: string) {
         this.api = api;
+        this.route = route;
     }
-
-    abstract fetchIds(): Promise<number[]>;
 
     determineActivationStrategy(): string {
         return 'replace';
@@ -32,7 +32,7 @@ export abstract class StoryList {
             this.currentPage = Number(params.page);
         }
 
-        this.allStories = await this.fetchIds();
+        this.allStories = await this.api.fetch(this.route);
         this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
     }

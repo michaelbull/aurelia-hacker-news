@@ -52,45 +52,45 @@ export class App {
             redirect: 'news'
         }).mapRoute({
             route: 'news',
-            moduleId: './pages/news/index',
+            moduleId: './pages/news',
             name: 'topstories'
         }).mapRoute({
             route: 'newest',
-            moduleId: './pages/newest/index',
+            moduleId: './pages/newest',
             name: 'newstories',
             nav: true,
             title: 'New'
         }).mapRoute({
             route: 'best',
-            moduleId: './pages/best/index',
+            moduleId: './pages/best',
             name: 'beststories',
             nav: true,
             title: 'Best'
         }).mapRoute({
             route: 'show',
-            moduleId: './pages/show/index',
+            moduleId: './pages/show',
             name: 'showstories',
             nav: true,
             title: 'Show'
         }).mapRoute({
             route: 'ask',
-            moduleId: './pages/ask/index',
+            moduleId: './pages/ask',
             name: 'askstories',
             nav: true,
             title: 'Ask'
         }).mapRoute({
             route: 'jobs',
-            moduleId: './pages/jobs/index',
+            moduleId: './pages/jobs',
             name: 'jobstories',
             nav: true,
             title: 'Jobs'
         }).mapRoute({
             route: 'item/:id',
-            moduleId: './pages/item/index',
+            moduleId: './pages/item',
             name: 'item'
         }).mapRoute({
             route: 'user/:id',
-            moduleId: './pages/user/index',
+            moduleId: './pages/user',
             name: 'user'
         }).mapUnknownRoutes({
             route: '',
