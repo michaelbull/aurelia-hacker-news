@@ -1,4 +1,5 @@
 import { observable } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 import {
     HackerNewsApi,
     STORIES_PER_PAGE
@@ -12,10 +13,12 @@ export abstract class StoryList {
     readonly route: string;
 
     protected readonly api: HackerNewsApi;
+    protected readonly router: Router;
     private allStories: number[] = [];
 
-    constructor(api: HackerNewsApi, route: string) {
+    constructor(api: HackerNewsApi, router: Router, route: string) {
         this.api = api;
+        this.router = router;
         this.route = route;
     }
 
@@ -26,15 +29,17 @@ export abstract class StoryList {
     async activate(params: any): Promise<void> {
         window.scrollTo(0, 0);
 
+        this.allStories = await this.api.fetch(this.route);
+        this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
+
         if (params.page === undefined || isNaN(params.page) || params.page < 1) {
-            this.currentPage = 1;
+            this.router.navigateToRoute(this.route, { page: 1 });
+        } else if (params.page > this.totalPages) {
+            this.router.navigateToRoute(this.route, { page: this.totalPages });
         } else {
             this.currentPage = Number(params.page);
+            this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         }
-
-        this.allStories = await this.api.fetch(this.route);
-        this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
-        this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
     }
 
     currentPageChanged(newValue: number, oldValue: number): void {
