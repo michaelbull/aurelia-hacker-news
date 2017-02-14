@@ -16,8 +16,6 @@ export class Item {
     }
 
     async activate(params: any): Promise<void> {
-        window.scrollTo(0, 0);
-
         if (params.id === undefined || isNaN(params.id) || params.id < 0) {
             this.router.navigateToRoute('news');
             return;
@@ -29,5 +27,7 @@ export class Item {
         if (this.item.kids !== undefined && this.item.kids.length >= 1) {
             this.comments = await this.api.fetchItems(this.item.kids);
         }
+
+        window.scrollTo(0, 0);
     }
 }

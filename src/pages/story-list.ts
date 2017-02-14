@@ -27,8 +27,6 @@ export abstract class StoryList {
     }
 
     async activate(params: any): Promise<void> {
-        window.scrollTo(0, 0);
-
         this.allStories = await this.api.fetch(this.route);
         this.totalPages = Math.ceil(this.allStories.length / STORIES_PER_PAGE);
 
@@ -40,6 +38,8 @@ export abstract class StoryList {
             this.currentPage = Number(params.page);
             this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         }
+
+        window.scrollTo(0, 0);
     }
 
     currentPageChanged(newValue: number, oldValue: number): void {
