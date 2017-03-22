@@ -1,31 +1,17 @@
-var path = require('path'),
+let path = require('path'),
     webpack = require('webpack'),
     cssnano = require('cssnano'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     SassLintPlugin = require('sasslint-webpack-plugin'),
-    AureliaWebPackPlugin = require('aurelia-webpack-plugin'),
+    { AureliaPlugin } = require('aurelia-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var prodEnv = (process.env.NODE_ENV === 'production');
+let prodEnv = (process.env.NODE_ENV === 'production');
 
 module.exports = {
     entry: {
         app: [
-            './src/main.ts'
-        ],
-        vendor: [
-            'aurelia-bootstrapper-webpack',
-            'aurelia-event-aggregator',
-            'aurelia-framework',
-            'aurelia-history-browser',
-            'aurelia-http-client',
-            'aurelia-logging-console',
-            'aurelia-templating-binding',
-            'aurelia-templating-router',
-            'aurelia-templating-resources',
-            'firebase',
-            'nprogress',
-            'timeago.js'
+            'aurelia-bootstrapper'
         ]
     },
 
@@ -42,6 +28,10 @@ module.exports = {
             '.jsx',
             '.ts',
             '.tsx'
+        ],
+        modules: [
+            'src',
+            'node_modules'
         ]
     },
 
@@ -50,25 +40,25 @@ module.exports = {
             {
                 test: /\.ts$/,
                 enforce: 'pre',
-                loader: 'tslint-loader'
+                use: 'tslint-loader'
             },
             {
                 test: /\.ts$/,
-                loader: 'awesome-typescript-loader'
+                use: 'awesome-typescript-loader'
             },
             {
                 test: /\.hbs$/,
-                loader: 'handlebars-loader'
+                use: 'handlebars-loader'
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                use: 'html-loader'
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
-                    loader: [
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
                         { loader: 'css-loader?sourceMap&importLoaders=1' },
                         { loader: 'postcss-loader?sourceMap' },
                         { loader: 'resolve-url-loader?sourceMap' },
@@ -78,11 +68,11 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'file-loader?name=images/[name].[ext]'
+                use: 'file-loader?name=images/[name].[ext]'
             },
             {
                 test: /\.(eot|svg|ttf|otf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader?name=fonts/[name].[ext]'
+                use: 'file-loader?name=fonts/[name].[ext]'
             }
         ]
     },
@@ -132,7 +122,9 @@ module.exports = {
             template: path.join(__dirname, 'index.hbs'),
             favicon: './assets/favicon.ico'
         }),
-        new AureliaWebPackPlugin(),
+        new AureliaPlugin({
+            includeAll: 'src'
+        }),
         new SassLintPlugin({
             configFile: 'sass-lint.yml',
             glob: 'style/**/*.s?(a|c)ss',
@@ -142,8 +134,7 @@ module.exports = {
                 'extract-text-webpack-plugin'
             ]
         }),
-        new ExtractTextPlugin('[name].css'),
-        new webpack.optimize.CommonsChunkPlugin('vendor')
+        new ExtractTextPlugin('[name].css')
     ]
 };
 

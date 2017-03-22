@@ -5,7 +5,11 @@
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "lib": [
+      "es6",
+      "dom"
+    ]
   },
   "exclude": [
     "node_modules",
