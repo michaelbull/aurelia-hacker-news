@@ -2,7 +2,7 @@ import {
     EventAggregator,
     Subscription
 } from 'aurelia-event-aggregator';
-import { inject } from 'aurelia-framework';
+import { autoinject } from 'aurelia-framework';
 import {
     Router,
     RouterConfiguration
@@ -11,7 +11,7 @@ import * as NProgress from 'nprogress';
 
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
 
-@inject(EventAggregator)
+@autoinject()
 export class App {
     private processingSubscription: Subscription;
     private completeSubscription: Subscription;

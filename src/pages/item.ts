@@ -1,8 +1,8 @@
-import { inject } from 'aurelia-framework';
+import { autoinject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import { HackerNewsApi } from '../services/api';
 
-@inject(Router, HackerNewsApi)
+@autoinject()
 export class Item {
     item: any;
     comments: any[];

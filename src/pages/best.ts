@@ -1,12 +1,12 @@
 import {
-    inject,
+    autoinject,
     useView
 } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import { HackerNewsApi } from '../services/api';
 import { StoryList } from './story-list';
 
-@inject(HackerNewsApi, Router)
+@autoinject()
 @useView('./story-list.html')
 export class BestStories extends StoryList {
     constructor(api: HackerNewsApi, router: Router) {

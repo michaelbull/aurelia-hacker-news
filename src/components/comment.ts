@@ -1,12 +1,12 @@
 import {
+    autoinject,
     bindable,
-    customElement,
-    inject
+    customElement
 } from 'aurelia-framework';
 import { HackerNewsApi } from '../services/api';
 
 @customElement('hn-comment')
-@inject(HackerNewsApi)
+@autoinject()
 export class Comment {
     readonly MAX_DEPTH: number = 8;
 
