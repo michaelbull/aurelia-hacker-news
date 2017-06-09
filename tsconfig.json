@@ -2,10 +2,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
-    "noImplicitAny": true,
+    "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": true,
     "lib": [
       "es6",
       "dom"

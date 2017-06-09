@@ -1,12 +1,12 @@
+import {
+    EventAggregator,
+    Subscription
+} from 'aurelia-event-aggregator';
 import { inject } from 'aurelia-framework';
 import {
     Router,
     RouterConfiguration
 } from 'aurelia-router';
-import {
-    EventAggregator,
-    Subscription
-} from 'aurelia-event-aggregator';
 import * as NProgress from 'nprogress';
 
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;

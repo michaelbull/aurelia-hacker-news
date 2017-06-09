@@ -100,21 +100,7 @@ module.exports = {
                         dir: 'reports/tslint',
                         clean: true
                     }
-                },
-                postcss: [
-                    /* merge media queries */
-                    require('css-mqpacker')({
-                        sort: true
-                    }),
-
-                    /* optimize css */
-                    require('cssnano')({
-                        autoprefixer: {
-                            add: true,
-                            remove: false
-                        }
-                    })
-                ]
+                }
             }
         }),
         new HtmlWebpackPlugin({

@@ -1,6 +1,6 @@
-import '../style/index.scss';
 import { Aurelia } from 'aurelia-framework';
 import * as NProgress from 'nprogress';
+import '../style/index.scss';
 
 export function configure(aurelia: Aurelia): void {
     aurelia.use
@@ -15,7 +15,7 @@ export function configure(aurelia: Aurelia): void {
     NProgress.configure({
         trickleSpeed: 100,
         template: `
-          <div class="loader">                                
+          <div class="loader">
             <div class="loader__bar" role="bar">
               <div class="loader__peg"></div>
             </div>
