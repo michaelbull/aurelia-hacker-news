@@ -47,10 +47,6 @@ module.exports = {
                 use: 'awesome-typescript-loader'
             },
             {
-                test: /\.hbs$/,
-                use: 'handlebars-loader'
-            },
-            {
                 test: /\.html$/,
                 use: 'html-loader'
             },
@@ -89,10 +85,6 @@ module.exports = {
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
-                context: __dirname,
-                output: {
-                    path: './'
-                },
                 tslint: {
                     emitErrors: true,
                     failOnHint: true,
@@ -103,12 +95,11 @@ module.exports = {
                 }
             }
         }),
+        new AureliaPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.join(__dirname, 'index.hbs'),
+            template: 'index.html',
             favicon: './assets/favicon.ico'
         }),
-        new AureliaPlugin(),
         new SassLintPlugin({
             configFile: 'sass-lint.yml',
             glob: 'style/**/*.s?(a|c)ss',
