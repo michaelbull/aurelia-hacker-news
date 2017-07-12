@@ -1,12 +1,12 @@
-import { FrameworkConfiguration } from 'aurelia-framework';
+import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 export function configure(config: FrameworkConfiguration): void {
     config.globalResources([
-        './comment',
-        './item-preview',
-        './nav-bar',
-        './paginator',
-        './story-list',
-        './user-profile'
+        PLATFORM.moduleName('./comment'),
+        PLATFORM.moduleName('./item-preview'),
+        PLATFORM.moduleName('./nav-bar'),
+        PLATFORM.moduleName('./paginator'),
+        PLATFORM.moduleName('./story-list'),
+        PLATFORM.moduleName('./user-profile')
     ]);
 }

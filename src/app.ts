@@ -2,12 +2,13 @@ import {
     EventAggregator,
     Subscription
 } from 'aurelia-event-aggregator';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, PLATFORM } from 'aurelia-framework';
 import {
     Router,
     RouterConfiguration
 } from 'aurelia-router';
 import * as NProgress from 'nprogress';
+import '../style/index.scss';
 
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
 
@@ -52,45 +53,45 @@ export class App {
             redirect: 'news'
         }).mapRoute({
             route: 'news',
-            moduleId: './pages/news',
+            moduleId: PLATFORM.moduleName('./pages/news'),
             name: 'topstories'
         }).mapRoute({
             route: 'newest',
-            moduleId: './pages/newest',
+            moduleId: PLATFORM.moduleName('./pages/newest'),
             name: 'newstories',
             nav: true,
             title: 'New'
         }).mapRoute({
             route: 'best',
-            moduleId: './pages/best',
+            moduleId: PLATFORM.moduleName('./pages/best'),
             name: 'beststories',
             nav: true,
             title: 'Best'
         }).mapRoute({
             route: 'show',
-            moduleId: './pages/show',
+            moduleId: PLATFORM.moduleName('./pages/show'),
             name: 'showstories',
             nav: true,
             title: 'Show'
         }).mapRoute({
             route: 'ask',
-            moduleId: './pages/ask',
+            moduleId: PLATFORM.moduleName('./pages/ask'),
             name: 'askstories',
             nav: true,
             title: 'Ask'
         }).mapRoute({
             route: 'jobs',
-            moduleId: './pages/jobs',
+            moduleId: PLATFORM.moduleName('./pages/jobs'),
             name: 'jobstories',
             nav: true,
             title: 'Jobs'
         }).mapRoute({
             route: 'item/:id',
-            moduleId: './pages/item',
+            moduleId: PLATFORM.moduleName('./pages/item'),
             name: 'item'
         }).mapRoute({
             route: 'user/:id',
-            moduleId: './pages/user',
+            moduleId: PLATFORM.moduleName('./pages/user'),
             name: 'user'
         }).mapUnknownRoutes({
             route: '',

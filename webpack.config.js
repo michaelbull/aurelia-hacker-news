@@ -1,6 +1,5 @@
 let path = require('path'),
     webpack = require('webpack'),
-    cssnano = require('cssnano'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     SassLintPlugin = require('sasslint-webpack-plugin'),
     { AureliaPlugin } = require('aurelia-webpack-plugin'),
@@ -17,7 +16,8 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].js',
+        chunkFilename: '[name].js'
     },
 
     resolve: {
@@ -108,9 +108,7 @@ module.exports = {
             template: path.join(__dirname, 'index.hbs'),
             favicon: './assets/favicon.ico'
         }),
-        new AureliaPlugin({
-            includeAll: 'src'
-        }),
+        new AureliaPlugin(),
         new SassLintPlugin({
             configFile: 'sass-lint.yml',
             glob: 'style/**/*.s?(a|c)ss',

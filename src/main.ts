@@ -1,12 +1,11 @@
-import { Aurelia } from 'aurelia-framework';
+import { Aurelia, PLATFORM } from 'aurelia-framework';
 import * as NProgress from 'nprogress';
-import '../style/index.scss';
 
 export function configure(aurelia: Aurelia): void {
     aurelia.use
         .standardConfiguration()
-        .feature('components')
-        .feature('converters');
+        .feature(PLATFORM.moduleName('components/index'))
+        .feature(PLATFORM.moduleName('converters/index'));
 
     if (process.env.NODE_ENV !== 'production') {
         aurelia.use.developmentLogging();
@@ -26,5 +25,5 @@ export function configure(aurelia: Aurelia): void {
         `
     });
 
-    aurelia.start().then(() => aurelia.setRoot('app'));
+    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

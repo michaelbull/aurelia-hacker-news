@@ -1,9 +1,9 @@
-import { FrameworkConfiguration } from 'aurelia-framework';
+import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 export function configure(config: FrameworkConfiguration): void {
     config.globalResources([
-        './hostname',
-        './pluralise',
-        './timeago'
+        PLATFORM.moduleName('./hostname'),
+        PLATFORM.moduleName('./pluralise'),
+        PLATFORM.moduleName('./timeago')
     ]);
 }
