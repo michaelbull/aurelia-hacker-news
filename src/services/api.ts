@@ -1,5 +1,6 @@
 import { autoinject } from 'aurelia-framework';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/database';
 
 const API_URL: string = 'https://hacker-news.firebaseio.com';
 const API_VERSION: string = '/v0';
