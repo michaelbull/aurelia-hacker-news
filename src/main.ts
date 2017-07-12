@@ -1,4 +1,7 @@
-import { Aurelia, PLATFORM } from 'aurelia-framework';
+import {
+    Aurelia,
+    PLATFORM
+} from 'aurelia-framework';
 import * as NProgress from 'nprogress';
 
 export function configure(aurelia: Aurelia): void {

@@ -2,7 +2,10 @@ import {
     EventAggregator,
     Subscription
 } from 'aurelia-event-aggregator';
-import { autoinject, PLATFORM } from 'aurelia-framework';
+import {
+    autoinject,
+    PLATFORM
+} from 'aurelia-framework';
 import {
     Router,
     RouterConfiguration
