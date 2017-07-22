@@ -17,11 +17,11 @@
 
 # npm
 !.npm*
-node_modules/
+/node_modules
 npm-debug.log*
 
 # Distribution
-dist/
+/dist
 
 # Reports
-reports/
+/reports
