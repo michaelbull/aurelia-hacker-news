@@ -1,5 +1,5 @@
 import { autoinject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
+import { RouteConfig, Router } from 'aurelia-router';
 import { HackerNewsApi } from '../services/api';
 
 @autoinject()
@@ -15,7 +15,7 @@ export class Item {
         this.api = api;
     }
 
-    async activate(params: any): Promise<void> {
+    async activate(params: any, routeConfig: RouteConfig): Promise<void> {
         if (params.id === undefined || isNaN(params.id) || params.id < 0) {
             this.router.navigateToRoute('news');
             return;
@@ -26,6 +26,10 @@ export class Item {
 
         if (this.item.kids !== undefined && this.item.kids.length >= 1) {
             this.comments = await this.api.fetchItems(this.item.kids);
+        }
+
+        if (routeConfig.navModel !== undefined && this.item !== undefined) {
+            routeConfig.navModel.setTitle(`${this.item.title}`);
         }
 
         window.scrollTo(0, 0);
