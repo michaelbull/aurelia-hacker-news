@@ -16,8 +16,8 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        chunkFilename: '[name].js'
+        filename: '[name]-[hash].js',
+        chunkFilename: '[name]-[chunkhash].js'
     },
 
     resolve: {
@@ -64,11 +64,11 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                use: 'file-loader?name=images/[name].[ext]'
+                use: 'file-loader?name=images/[name]-[hash].[ext]'
             },
             {
                 test: /\.(eot|svg|ttf|otf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                use: 'file-loader?name=fonts/[name].[ext]'
+                use: 'file-loader?name=fonts/[name]-[hash].[ext]'
             }
         ]
     },
@@ -109,7 +109,7 @@ module.exports = {
                 'extract-text-webpack-plugin'
             ]
         }),
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name]-[contenthash].css')
     ]
 };
 
