@@ -53,9 +53,6 @@ export class App {
 
         config.mapRoute({
             route: '',
-            redirect: 'news'
-        }).mapRoute({
-            route: 'news',
             moduleId: PLATFORM.moduleName('./pages/news'),
             name: 'topstories'
         }).mapRoute({
@@ -97,8 +94,8 @@ export class App {
             moduleId: PLATFORM.moduleName('./pages/user'),
             name: 'user'
         }).mapUnknownRoutes({
-            route: '',
-            redirect: 'news'
+            route: 'unknown',
+            redirect: ''
         });
     }
 }

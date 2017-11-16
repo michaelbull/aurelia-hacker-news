@@ -1,12 +1,11 @@
-import { autoinject } from 'aurelia-framework';
 import * as firebase from 'firebase/app';
 import 'firebase/database';
+import DataSnapshot = firebase.database.DataSnapshot;
 
 const API_URL: string = 'https://hacker-news.firebaseio.com';
 const API_VERSION: string = '/v0';
 export const STORIES_PER_PAGE: number = 25;
 
-@autoinject()
 export class HackerNewsApi {
     private readonly db: firebase.database.Reference;
 
@@ -15,8 +14,8 @@ export class HackerNewsApi {
     }
 
     fetchItemsOnPage(ids: number[], page: number): Promise<any[]> {
-        let start: number = (page - 1) * STORIES_PER_PAGE;
-        let end: number = page * STORIES_PER_PAGE;
+        let start = (page - 1) * STORIES_PER_PAGE;
+        let end = page * STORIES_PER_PAGE;
         return this.fetchItems(ids.slice(start, end));
     }
 
@@ -34,7 +33,7 @@ export class HackerNewsApi {
 
     fetch(path: string): Promise<any> {
         return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child(path).once('value', (snapshot: firebase.database.DataSnapshot) => {
+            this.db.child(path).once('value', (snapshot: DataSnapshot) => {
                 resolve(snapshot.val());
             }, reject);
         });

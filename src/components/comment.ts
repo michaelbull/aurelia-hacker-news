@@ -35,21 +35,21 @@ export class Comment {
     }
 
     text(): string {
-        let raw: string = this.comment.text;
-        let url: RegExp = new RegExp(
+        let raw = this.comment.text;
+        let url = new RegExp(
             '<a href="https:&#x2F;&#x2F;news\.ycombinator\.com&#x2F;item\\?id=(\\d+)" rel="nofollow">' +
             'https:&#x2F;&#x2F;news\.ycombinator\.com&#x2F;item\\?id=\\d+' +
             '<\/a>',
             'g');
 
-        let match: RegExpExecArray | null = url.exec(raw);
+        let match = url.exec(raw);
 
         if (match === null) {
             return raw;
         }
 
         // TODO: avoid hardcoding this href
-        let replacement: string = `<a
+        let replacement = `<a
           href="https://michaelbull.github.io/aurelia-hacker-news/#/item/${match[1]}"
           rel="nofollow">#${match[1]}</a>`;
 

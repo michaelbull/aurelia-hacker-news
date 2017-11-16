@@ -1,7 +1,7 @@
 <template>
   <div class="paginator">
     <a class="paginator__selector ${current > 1 ? '' : 'paginator__selector--disabled'}"
-       route-href="route.bind: route; params.bind: { page: current > 1 ? current - 1 : 1 }">
+       route-href="route.bind: route; params.bind: { page: current > 2 ? current - 1 : undefined }">
       &laquo;</a>
 
     <div class="paginator__current">Page ${current} of ${total}</div>

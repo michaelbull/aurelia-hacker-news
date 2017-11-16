@@ -12,7 +12,10 @@
     "max-line-length": [
       false
     ],
-    "member-access": false,
+    "member-access": [
+      true,
+      "no-public"
+    ],
     "member-ordering": [
       true,
       {
@@ -25,16 +28,26 @@
         ]
       }
     ],
+    "no-console": false,
     "no-string-literal": false,
     "object-literal-key-quotes": [
       true,
       "consistent"
     ],
     "object-literal-sort-keys": false,
+    "only-arrow-functions": false,
     "prefer-const": false,
+    "prefer-for-of": false,
     "quotemark": [
       true,
       "single"
+    ],
+    "semicolon": false,
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "always"
+      }
     ],
     "trailing-comma": [
       true,
@@ -50,10 +63,15 @@
       "parameter",
       "arrow-parameter",
       "property-declaration",
-      "variable-declaration",
       "member-variable-declaration",
       "object-destructuring",
       "array-destructuring"
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
     ]
   },
   "rulesDirectory": []
