@@ -31,7 +31,5 @@ export class Item {
         if (routeConfig.navModel !== undefined && this.item !== undefined) {
             routeConfig.navModel.setTitle(`${this.item.title}`);
         }
-
-        window.scrollTo(0, 0);
     }
 }

@@ -12,6 +12,7 @@ import {
 } from 'aurelia-router';
 import * as NProgress from 'nprogress';
 import '../style/index.scss';
+import { ScrollToTopStep } from './services/scroll-to-top-step';
 
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
 
@@ -50,6 +51,7 @@ export class App {
         this.router = router;
 
         config.title = 'Aurelia HN';
+        config.addPipelineStep('postcomplete', ScrollToTopStep);
 
         config.mapRoute({
             route: '',

@@ -1,4 +1,3 @@
-import { observable } from 'aurelia-framework';
 import {
     RoutableComponentActivate,
     RoutableComponentDetermineActivationStrategy,
@@ -39,7 +38,5 @@ export abstract class StoryList implements RoutableComponentActivate, RoutableCo
         } else {
             this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         }
-
-        window.scrollTo(0, 0);
     }
 }
