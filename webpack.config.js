@@ -1,9 +1,8 @@
-let path = require('path'),
-    webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    SassLintPlugin = require('sasslint-webpack-plugin'),
-    { AureliaPlugin } = require('aurelia-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { AureliaPlugin } = require('aurelia-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let prodEnv = (process.env.NODE_ENV === 'production');
 
@@ -100,16 +99,7 @@ module.exports = {
             template: 'index.html',
             favicon: './assets/favicon.ico'
         }),
-        new SassLintPlugin({
-            configFile: 'sass-lint.yml',
-            glob: 'style/**/*.s?(a|c)ss',
-            failOnWarning: prodEnv,
-            failOnError: prodEnv,
-            ignorePlugins: [
-                'extract-text-webpack-plugin'
-            ]
-        }),
-        new ExtractTextPlugin('[name]-[contenthash].css')
+        new ExtractTextPlugin('[name].css')
     ]
 };
 
