@@ -99,7 +99,7 @@ module.exports = {
             template: 'index.html',
             favicon: './assets/favicon.ico'
         }),
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name]-[contenthash].css')
     ]
 };
 
