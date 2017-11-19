@@ -7,6 +7,8 @@ import {
     PLATFORM
 } from 'aurelia-framework';
 import {
+    RoutableComponentActivate,
+    RoutableComponentDeactivate,
     Router,
     RouterConfiguration
 } from 'aurelia-router';
@@ -17,7 +19,7 @@ import { ScrollToTopStep } from './services/scroll-to-top-step';
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
 
 @autoinject()
-export class App {
+export class App implements RoutableComponentActivate, RoutableComponentDeactivate {
     private processingSubscription: Subscription;
     private completeSubscription: Subscription;
     private router: Router;
@@ -29,17 +31,8 @@ export class App {
     }
 
     activate(): void {
-        this.processingSubscription = this.events.subscribe('router:navigation:processing', () => {
-            setTimeout(() => {
-                if (this.router.isNavigating) {
-                    NProgress.start();
-                }
-            }, MS_FOR_LOADER_BAR_TO_APPEAR);
-        });
-
-        this.completeSubscription = this.events.subscribe('router:navigation:complete', () => {
-            NProgress.done();
-        });
+        this.processingSubscription = this.events.subscribe('router:navigation:processing', this.showLoaderBar);
+        this.completeSubscription = this.events.subscribe('router:navigation:complete', NProgress.done);
     }
 
     deactivate(): void {
@@ -100,4 +93,12 @@ export class App {
             redirect: ''
         });
     }
+
+    private showLoaderBar = (): void => {
+        setTimeout(() => {
+            if (this.router.isNavigating) {
+                NProgress.start();
+            }
+        }, MS_FOR_LOADER_BAR_TO_APPEAR);
+    };
 }
