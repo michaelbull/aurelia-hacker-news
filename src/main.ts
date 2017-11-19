@@ -4,7 +4,7 @@ import {
 } from 'aurelia-framework';
 import * as NProgress from 'nprogress';
 
-export function configure(aurelia: Aurelia): void {
+export async function configure(aurelia: Aurelia): Promise<void> {
     aurelia.use
         .standardConfiguration()
         .feature(PLATFORM.moduleName('components/index'))
@@ -28,5 +28,6 @@ export function configure(aurelia: Aurelia): void {
         `
     });
 
-    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    await aurelia.start();
+    await aurelia.setRoot(PLATFORM.moduleName('app'));
 }
