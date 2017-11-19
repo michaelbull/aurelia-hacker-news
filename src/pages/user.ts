@@ -6,11 +6,12 @@ import {
     RouteConfig,
     Router
 } from 'aurelia-router';
+import { User } from '../models/user';
 import { HackerNewsApi } from '../services/api';
 
 @autoinject()
-export class User implements RoutableComponentCanActivate, RoutableComponentActivate {
-    user: any;
+export class UserPage implements RoutableComponentCanActivate, RoutableComponentActivate {
+    user: User;
 
     private readonly router: Router;
     private readonly api: HackerNewsApi;
@@ -25,6 +26,6 @@ export class User implements RoutableComponentCanActivate, RoutableComponentActi
     }
 
     async activate(params: any): Promise<void> {
-        this.user = await this.api.fetch(`user/${params.id}`);
+        this.user = await this.api.fetchUser(params.id);
     }
 }

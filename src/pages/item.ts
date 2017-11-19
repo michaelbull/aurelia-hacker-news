@@ -6,14 +6,21 @@ import {
     RouteConfig,
     Router
 } from 'aurelia-router';
+import { Item } from '../models/item';
 import { HackerNewsApi } from '../services/api';
 
-@autoinject()
-export class Item implements RoutableComponentCanActivate, RoutableComponentActivate {
-    item: any;
-    comments: any[];
-    private readonly router: Router;
+function decodeHtml(html: string): string {
+    let txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+}
 
+@autoinject()
+export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
+    item: Item;
+    comments: Item[];
+
+    private readonly router: Router;
     private readonly api: HackerNewsApi;
 
     constructor(router: Router, api: HackerNewsApi) {
@@ -33,8 +40,8 @@ export class Item implements RoutableComponentCanActivate, RoutableComponentActi
             this.comments = await this.api.fetchItems(this.item.kids);
         }
 
-        if (routeConfig.navModel !== undefined && this.item !== undefined) {
-            routeConfig.navModel.setTitle(`${this.item.title}`);
+        if (routeConfig.navModel !== undefined && this.item !== undefined && this.item.title !== undefined) {
+            routeConfig.navModel.setTitle(decodeHtml(this.item.title));
         }
     }
 }

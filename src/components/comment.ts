@@ -3,6 +3,7 @@ import {
     bindable,
     customElement
 } from 'aurelia-framework';
+import { Item } from '../models/item';
 import { HackerNewsApi } from '../services/api';
 
 @customElement('hn-comment')
@@ -10,10 +11,10 @@ import { HackerNewsApi } from '../services/api';
 export class Comment {
     readonly MAX_DEPTH: number = 8;
 
-    replies: any[];
+    replies: Item[];
     expanded: boolean = true;
 
-    @bindable() readonly comment: any;
+    @bindable() readonly comment: Item;
     @bindable() readonly depth: number;
 
     private readonly api: HackerNewsApi;
@@ -35,7 +36,7 @@ export class Comment {
     }
 
     text(): string {
-        let raw = this.comment.text;
+        let raw = this.comment.text as string;
         let url = new RegExp(
             '<a href="https:&#x2F;&#x2F;news\.ycombinator\.com&#x2F;item\\?id=(\\d+)" rel="nofollow">' +
             'https:&#x2F;&#x2F;news\.ycombinator\.com&#x2F;item\\?id=\\d+' +

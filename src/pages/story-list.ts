@@ -3,13 +3,14 @@ import {
     RoutableComponentDetermineActivationStrategy,
     Router
 } from 'aurelia-router';
+import { Item } from '../models/item';
 import {
     HackerNewsApi,
     STORIES_PER_PAGE
 } from '../services/api';
 
 export abstract class StoryList implements RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
-    stories: any[];
+    stories: Item[];
     currentPage: number;
     totalPages: number;
     readonly route: string;
