@@ -1,9 +1,15 @@
 import { autoinject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
+import {
+    NavigationInstruction,
+    RoutableComponentActivate,
+    RoutableComponentCanActivate,
+    RouteConfig,
+    Router
+} from 'aurelia-router';
 import { HackerNewsApi } from '../services/api';
 
 @autoinject()
-export class User {
+export class User implements RoutableComponentCanActivate, RoutableComponentActivate {
     user: any;
 
     private readonly router: Router;
@@ -14,12 +20,11 @@ export class User {
         this.api = api;
     }
 
-    async activate(params: any): Promise<void> {
-        if (params.id === undefined) {
-            this.router.navigateToRoute('news');
-            return;
-        }
+    canActivate(params: any, routeConfig: RouteConfig, navigationInstruction: NavigationInstruction): boolean {
+        return params.id !== undefined;
+    }
 
+    async activate(params: any): Promise<void> {
         this.user = await this.api.fetch(`user/${params.id}`);
     }
 }
