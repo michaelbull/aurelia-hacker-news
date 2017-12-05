@@ -11,6 +11,7 @@ import {
 
 export abstract class StoryList implements RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
     stories: Item[];
+    offset: number;
     currentPage: number;
     totalPages: number;
     readonly route: string;
@@ -39,5 +40,7 @@ export abstract class StoryList implements RoutableComponentActivate, RoutableCo
         } else {
             this.stories = await this.api.fetchItemsOnPage(this.allStories, this.currentPage);
         }
+
+        this.offset = STORIES_PER_PAGE * (this.currentPage - 1);
     }
 }
