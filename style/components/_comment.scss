@@ -54,14 +54,10 @@
 
 .comment__reply {
   list-style-type: none;
-  padding-left: 2.5em;
-
-  @media(max-width: $tablet-breakpoint) {
-    padding-left: 0.5em;
-  }
+  padding-left: 1.5em;
+  border-left: 1px solid $cararra;
 
   .comment {
-    border-left: 4px solid $spring-wood;
     padding-left: 0.5em;
   }
 }

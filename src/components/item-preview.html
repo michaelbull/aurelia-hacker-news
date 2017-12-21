@@ -8,7 +8,7 @@
       </a>
     </h1>
 
-    <h1 class="item-preview__title" if.bind="!item.url">
+    <h1 class="item-preview__title" if.bind="!item.url && item.title">
       <a class="item-preview__link"
          innerhtml.bind="item.title"
          route-href="route: item; params.bind: { id: item.id}">
