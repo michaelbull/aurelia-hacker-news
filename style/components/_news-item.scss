@@ -46,7 +46,14 @@
 }
 
 .news-item__comments {
-  margin: 2em 0 0;
+  margin: 1em 0 0;
   padding: 0;
   list-style-type: none;
+
+  @media(max-width: $tablet-breakpoint) {
+    margin: {
+      left: -1rem;
+      right: -1rem;
+    }
+  }
 }

@@ -9,7 +9,7 @@ import { HackerNewsApi } from '../services/api';
 @customElement('hn-comment')
 @autoinject()
 export class Comment {
-    readonly MAX_DEPTH: number = 8;
+    readonly MAX_DEPTH: number = 6;
 
     replies: Item[];
     expanded: boolean = true;

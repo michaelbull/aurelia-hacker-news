@@ -1,33 +1,98 @@
 .comment {
-  padding: 0;
-  margin: 0 0 1.5em;
+  position: relative;
+
+  margin-top: 1rem;
+  padding: 1rem 0 1rem 1rem;
 
   font-size: 0.875rem;
+  border-radius: 5px 0 0 5px;
+
+  border: 1px solid $iron;
+  background-color: $athens-gray;
+
+  .comment {
+    border-right-width: 0;
+    background-color: $spring-wood;
+
+    .comment {
+      background-color: $athens-gray;
+
+      .comment {
+        background-color: $spring-wood;
+
+        .comment {
+          background-color: $athens-gray;
+
+          .comment {
+            background-color: $spring-wood;
+          }
+        }
+      }
+    }
+  }
 }
 
-.comment__author {
-  margin: 0 0 0.35em;
-  padding: 0;
-
-  color: $gray;
-  font-size: 0.75rem;
+.comment--collapsed {
+  padding: {
+    top: 0.5rem;
+    bottom: 0.5rem;
+  }
 }
 
 .comment__toggle {
-  padding-right: 0.25em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 
+  padding: 0;
+  border: 0;
+
+  width: 14px;
+  height: 100%;
+
+  font-size: 0;
+  text-align: center;
+  background-color: transparent;
   color: $gray;
+  transition: background-color 200ms;
   cursor: pointer;
-  user-select: none;
 
   &:hover {
-    text-decoration: underline;
+    background-color: $pattens-blue;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    font-size: 1rem;
+    line-height: 3;
+    content: '-';
+  }
+}
+
+.comment__toggle--collapsed {
+  &::after {
+    line-height: 2;
+    content: '+';
+  }
+}
+
+.comment__author {
+  color: $gray;
+  font-size: 0.75rem;
+
+  padding-left: 1rem;
+
+  @media(max-width: $tablet-breakpoint) {
+    padding-left: 0;
   }
 }
 
 .comment__author-link {
-  padding-right: 0.25em;
-
   color: $vivid-violet;
   text-decoration: none;
 
@@ -49,23 +114,26 @@
 
 .comment__text {
   @include post-text();
-  padding-left: 1.2em;
-}
+  padding: 0.5rem 1rem 0;
 
-.comment__reply {
-  list-style-type: none;
-  padding-left: 1.5em;
-  border-left: 1px solid $cararra;
-
-  .comment {
-    padding-left: 0.5em;
+  @media(max-width: $tablet-breakpoint) {
+    padding-left: 0;
   }
 }
 
-.comment__more-link {
-  display: block;
-  margin: 0 2em 2em 2em;
+.comment__reply {
+  margin-left: 1rem;
+  padding: 0;
+  list-style-type: none;
+}
 
+.comment__more-link {
+  margin: {
+    top: 1em;
+    left: 1em;
+  }
+
+  display: block;
   font-size: 1rem;
   color: $brick-red;
 

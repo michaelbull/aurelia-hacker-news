@@ -18,7 +18,12 @@
 
     <ul class="news-item__comments" if.bind="comments.length > 0">
       <template repeat.for="comment of comments">
-        <hn-comment comment.bind="comment" depth.bind="1"></hn-comment>
+        <li
+          as-element="hn-comment"
+          if.bind="!comment.deleted"
+          comment.bind="comment"
+          depth.bind="1">
+        </li>
       </template>
     </ul>
   </div>
