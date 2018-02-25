@@ -1,19 +1,6 @@
 .news-item {
   margin: 0;
-
-  padding: {
-    top: 1em;
-    right: 3em;
-    bottom: 1em;
-    left: 3em;
-  }
-
-  @include breakpoint($medium) {
-    padding: {
-      left: 1em;
-      right: 1em;
-    }
-  }
+  padding: 1em;
 }
 
 .news-item__deleted {
