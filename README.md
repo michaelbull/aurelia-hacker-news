@@ -1,7 +1,7 @@
 <p align="center">
   <a href="#readme">
     <img 
-      src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/logo.svg"
+      src="https://cdn.rawgit.com/michaelbull/aurelia-hacker-news/master/assets/logo.svg"
       alt="Aurelia Hacker News"
       width="400"
       height="200" 
@@ -19,7 +19,7 @@
 <p align="center">
   <a href="#readme">
     <img
-      src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/preview.png"
+      src="https://cdn.rawgit.com/michaelbull/aurelia-hacker-news/master/assets/preview.png"
       alt="Preview"
       width="888"
       height="600"
