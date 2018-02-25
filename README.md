@@ -39,15 +39,12 @@ A running demonstration can be found [here][demo].
 
 The following scripts are configured to run via [npm][npm]:
 
-- `npm start` or `npm run server:dev`
+- `npm start`
   - Runs the [webpack-dev-server][dev-server] at
     [`http://localhost:8080`][localhost]
 - `npm run build`
   - Builds the production distribution and places it under the `./dist`
     directory.
-- `npm run server:prod`
-  - Starts a local-web-server at [`http://localhost:8080`][localhost] that
-    serves the `./dist` directory.
 - `npm run clean`
   - Cleans the `./dist` directory.
 
