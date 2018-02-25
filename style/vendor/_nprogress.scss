@@ -1,5 +1,4 @@
-$loader-bar-color: $vivid-violet;
-$loader-bar-z-index: 2000;
+$loader-bar-color: $fuschia;
 
 .loader {
   pointer-events: none;
@@ -7,7 +6,7 @@ $loader-bar-z-index: 2000;
 
 .loader__bar {
   position: fixed;
-  top: 0;
+  top: $header-height;
   left: 0;
 
   width: 100%;
@@ -24,11 +23,11 @@ $loader-bar-z-index: 2000;
   position: absolute;
   right: 0;
 
-  width: 100px;
+  width: 20px;
   height: 100%;
 
-  transform: rotate(3deg) translate(0, -4px);
-  box-shadow: 0 0 10px $loader-bar-color, 0 0 5px $loader-bar-color;
+  $shadow-color: transparentize($loader-bar-color, 0.8);
+  box-shadow: 0 0 14px 2px $shadow-color;
   opacity: 1;
 }
 

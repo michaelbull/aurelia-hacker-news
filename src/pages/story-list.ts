@@ -10,10 +10,10 @@ import {
 } from '../services/api';
 
 export abstract class StoryList implements RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
-    stories: Item[];
-    offset: number;
-    currentPage: number;
-    totalPages: number;
+    stories: Item[] = [];
+    offset!: number;
+    currentPage!: number;
+    totalPages!: number;
     readonly route: string;
 
     protected readonly api: HackerNewsApi;

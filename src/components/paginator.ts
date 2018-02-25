@@ -5,7 +5,7 @@ import {
 
 @customElement('hn-paginator')
 export class Paginator {
-    @bindable() readonly current: number;
-    @bindable() readonly total: number;
-    @bindable() readonly route: string;
+    @bindable() current!: number;
+    @bindable() total!: number;
+    @bindable() route!: string;
 }

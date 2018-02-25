@@ -1,4 +1,11 @@
 <template>
+  <hn-paginator
+    if.bind="stories"
+    current.bind="currentPage"
+    total.bind="totalPages"
+    route.bind="route">
+  </hn-paginator>
+
   <hn-story-list
     stories.bind="stories"
     offset.bind="offset">

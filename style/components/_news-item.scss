@@ -1,9 +1,18 @@
 .news-item {
-  padding: 0 3em 1em;
   margin: 0;
 
-  @media(max-width: $tablet-breakpoint) {
-    padding: 0 1em;
+  padding: {
+    top: 1em;
+    right: 3em;
+    bottom: 1em;
+    left: 3em;
+  }
+
+  @include breakpoint($medium) {
+    padding: {
+      left: 1em;
+      right: 1em;
+    }
   }
 }
 
@@ -22,10 +31,10 @@
   text-align: center;
   text-decoration: none;
 
-  color: $brick-red;
+  color: $torch-red;
   background-color: $white;
   box-shadow: $shadow;
-  border: 1px solid $vivid-violet;
+  border: 1px solid $purple-pizzazz;
   border-radius: 2px;
 
   &:active {
@@ -46,14 +55,19 @@
 }
 
 .news-item__comments {
-  margin: 1em 0 0;
+  margin: {
+    top: 1em;
+    right: -1rem;
+    left: -1rem;
+  }
+
   padding: 0;
   list-style-type: none;
 
-  @media(max-width: $tablet-breakpoint) {
+  @include breakpoint($medium) {
     margin: {
-      left: -1rem;
-      right: -1rem;
+      left: 0;
+      right: 0;
     }
   }
 }

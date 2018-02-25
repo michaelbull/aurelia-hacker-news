@@ -4,6 +4,7 @@ import {
 } from 'aurelia-event-aggregator';
 import {
     autoinject,
+    ComponentAttached,
     PLATFORM
 } from 'aurelia-framework';
 import {
@@ -19,10 +20,10 @@ import { ScrollToTopStep } from './services/scroll-to-top-step';
 const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
 
 @autoinject()
-export class App implements RoutableComponentActivate, RoutableComponentDeactivate {
-    private processingSubscription: Subscription;
-    private completeSubscription: Subscription;
-    private router: Router;
+export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ComponentAttached {
+    private processingSubscription!: Subscription;
+    private completeSubscription!: Subscription;
+    private router!: Router;
 
     private readonly events: EventAggregator;
 
@@ -91,6 +92,22 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
         }).mapUnknownRoutes({
             route: 'unknown',
             redirect: ''
+        });
+    }
+
+    attached(): void {
+        NProgress.configure({
+            trickleSpeed: 100,
+            template: `
+              <div class="loader">
+                <div class="loader__bar" role="bar">
+                  <div class="loader__peg"></div>
+                </div>
+                <div class="loader__spinner" role="spinner">
+                  <div class="loader__spinner-icon"></div>
+                </div>
+              </div>
+            `
         });
     }
 

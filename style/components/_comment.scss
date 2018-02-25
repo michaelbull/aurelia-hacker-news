@@ -87,13 +87,13 @@
 
   padding-left: 1rem;
 
-  @media(max-width: $tablet-breakpoint) {
+  @include breakpoint($medium) {
     padding-left: 0;
   }
 }
 
 .comment__author-link {
-  color: $vivid-violet;
+  color: $purple-pizzazz;
   text-decoration: none;
 
   &:hover {
@@ -114,10 +114,15 @@
 
 .comment__text {
   @include post-text();
-  padding: 0.5rem 1rem 0;
 
-  @media(max-width: $tablet-breakpoint) {
-    padding-left: 0;
+  padding: {
+    top: 0.5rem;
+    right: 1rem;
+    bottom: 0;
+  }
+
+  @include breakpoint($medium) {
+    padding-left: 1rem;
   }
 }
 
@@ -135,9 +140,9 @@
 
   display: block;
   font-size: 1rem;
-  color: $brick-red;
+  color: $torch-red;
 
   &:visited {
-    color: $vivid-violet;
+    color: $purple-pizzazz;
   }
 }

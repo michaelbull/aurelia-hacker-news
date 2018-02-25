@@ -15,7 +15,7 @@
   background-size: 100% 1px;
   background-position: 0 0, 0 100%;
   background-repeat: no-repeat;
-  background-image: none, linear-gradient(to left, $vivid-violet 1%, $brick-red 50%, $vivid-violet 100%);
+  background-image: none, linear-gradient(to left, $purple-pizzazz 1%, $torch-red 50%, $purple-pizzazz 100%);
 }
 
 .item-preview__title {
@@ -49,7 +49,7 @@
 
 .item-preview__author-link,
 .item-preview__comments-link {
-  color: $vivid-violet;
+  color: $purple-pizzazz;
   text-decoration: none;
 
   &:hover {

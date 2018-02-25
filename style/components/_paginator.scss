@@ -1,46 +1,56 @@
 .paginator {
-  padding-left: 1em;
-  padding-bottom: 1.5em;
+  display: flex;
+  align-items: center;
 
-  user-select: none;
-  background-color: $spring-wood;
+  height: 3rem;
+  margin-bottom: 1rem;
 
-  @media (max-width: $tablet-breakpoint) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  font-size: 0.875rem;
+  text-align: center;
 
-    padding: 1em 0;
-    width: 100%;
-    text-align: center;
+  background-color: $alabaster-white;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-image: none, linear-gradient(to left, $purple-pizzazz 1%, $torch-red 50%, $purple-pizzazz 100%);
 
-    box-shadow: 0 2px 16px $cod-gray;
-
-    background-size: 100% 2px;
+  &:first-child {
+    padding-bottom: 1px;
     background-position: 0 0, 0 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(to left, $vivid-violet 1%, $brick-red 50%, $vivid-violet 100%), none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  }
+
+  &:last-child {
+    padding-top: 1px;
+    background-position: 0 100%, 0 0;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .2);
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($medium) {
+    height: 2rem;
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
   }
 }
 
+.paginator__selector,
+.paginator__current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .paginator__selector {
-  border: 1px solid $quill-gray;
-  border-radius: 2px;
+  flex: 1;
+  height: 100%;
 
-  color: $gray;
-  background-color: $spring-wood;
   text-decoration: none;
-
-  font-size: 1rem;
-  padding: 0.25em 1em;
-
-  @media (max-width: $tablet-breakpoint) {
-    font-size: 1rem;
-    padding: 0.4em 0.75em;
-  }
+  transition: background-color 200ms;
 
   &:hover {
-    background-color: $white;
+    background-color: $spring-wood;
   }
 
   &:active {
@@ -48,27 +58,82 @@
   }
 }
 
-.paginator__selector--disabled {
-  cursor: not-allowed;
-
-  &:hover {
-    background-color: $spring-wood;
-  }
-
-  &:active {
-    box-shadow: none;
-  }
-}
-
 .paginator__current {
-  display: inline-block;
-  width: 8em;
-
-  color: $gray;
-  font-size: 0.875rem;
-  text-align: center;
-
-  @media (max-width: $tablet-breakpoint) {
-    font-size: 0.75rem;
-  }
+  flex: 0 0 150px;
+  height: 100%;
 }
+
+//.paginator {
+//  padding-left: 1em;
+//  padding-bottom: 1.5em;
+//
+//  user-select: none;
+//  background-color: $spring-wood;
+//
+//  @media (max-width: $tablet-breakpoint) {
+//    position: fixed;
+//    bottom: 0;
+//    left: 0;
+//
+//    padding: 1em 0;
+//    width: 100%;
+//    text-align: center;
+//
+//    box-shadow: 0 2px 16px $cod-gray;
+//
+//    background-size: 100% 2px;
+//    background-position: 0 0, 0 100%;
+//    background-repeat: no-repeat;
+//    background-image: linear-gradient(to left, $vivid-violet 1%, $brick-red 50%, $vivid-violet 100%), none;
+//  }
+//}
+//
+//.paginator__selector {
+//  border: 1px solid $quill-gray;
+//  border-radius: 2px;
+//
+//  color: $gray;
+//  background-color: $spring-wood;
+//  text-decoration: none;
+//
+//  font-size: 1rem;
+//  padding: 0.25em 1em;
+//
+//  @media (max-width: $tablet-breakpoint) {
+//    font-size: 1rem;
+//    padding: 0.4em 0.75em;
+//  }
+//
+//  &:hover {
+//    background-color: $white;
+//  }
+//
+//  &:active {
+//    box-shadow: inset 0 3px 6px 0 $gray-nickel;
+//  }
+//}
+//
+//.paginator__selector--disabled {
+//  cursor: not-allowed;
+//
+//  &:hover {
+//    background-color: $spring-wood;
+//  }
+//
+//  &:active {
+//    box-shadow: none;
+//  }
+//}
+//
+//.paginator__current {
+//  display: inline-block;
+//  width: 8em;
+//
+//  color: $gray;
+//  font-size: 0.875rem;
+//  text-align: center;
+//
+//  @media (max-width: $tablet-breakpoint) {
+//    font-size: 0.75rem;
+//  }
+//}

@@ -1,12 +1,12 @@
 // http://sass-guidelin.es/#the-7-1-pattern
 
 // 1. Abstracts
-@import 'abstracts/breakpoints';
-@import 'abstracts/colors';
-@import 'abstracts/font-stacks';
+@import 'abstracts/variables';
 @import 'abstracts/mixins';
+@import 'abstracts/z-index';
 
 // 2. Vendors
+@import '~breakpoint-sass';
 @import '~normalize.css';
 @import 'vendor/nprogress';
 
@@ -16,6 +16,8 @@
 @import 'base/typography';
 
 // 4. Layout
+@import 'layout/body';
+@import 'layout/header';
 @import 'layout/main';
 
 // 5. Components

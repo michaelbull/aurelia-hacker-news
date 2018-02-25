@@ -1,11 +1,21 @@
 main {
-  width: 85%;
-  margin: 1em auto 1em;
-  background-color: $spring-wood;
+  margin: {
+    top: $header-height;
+    left: auto;
+    right: auto;
+  }
 
-  @media (max-width: $tablet-breakpoint) {
-    margin: 0;
-    width: 100%;
-    background-color: $white;
+  max-width: $medium-width;
+  background-color: $white;
+  box-shadow: (
+    0 26px 40px 1px rgba(0, 0, 0, 0.08),
+    0 0 8px 0 rgba(0, 0, 0, 0.12)
+  );
+
+  @include breakpoint($medium) {
+    margin: {
+      top: calc(#{$header-height} + 1em);
+      bottom: 4em;
+    }
   }
 }

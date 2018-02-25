@@ -11,11 +11,11 @@ import { HackerNewsApi } from '../services/api';
 export class Comment {
     readonly MAX_DEPTH: number = 6;
 
-    replies: Item[];
+    replies: Item[] = [];
     expanded: boolean = true;
 
-    @bindable() readonly comment: Item;
-    @bindable() readonly depth: number;
+    @bindable() comment!: Item;
+    @bindable() depth!: number;
 
     private readonly api: HackerNewsApi;
 

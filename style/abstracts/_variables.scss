@@ -1,0 +1,47 @@
+// Breakpoints
+$medium-width: 800px;
+$medium: screen and (min-width $medium-width) !default;
+
+// Colours
+// http://chir.ag/projects/name-that-color/
+$cod-gray: hsl(0, 0%, 10%);
+$scorpion: hsl(0, 0%, 35%);
+$gray: hsl(0, 0%, 51%);
+$gray-nickel: hsl(60, 4%, 76%);
+$iron: hsl(228, 8%, 88%);
+$cararra: hsl(60, 8%, 90%);
+$spring-wood: hsl(60, 28%, 95%);
+$athens-gray: hsl(240, 7%, 97%);
+$alabaster-white: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$pattens-blue: hsl(206, 100%, 91%);
+$carnation-pink: hsl(295, 100%, 85%);
+$purple-pizzazz: hsl(302, 97%, 44%);
+$torch-red: hsl(341, 100%, 53%);
+$fuschia: hsl(301, 100%, 50%);
+
+// Fonts
+$sans-serif-font-stack: (
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  Fira Sans,
+  Droid Sans,
+  Helvetica Neue,
+  sans-serif
+);
+
+$monospace-font-stack: (
+  Menlo,
+  Monaco,
+  Courier New,
+  monospace,
+);
+
+// Components
+$header-height: 56px

@@ -17,8 +17,8 @@ function decodeHtml(html: string): string {
 
 @autoinject()
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
-    item: Item;
-    comments: Item[];
+    item!: Item;
+    comments: Item[] = [];
 
     private readonly router: Router;
     private readonly api: HackerNewsApi;
