@@ -17,7 +17,7 @@
   <a href="https://michaelbull.github.io/aurelia-hacker-news" rel="nofollow">Demo</a>
 </p>
 <p align="center">
-  <a href="#readme">
+  <a href="https://michaelbull.github.io/aurelia-hacker-news">
     <img
       src="https://cdn.rawgit.com/michaelbull/aurelia-hacker-news/master/assets/preview.png"
       alt="Preview"
