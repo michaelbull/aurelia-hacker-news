@@ -7,6 +7,7 @@ header {
   height: $header-height;
   z-index: $header-z-index;
 
+  animation: fade-in-down 500ms;
   background-image: linear-gradient(to right, $torch-red, $purple-pizzazz);
 
   box-shadow: (

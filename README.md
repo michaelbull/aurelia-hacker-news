@@ -1,21 +1,34 @@
-# Aurelia Hacker News Clone
-
-A recreation of the [Hacker News][hn] website written in [TypeScript][ts] and
-built using [Aurelia][aurelia], with [webpack][webpack] as a module bundler.
-
-A running demonstration can be found [here][demo].
-
-<br />
-
 <p align="center">
   <a href="#readme">
-    <img src="./assets/preview.png" alt="Preview" />
+    <img 
+      src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/logo.svg"
+      alt="Aurelia Hacker News"
+      width="400"
+      height="200" 
+    />
   </a>
 </p>
+<p align="center">
+  A recreation of the <a href="https://news.ycombinator.com/news" rel="nofollow">Hacker News</a> website written in 
+  <a href="https://www.typescriptlang.org/" rel="nofollow">TypeScript</a> and built with
+  <a href="https://aurelia.io/" rel="nofollow">Aurelia</a>.
+</p>
+<p align="center">
+  <a href="https://michaelbull.github.io/aurelia-hacker-news" rel="nofollow">Demo</a>
+</p>
+<p align="center">
+  <a href="#readme">
+    <img
+      src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/preview.png"
+      alt="Preview"
+      width="888"
+      height="600"
+    />
+  </a>
+</p>
+<br />
+<br />
 
-<br />
-<br />
-<br />
 
 ## Features
 
@@ -55,23 +68,20 @@ Bug reports and pull requests are welcome on [GitHub][github].
 ## License
 
 This project is available under the terms of the ISC license. See the
-[`LICENSE`][license] file for the copyright information and licensing terms.
+[`LICENSE`](LICENSE) file for the copyright information and licensing terms.
 
-[hn]: https://news.ycombinator.com/news
-[ts]: https://www.typescriptlang.org/
-[aurelia]: http://aurelia.io/
-[webpack]: https://webpack.github.io/
-[demo]: https://michaelbull.github.io/aurelia-hacker-news
 [topstories]: https://michaelbull.github.io/aurelia-hacker-news/#/news
-[beststories]: https://michaelbull.github.io/aurelia-hacker-news/#/best
 [newstories]: https://michaelbull.github.io/aurelia-hacker-news/#/newest
+[beststories]: https://michaelbull.github.io/aurelia-hacker-news/#/best
+[webpack]: https://webpack.github.io/
+[aurelia]: https://aurelia.io/
+[ts]: https://www.typescriptlang.org/
 [scss]: http://sass-lang.com/
 [7-1]: https://sass-guidelin.es/#the-7-1-pattern
 [bem]: http://getbem.com/
 [firebase]: https://www.npmjs.com/package/firebase
 [hn-api]: https://github.com/HackerNews/API
 [npm]: https://www.npmjs.com/
-[localhost]: http://localhost:8080
 [dev-server]: https://github.com/webpack/webpack-dev-server
+[localhost]: http://localhost:8080
 [github]: https://github.com/michaelbull/aurelia-hacker-news
-[license]: LICENSE

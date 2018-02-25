@@ -1,23 +1,23 @@
 $loader-bar-color: $fuschia;
 
-.loader {
+.nprogress {
   pointer-events: none;
 }
 
-.loader__bar {
+.nprogress__bar {
   position: fixed;
   top: $header-height;
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: 4px;
 
   background: $loader-bar-color;
   z-index: $loader-bar-z-index;
 }
 
 // Fancy blur effect
-.loader__peg {
+.nprogress__peg {
   display: block;
 
   position: absolute;
@@ -31,7 +31,7 @@ $loader-bar-color: $fuschia;
   opacity: 1;
 }
 
-.loader__spinner {
+.nprogress__spinner {
   display: block;
 
   position: fixed;
@@ -41,7 +41,7 @@ $loader-bar-color: $fuschia;
   z-index: $loader-bar-z-index;
 }
 
-.loader__spinner-icon {
+.nprogress__spinner-icon {
   box-sizing: border-box;
 
   width: 18px;

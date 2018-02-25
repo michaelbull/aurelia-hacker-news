@@ -1,8 +1,14 @@
-body {
-  min-width: 290px;
-  width: auto;
+html {
+  height: 100%;
+}
 
-  background-color: $spring-wood;
+body {
+  margin: 0;
+
+  min-width: 290px;
+  height: 100%;
+
+  background: $spring-wood;
 
   overflow-x: hidden; // Stop content overflow creating an unnecessary horizontal scroll-bar in IE
   overflow-y: scroll; // Force vertical scroll-bar to always appear

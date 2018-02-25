@@ -99,12 +99,12 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
         NProgress.configure({
             trickleSpeed: 100,
             template: `
-              <div class="loader">
-                <div class="loader__bar" role="bar">
-                  <div class="loader__peg"></div>
+              <div class="nprogress">
+                <div class="nprogress__bar" role="bar">
+                  <div class="nprogress__peg"></div>
                 </div>
-                <div class="loader__spinner" role="spinner">
-                  <div class="loader__spinner-icon"></div>
+                <div class="nprogress__spinner" role="spinner">
+                  <div class="nprogress__spinner-icon"></div>
                 </div>
               </div>
             `

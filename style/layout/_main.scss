@@ -5,12 +5,16 @@ main {
     right: auto;
   }
 
+  width: 100%;
   max-width: $medium-width;
+
   background-color: $white;
   box-shadow: (
     0 26px 40px 1px rgba(0, 0, 0, 0.08),
     0 0 8px 0 rgba(0, 0, 0, 0.12)
   );
+
+  animation: fade-in 500ms;
 
   @include breakpoint($medium) {
     margin: {
