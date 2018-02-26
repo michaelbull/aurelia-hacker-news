@@ -1,5 +1,5 @@
 ::selection {
-  background-color: $pattens-blue;
+  background-color: $white-pointer;
   text-shadow: inherit;
   color: inherit;
 }
@@ -23,34 +23,48 @@ pre, code, kbd, samp {
 
 // inline code blocks
 code {
-  border-radius: 4px;
   background-color: $alabaster-white;
   padding: 2px 4px;
+
   word-wrap: break-word;
+
+  border: 1px solid $iron;
+  border-radius: 4px;
 }
 
 // fenced code blocks
 pre {
   display: block;
+
+  max-height: 300px;
+
   margin: 0 0 0.5em;
   padding: 1em;
-  line-height: 1.4;
 
-  color: $scorpion;
-  background-color: $alabaster-white;
+  color: $cod-gray;
+  background-color: $athens-gray;
+  border: 1px solid $gray-nickel;
+  border-radius: 4px;
 
   word-wrap: normal;
-  overflow-x: auto;
+  overflow: auto;
 
   white-space: pre;
   tab-size: 4;
 
+  line-height: 1.4;
+
   code {
-    display: block;
     position: relative;
-    border-radius: 0;
+    display: block;
     padding: 0;
+
     font-size: 1em;
     word-wrap: normal;
+
+    background-color: inherit;
+
+    border: 0;
+    border-radius: 0;
   }
 }

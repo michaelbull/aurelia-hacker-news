@@ -2,29 +2,34 @@
   position: relative;
 
   margin-top: 1rem;
-  padding: 1rem 0 1rem 1rem;
+
+  padding: {
+    top: 1rem;
+    right: 0;
+    left: 2rem;
+    bottom: 1rem;
+  }
 
   font-size: 0.875rem;
-  border-radius: 5px 0 0 5px;
 
   border: 1px solid $iron;
-  background-color: $athens-gray;
+  background-color: $alabaster-white;
 
   .comment {
     border-right-width: 0;
-    background-color: $spring-wood;
+    background-color: $white;
 
     .comment {
-      background-color: $athens-gray;
+      background-color: $alabaster-white;
 
       .comment {
-        background-color: $spring-wood;
+        background-color: $white;
 
         .comment {
-          background-color: $athens-gray;
+          background-color: $alabaster-white;
 
           .comment {
-            background-color: $spring-wood;
+            background-color: $white;
           }
         }
       }
@@ -58,8 +63,9 @@
   transition: background-color 200ms;
   cursor: pointer;
 
-  &:hover {
-    background-color: $pattens-blue;
+  &:hover,
+  &:focus {
+    background-color: $white-pointer;
   }
 
   &::after {
@@ -84,19 +90,14 @@
 .comment__author {
   color: $gray;
   font-size: 0.75rem;
-
-  padding-left: 1rem;
-
-  @include breakpoint($medium) {
-    padding-left: 0;
-  }
 }
 
 .comment__author-link {
   color: $purple-pizzazz;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }
@@ -107,7 +108,8 @@
   color: $gray;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }
@@ -120,14 +122,9 @@
     right: 1rem;
     bottom: 0;
   }
-
-  @include breakpoint($medium) {
-    padding-left: 1rem;
-  }
 }
 
 .comment__reply {
-  margin-left: 1rem;
   padding: 0;
   list-style-type: none;
 }
