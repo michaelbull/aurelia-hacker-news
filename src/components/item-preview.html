@@ -32,15 +32,14 @@
         |
 
         <a class="item-preview__comments-link"
-           route-href="route: item; params.bind: { id: item.id}"
-           if.bind="item.descendants">
-          ${item.descendants} ${item.descendants | pluralise: 'comment'}
-        </a>
+           route-href="route: item; params.bind: { id: item.id}">
 
-        <a class="item-preview__comments-link"
-           route-href="route: item; params.bind: { id: item.id}"
-           if.bind="!item.descendants">
-          discuss
+          <template if.bind="item.descendants">
+            ${item.descendants} ${item.descendants | pluralise: 'comment'}
+          </template>
+          <template else>
+            discuss
+          </template>
         </a>
       </template>
     </p>
