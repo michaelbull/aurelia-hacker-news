@@ -21,16 +21,15 @@
     </a>
   </template>
 
-  <template if.bind="depth < MAX_DEPTH">
-    <ul class="comment__reply" if.bind="expanded">
-      <template repeat.for="reply of replies">
+  <ul class="comment__reply" if.bind="replies.length > 0 && depth < MAX_DEPTH && expanded">
+    <template repeat.for="reply of replies">
+      <template if.bind="reply !== null && !reply.deleted">
         <li
           as-element="hn-comment"
           comment.bind="reply"
-          if.bind="!reply.deleted"
           depth.bind="depth + 1">
         </li>
       </template>
-    </ul>
-  </template>
+    </template>
+  </ul>
 </template>
