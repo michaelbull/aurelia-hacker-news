@@ -9,8 +9,8 @@ export class HostnameValueConverter {
 
         if (this.anchor.hostname === location.hostname) {
             return undefined;
+        } else {
+            return `(${this.anchor.hostname.replace('www.', '')})`;
         }
-
-        return `(${this.anchor.hostname.replace('www.', '')})`;
     }
 }

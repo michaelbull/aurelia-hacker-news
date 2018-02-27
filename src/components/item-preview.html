@@ -31,9 +31,7 @@
       <template if.bind="item.type === 'story'">
         |
 
-        <a class="item-preview__comments-link"
-           route-href="route: item; params.bind: { id: item.id}">
-
+        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id }">
           <template if.bind="item.descendants">
             ${item.descendants} ${item.descendants | pluralise: 'comment'}
           </template>
