@@ -26,10 +26,12 @@
     "url": "https://github.com/michaelbull/aurelia-hacker-news/issues"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "start": "webpack-dev-server --env=development --inline --hot --open",
+    "prebuild": "npm run clean",
     "build": "webpack --env=production",
-    "deploy": "npm run clean && npm run build && push-dir --dir=dist --branch=gh-pages",
-    "clean": "rimraf dist && rimraf reports"
+    "predeploy": "npm run build",
+    "deploy": "push-dir --dir=dist --branch=gh-pages"
   },
   "dependencies": {
     "aurelia-bootstrapper": "2.2.0",
