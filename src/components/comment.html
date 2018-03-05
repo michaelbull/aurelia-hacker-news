@@ -13,7 +13,7 @@
     [${expanded ? '-' : '+' + replies.length}]
   </button>
 
-  <p class="comment__text" innerhtml.one-way="text()" if.bind="expanded"></p>
+  <div class="comment__text" innerhtml.one-way="text()" if.bind="expanded"></div>
 
   <template if.bind="depth === MAX_DEPTH">
     <a class="comment__more-link" route-href="route: item; params.bind: { id: comment.id}">

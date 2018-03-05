@@ -1,13 +1,14 @@
 .comment {
   position: relative;
 
-  margin-top: 1rem;
+  margin: {
+    top: 1rem;
+    bottom: -1px;
+  }
 
   padding: {
     top: 1rem;
-    right: 0;
     left: 2rem;
-    bottom: 1rem;
   }
 
   font-size: 0.875rem;
@@ -71,8 +72,9 @@
   &::after {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    bottom: 0;
+    left: 0;
 
     font-size: 1rem;
     line-height: 3;
@@ -120,8 +122,9 @@
   padding: {
     top: 0.5rem;
     right: 1rem;
-    bottom: 0;
   }
+
+  margin-bottom: 1rem;
 }
 
 .comment__reply {
@@ -131,8 +134,9 @@
 
 .comment__more-link {
   margin: {
-    top: 1em;
-    left: 1em;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
   }
 
   display: block;
