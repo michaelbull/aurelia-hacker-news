@@ -4,9 +4,9 @@
   </p>
 
   <div class="news-item" if.bind="!item.deleted">
-    <a class="news-item__parent" if.bind="item.parent" route-href="route: item; params.bind: { id: item.parent }">
-      View Parent &raquo;
-    </a>
+    <template if.bind="item.parent">
+      <a class="news-item__parent" route-href="route: item; params.bind: { id: item.parent }">View Parent &raquo;</a>
+    </template>
 
     <hn-item-preview item.bind="item"></hn-item-preview>
 

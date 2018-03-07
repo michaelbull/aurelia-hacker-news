@@ -22,9 +22,7 @@
         ${item.score} ${item.score | pluralise: 'point'} by
       </template>
 
-      <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">
-        ${item.by}
-      </a>
+      <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
 
       ${item.time | timeago}
 

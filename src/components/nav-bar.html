@@ -10,13 +10,13 @@
 
       <div class="nav-bar__links">
         <a repeat.for="nav of navigation"
-           href.bind="nav.href"
-           class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}">${nav.title}</a>
+           class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}"
+           href.bind="nav.href">${nav.title}</a>
       </div>
     </div>
 
     <div class="nav-bar__right">
-      Built with <a class="nav-bar__url" href="http://aurelia.io/" target="_blank"> Aurelia</a> |
+      Built with <a class="nav-bar__url" href="https://aurelia.io/" target="_blank"> Aurelia</a> |
       Made with <span class="nav-bar__author-heart">♥</span>
       by <a class="nav-bar__url" href="https://www.michael-bull.com/" target="_blank">Mike</a> |
       <a class="nav-bar__url" href="https://github.com/michaelbull/aurelia-hacker-news" target="_blank">Source</a>
