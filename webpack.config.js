@@ -6,6 +6,7 @@ const { DefinePlugin, LoaderOptionsPlugin, optimize: { UglifyJsPlugin } } = requ
 
 const srcDir = path.resolve(__dirname, 'src');
 const distDir = path.resolve(__dirname, 'dist');
+const assetsDir = path.resolve(__dirname, 'assets');
 
 module.exports = (env) => {
     let styleRules = [
@@ -74,7 +75,7 @@ module.exports = (env) => {
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
                 template: 'index.html',
-                favicon: './assets/favicon.ico'
+                favicon: path.resolve(assetsDir, 'favicon.ico')
             }),
             new DefinePlugin({
                 'process.env': {
