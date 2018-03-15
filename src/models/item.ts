@@ -1,4 +1,9 @@
+/**
+ * Stories, comments, jobs, Ask HNs and even polls are just items.
+ * They're identified by their ids, which are unique integers, and live under /v0/item/<id>.
+ */
 export interface Item {
+
     /**
      * The item's unique id.
      */

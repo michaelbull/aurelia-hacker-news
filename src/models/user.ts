@@ -1,4 +1,9 @@
+/**
+ * Users are identified by case-sensitive ids, and live under /v0/user/.
+ * Only users that have public activity (comments or story submissions) on the site are available through the API.
+ */
 export interface User {
+
     /**
      * The user's unique username. Case-sensitive. Required.
      */
