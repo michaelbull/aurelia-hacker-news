@@ -7,9 +7,7 @@ export class HostnameValueConverter {
     toView(url: string): string | undefined {
         this.anchor.href = url;
 
-        if (this.anchor.hostname === location.hostname) {
-            return undefined;
-        } else {
+        if (this.anchor.hostname !== location.hostname) {
             return `(${this.anchor.hostname.replace('www.', '')})`;
         }
     }
