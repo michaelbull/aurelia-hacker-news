@@ -11,7 +11,7 @@ indent_style = space
 indent_size = 4
 continuation_indent_size = 4
 
-[*.{html,hbs,css,scss,json,yml}]
+[*.{html,ejs,css,scss,json,yml}]
 indent_style = space
 indent_size = 2
 continuation_indent_size = 2
