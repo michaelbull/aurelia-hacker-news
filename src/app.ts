@@ -17,7 +17,7 @@ import * as NProgress from 'nprogress';
 import '../style/index.scss';
 import { ScrollToTopStep } from './services/scroll-to-top-step';
 
-const MS_FOR_LOADER_BAR_TO_APPEAR: number = 50;
+const MS_FOR_LOADER_BAR_TO_APPEAR = 50;
 
 @autoinject()
 export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ComponentAttached {

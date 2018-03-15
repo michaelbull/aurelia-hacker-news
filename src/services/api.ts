@@ -3,18 +3,13 @@ import 'firebase/database';
 import { Item } from '../models/item';
 import { User } from '../models/user';
 import DataSnapshot = firebase.database.DataSnapshot;
-import Reference = firebase.database.Reference;
 
-const API_URL: string = 'https://hacker-news.firebaseio.com';
-const API_VERSION: string = '/v0';
-export const STORIES_PER_PAGE: number = 25;
+const API_URL = 'https://hacker-news.firebaseio.com';
+const API_VERSION = '/v0';
+export const STORIES_PER_PAGE = 25;
 
 export class HackerNewsApi {
-    private readonly db: Reference;
-
-    constructor() {
-        this.db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
-    }
+    private readonly db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
 
     fetchItemsOnPage(ids: number[], page: number): Promise<Item[]> {
         let start = (page - 1) * STORIES_PER_PAGE;
@@ -26,7 +21,7 @@ export class HackerNewsApi {
         if (ids.length < 1) {
             return Promise.resolve([]);
         } else {
-            return Promise.all(ids.map((id: number) => this.fetchItem(id)));
+            return Promise.all(ids.map((id) => this.fetchItem(id)));
         }
     }
 

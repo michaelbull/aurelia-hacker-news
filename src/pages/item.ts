@@ -40,8 +40,8 @@ export class ItemPage implements RoutableComponentCanActivate, RoutableComponent
             this.comments = await this.api.fetchItems(this.item.kids);
         }
 
-        if (routeConfig.navModel !== undefined && this.item !== undefined && this.item.title !== undefined) {
-            routeConfig.navModel.setTitle(decodeHtml(this.item.title));
+        if (this.item !== undefined && this.item.title !== undefined) {
+            routeConfig.navModel!.setTitle(decodeHtml(this.item.title));
         }
     }
 }

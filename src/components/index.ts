@@ -10,6 +10,7 @@ export function configure(config: FrameworkConfiguration): void {
         PLATFORM.moduleName('./nav-bar'),
         PLATFORM.moduleName('./paginator'),
         PLATFORM.moduleName('./story-list'),
+        PLATFORM.moduleName('./text'),
         PLATFORM.moduleName('./user-profile')
     ]);
 }

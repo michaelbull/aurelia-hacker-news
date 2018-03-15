@@ -2,7 +2,7 @@ import { valueConverter } from 'aurelia-framework';
 
 @valueConverter('hostname')
 export class HostnameValueConverter {
-    private readonly anchor: HTMLAnchorElement = document.createElement('a');
+    private readonly anchor = document.createElement('a');
 
     toView(url: string): string | undefined {
         this.anchor.href = url;

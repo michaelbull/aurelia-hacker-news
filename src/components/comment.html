@@ -9,7 +9,11 @@
     [${expanded ? '-' : '+' + replies.length}]
   </button>
 
-  <div class="comment__text" innerhtml.one-way="text()" if.bind="expanded"></div>
+  <hn-text
+    class="comment__text"
+    if.bind="expanded"
+    value.bind="comment.text">
+  </hn-text>
 
   <template if.bind="depth === MAX_DEPTH">
     <a class="comment__more-link" route-href="route: item; params.bind: { id: comment.id}">View more replies…</a>
@@ -17,13 +21,12 @@
 
   <ul class="comment__reply" if.bind="replies.length > 0 && depth < MAX_DEPTH && expanded">
     <template repeat.for="reply of replies">
-      <template if.bind="reply !== null && !reply.deleted">
-        <li
-          as-element="hn-comment"
-          comment.bind="reply"
-          depth.bind="depth + 1">
-        </li>
-      </template>
+      <li
+        if.bind="reply !== null && !reply.deleted"
+        as-element="hn-comment"
+        comment.bind="reply"
+        depth.bind="depth + 1">
+      </li>
     </template>
   </ul>
 </template>

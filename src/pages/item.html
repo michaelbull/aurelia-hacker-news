@@ -10,7 +10,11 @@
 
     <hn-item-preview item.bind="item"></hn-item-preview>
 
-    <p class="news-item__text" if.bind="item.text" innerhtml.one-way="item.text"></p>
+    <hn-text
+      class="news-item__text"
+      if.bind="item.text"
+      value.bind="item.text">
+    </hn-text>
 
     <p class="news-item__no-comments" if.bind="item.type === 'story' && comments.length < 1">
       No comments yet.
@@ -18,13 +22,12 @@
 
     <ul class="news-item__comments" if.bind="comments.length > 0">
       <template repeat.for="comment of comments">
-        <template if.bind="comment !== null && !comment.deleted">
-          <li
-            as-element="hn-comment"
-            comment.bind="comment"
-            depth.bind="1">
-          </li>
-        </template>
+        <li
+          if.bind="comment !== null && !comment.deleted"
+          as-element="hn-comment"
+          comment.bind="comment"
+          depth.bind="1">
+        </li>
       </template>
     </ul>
   </div>
