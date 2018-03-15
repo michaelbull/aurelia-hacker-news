@@ -14,7 +14,6 @@ import {
     RouterConfiguration
 } from 'aurelia-router';
 import * as NProgress from 'nprogress';
-import '../assets/aurelia-logo.png';
 import '../style/index.scss';
 import { ScrollToTopStep } from './services/scroll-to-top-step';
 

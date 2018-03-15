@@ -65,7 +65,7 @@ function configure(env: any, args: any): webpack.Configuration {
         plugins: [
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
-                template: 'index.html',
+                template: 'index.ejs',
                 favicon: './assets/favicon.ico'
             })
         ],
@@ -75,7 +75,7 @@ function configure(env: any, args: any): webpack.Configuration {
         }
     };
 
-    switch (env) {
+    switch (args.mode) {
         case 'development':
             config.devtool = 'inline-source-map';
             break;

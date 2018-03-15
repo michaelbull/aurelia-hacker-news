@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Michael Bull" />
+    <meta name="description" content="A recreation of the Hacker News website written in TypeScript and built using Aurelia." />
+    <meta name="keywords" content="hacker news, website, typescript, javascript, aurelia, framework" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="theme-color" content="#FF00FB" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hacker News" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i">
+    <link rel="author" href="https://www.michael-bull.com" />
+
+    <link rel="icon" type="image/png" sizes="120x120" href="<%= require('./assets/aurelia-logo.png') %>" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<%= require('./assets/aurelia-logo.png') %>" />
+
+    <title>Aurelia HN</title>
+  </head>
+
+  <body aurelia-app="main">
+    <div class="loader">
+      <div class="loader__logo">
+        <%= require('svg-inline-loader!./assets/logo.svg') %>
+      </div>
+
+      <div class="loader__bars">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+      </div>
+    </div>
+  </body>
+</html>
