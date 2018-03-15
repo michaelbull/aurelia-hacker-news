@@ -1,8 +1,8 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
     "strict": true,
+    "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "lib": [
@@ -13,6 +13,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "webpack.config.js"
+    "webpack.config.ts"
   ]
 }
