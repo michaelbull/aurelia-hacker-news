@@ -7,6 +7,7 @@ const { AureliaPlugin } = require('aurelia-webpack-plugin');
 
 let srcDir = path.resolve(__dirname, 'src');
 let distDir = path.resolve(__dirname, 'dist');
+let assetsDir = path.resolve(__dirname, 'assets');
 
 function configure(env: any, args: any): webpack.Configuration {
     let styleLoaders: webpack.Loader[] = [
@@ -66,7 +67,7 @@ function configure(env: any, args: any): webpack.Configuration {
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
                 template: 'index.ejs',
-                favicon: './assets/favicon.ico'
+                favicon: path.resolve(assetsDir, 'favicon.ico')
             })
         ],
 
