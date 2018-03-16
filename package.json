@@ -31,7 +31,7 @@
     "prebuild": "npm run clean",
     "build": "webpack --mode=production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "push-dir --dir=dist --branch=gh-pages"
   },
   "dependencies": {
     "aurelia-bootstrapper": "2.2.0",
@@ -54,11 +54,11 @@
     "cssnano-preset-advanced": "4.0.0-rc.2",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "1.1.11",
-    "gh-pages": "1.1.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.0.6",
     "node-sass": "4.7.2",
     "postcss-loader": "2.1.1",
+    "push-dir": "0.4.1",
     "resolve-url-loader": "2.3.0",
     "rimraf": "2.6.2",
     "sass-loader": "6.0.7",
