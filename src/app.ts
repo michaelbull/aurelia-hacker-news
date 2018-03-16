@@ -45,7 +45,7 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
         this.router = router;
 
         config.title = 'Aurelia HN';
-        config.addPipelineStep('postcomplete', ScrollToTopStep);
+        config.addPostRenderStep(ScrollToTopStep);
 
         config.mapRoute({
             route: '',

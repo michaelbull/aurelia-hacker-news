@@ -8,7 +8,9 @@ import {
 @autoinject()
 export class ScrollToTopStep implements PipelineStep {
     run(instruction: NavigationInstruction, next: Next): Promise<any> {
-        window.scrollTo(0, 0);
+        if (instruction.router.isNavigatingNew) {
+            window.scroll(0, 0);
+        }
         return next();
     }
 }
