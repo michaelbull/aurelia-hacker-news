@@ -2,7 +2,7 @@ import {
     RoutableComponentActivate,
     RoutableComponentCanActivate,
     RoutableComponentDetermineActivationStrategy,
-    Router,Redirect,NavigationCommand
+    Router
 } from 'aurelia-router';
 import { Item } from '../models/item';
 import {
