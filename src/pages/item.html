@@ -1,34 +1,42 @@
 <template>
-  <p class="news-item__deleted" if.bind="item.deleted">
-    Item ${item.id} has been deleted.
-  </p>
-
-  <div class="news-item" if.bind="!item.deleted">
-    <template if.bind="item.parent">
-      <a class="news-item__parent" route-href="route: item; params.bind: { id: item.parent }">View Parent &raquo;</a>
+  <div class="news-item">
+    <template if.bind="item === null">
+      No such item.
     </template>
 
-    <hn-item-preview item.bind="item"></hn-item-preview>
-
-    <hn-text
-      class="news-item__text"
-      if.bind="item.text"
-      value.bind="item.text">
-    </hn-text>
-
-    <p class="news-item__no-comments" if.bind="item.type === 'story' && comments.length < 1">
-      No comments yet.
-    </p>
-
-    <ul class="news-item__comments" if.bind="comments.length > 0">
-      <template repeat.for="comment of comments">
-        <li
-          if.bind="comment !== null && !comment.deleted"
-          as-element="hn-comment"
-          comment.bind="comment"
-          depth.bind="1">
-        </li>
+    <template else>
+      <template if.bind="item.deleted">
+        Item ${item.id} has been deleted.
       </template>
-    </ul>
+
+      <template else>
+        <template if.bind="item.parent !== undefined">
+          <a class="news-item__parent" route-href="route: item; params.bind: { id: item.parent }">View Parent &raquo;</a>
+        </template>
+
+        <hn-item-preview item.bind="item"></hn-item-preview>
+
+        <hn-text
+          class="news-item__text"
+          if.bind="item.text"
+          value.bind="item.text">
+        </hn-text>
+
+        <p class="news-item__no-comments" if.bind="item.type === 'story' && comments.length < 1">
+          No comments yet.
+        </p>
+
+        <ul class="news-item__comments" if.bind="comments.length > 0">
+          <template repeat.for="comment of comments">
+            <li
+              if.bind="comment !== null && !comment.deleted"
+              as-element="hn-comment"
+              comment.bind="comment"
+              depth.bind="1">
+            </li>
+          </template>
+        </ul>
+      </template>
+    </template>
   </div>
 </template>

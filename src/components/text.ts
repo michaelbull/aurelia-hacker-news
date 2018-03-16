@@ -16,12 +16,12 @@ const URL_PATTERN = new RegExp(
     'g'
 );
 
-@customElement('hn-text')
 @noView()
+@customElement('hn-text')
 export class Text {
 
     @bindable({ defaultBindingMode: bindingMode.oneTime })
-    value: string = '';
+    value = '';
 
     private readonly container: Container;
     private readonly viewCompiler: ViewCompiler;

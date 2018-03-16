@@ -1,7 +1,8 @@
 import {
     RoutableComponentActivate,
+    RoutableComponentCanActivate,
     RoutableComponentDetermineActivationStrategy,
-    Router
+    Router,Redirect,NavigationCommand
 } from 'aurelia-router';
 import { Item } from '../models/item';
 import {
@@ -9,15 +10,15 @@ import {
     STORIES_PER_PAGE
 } from '../services/api';
 
-export abstract class StoryList implements RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
+export abstract class StoryList implements RoutableComponentCanActivate, RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
     stories: Item[] = [];
-    offset!: number;
-    currentPage!: number;
-    totalPages!: number;
-    readonly route: string;
+    offset = 0;
+    currentPage = 1;
+    totalPages = 0;
 
     protected readonly api: HackerNewsApi;
     protected readonly router: Router;
+    readonly route: string;
 
     constructor(api: HackerNewsApi, router: Router, route: string) {
         this.api = api;
@@ -26,13 +27,19 @@ export abstract class StoryList implements RoutableComponentActivate, RoutableCo
     }
 
     determineActivationStrategy(): 'no-change' | 'invoke-lifecycle' | 'replace' {
-        return 'invoke-lifecycle';
+        return 'replace';
+    }
+
+    canActivate(params: any): boolean {
+        return params.page === undefined || !isNaN(params.page);
     }
 
     async activate(params: any): Promise<void> {
-        let allStories = await this.api.fetch(this.route);
+        if (params.page !== undefined) {
+            this.currentPage = Number(params.page);
+        }
 
-        this.currentPage = params.page ? Number(params.page) : 1;
+        let allStories = await this.api.fetchItemIds(this.route);
         this.totalPages = Math.ceil(allStories.length / STORIES_PER_PAGE);
 
         if (this.currentPage > this.totalPages) {

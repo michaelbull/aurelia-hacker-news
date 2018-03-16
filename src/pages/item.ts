@@ -3,8 +3,7 @@ import {
     NavigationInstruction,
     RoutableComponentActivate,
     RoutableComponentCanActivate,
-    RouteConfig,
-    Router
+    RouteConfig
 } from 'aurelia-router';
 import { Item } from '../models/item';
 import { HackerNewsApi } from '../services/api';
@@ -17,14 +16,12 @@ function decodeHtml(html: string): string {
 
 @autoinject()
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
-    item!: Item;
+    item: Item | null = null;
     comments: Item[] = [];
 
-    private readonly router: Router;
     private readonly api: HackerNewsApi;
 
-    constructor(router: Router, api: HackerNewsApi) {
-        this.router = router;
+    constructor(api: HackerNewsApi) {
         this.api = api;
     }
 
@@ -33,15 +30,16 @@ export class ItemPage implements RoutableComponentCanActivate, RoutableComponent
     }
 
     async activate(params: any, routeConfig: RouteConfig): Promise<void> {
-        this.comments = [];
         this.item = await this.api.fetchItem(params.id);
 
-        if (this.item.kids !== undefined && this.item.kids.length >= 1) {
-            this.comments = await this.api.fetchItems(this.item.kids);
-        }
+        if (this.item !== null) {
+            if (this.item.kids !== undefined && this.item.kids.length >= 1) {
+                this.comments = await this.api.fetchItems(this.item.kids);
+            }
 
-        if (this.item !== undefined && this.item.title !== undefined) {
-            routeConfig.navModel!.setTitle(decodeHtml(this.item.title));
+            if (this.item.title !== undefined) {
+                routeConfig.navModel!.setTitle(decodeHtml(this.item.title));
+            }
         }
     }
 }

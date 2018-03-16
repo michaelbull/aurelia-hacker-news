@@ -3,21 +3,18 @@ import {
     NavigationInstruction,
     RoutableComponentActivate,
     RoutableComponentCanActivate,
-    RouteConfig,
-    Router
+    RouteConfig
 } from 'aurelia-router';
 import { User } from '../models/user';
 import { HackerNewsApi } from '../services/api';
 
 @autoinject()
 export class UserPage implements RoutableComponentCanActivate, RoutableComponentActivate {
-    user!: User;
+    user: User | null = null;
 
-    private readonly router: Router;
     private readonly api: HackerNewsApi;
 
-    constructor(router: Router, api: HackerNewsApi) {
-        this.router = router;
+    constructor(api: HackerNewsApi) {
         this.api = api;
     }
 

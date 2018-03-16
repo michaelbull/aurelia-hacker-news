@@ -6,8 +6,8 @@ import {
 import { Item } from '../models/item';
 import { HackerNewsApi } from '../services/api';
 
-@customElement('hn-comment')
 @autoinject()
+@customElement('hn-comment')
 export class Comment {
     readonly MAX_DEPTH = 6;
 
