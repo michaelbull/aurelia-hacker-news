@@ -11,10 +11,10 @@ let assetsDir = path.resolve(__dirname, 'assets');
 
 function configure(env: any, args: any): webpack.Configuration {
     let styleLoaders: webpack.Loader[] = [
-        { loader: 'css-loader?sourceMap&importLoaders=1' },
-        { loader: 'postcss-loader?sourceMap' },
-        { loader: 'resolve-url-loader?sourceMap' },
-        { loader: 'sass-loader?sourceMap' }
+        'css-loader?sourceMap&importLoaders=1',
+        'postcss-loader?sourceMap',
+        'resolve-url-loader?sourceMap',
+        'sass-loader?sourceMap'
     ];
 
     let config: webpack.Configuration = {
