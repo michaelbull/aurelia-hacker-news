@@ -17,6 +17,9 @@
   <a href="https://michaelbull.github.io/aurelia-hacker-news" rel="nofollow">Demo</a>
 </p>
 <p align="center">
+  <a href="https://david-dm.org/michaelbull/aurelia-hacker-news" title="dependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/status.svg?style=flat-square"/></a> <a href="https://david-dm.org/michaelbull/aurelia-hacker-news?type=dev" title="devDependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/dev-status.svg?style=flat-square"/></a>
+</p>
+<p align="center">
   <a href="https://michaelbull.github.io/aurelia-hacker-news">
     <img
       src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/preview.png"
