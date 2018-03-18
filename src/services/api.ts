@@ -6,7 +6,7 @@ import DataSnapshot = firebase.database.DataSnapshot;
 
 const API_URL = 'https://hacker-news.firebaseio.com';
 const API_VERSION = '/v0';
-export const STORIES_PER_PAGE = 25;
+export const STORIES_PER_PAGE = 30;
 
 export class HackerNewsApi {
     private readonly db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
