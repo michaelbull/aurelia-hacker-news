@@ -49,7 +49,7 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
 
         config.mapRoute({
             route: '',
-            moduleId: PLATFORM.moduleName('./pages/news'),
+            moduleId: PLATFORM.moduleName('./pages/top'),
             name: 'topstories'
         }).mapRoute({
             route: 'newest',

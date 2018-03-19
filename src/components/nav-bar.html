@@ -1,12 +1,17 @@
 <template>
   <nav class="nav-bar">
-    <a href="#"><img class="nav-bar__logo"
-                     src="../../assets/aurelia-logo-white.png"
-                     alt="Aurelia Hacker News Clone"
-                     width="40" height="40" /></a>
+    <a route-href="topstories">
+      <img
+        class="nav-bar__logo"
+        src="../../assets/aurelia-logo-white.png"
+        alt="Aurelia Hacker News Clone"
+        width="40"
+        height="40"
+      />
+    </a>
 
     <div class="nav-bar__left">
-      <a class="nav-bar__title" href="#">Aurelia HN</a>
+      <a class="nav-bar__title" route-href="topstories">Aurelia HN</a>
 
       <div class="nav-bar__links">
         <a repeat.for="nav of navigation"
