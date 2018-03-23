@@ -42,7 +42,6 @@
     "timeago.js": "3.0.2"
   },
   "devDependencies": {
-    "@types/extract-text-webpack-plugin": "3.0.2",
     "@types/html-webpack-plugin": "2.30.3",
     "@types/nprogress": "0.0.29",
     "@types/webpack": "4.1.0",
@@ -52,10 +51,10 @@
     "css-mqpacker": "6.0.2",
     "cssnano": "4.0.0-rc.2",
     "cssnano-preset-advanced": "4.0.0-rc.2",
-    "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "1.1.11",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.0.6",
+    "mini-css-extract-plugin": "0.2.0",
     "node-sass": "4.7.2",
     "postcss-loader": "2.1.1",
     "push-dir": "0.4.1",

@@ -1,9 +1,9 @@
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let srcDir = path.resolve(__dirname, 'src');
 let distDir = path.resolve(__dirname, 'dist');
@@ -40,10 +40,7 @@ function configure(env: any, args: any): webpack.Configuration {
                 },
                 {
                     test: /\.scss$/,
-                    use: (args.mode === 'production') ? ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: styleLoaders
-                    }) : ['style-loader', ...styleLoaders]
+                    use: args.mode === 'production' ? [MiniCssExtractPlugin.loader, ...styleLoaders] : ['style-loader', ...styleLoaders]
                 },
                 {
                     test: /\.(png|jpg|gif)$/,
@@ -68,6 +65,10 @@ function configure(env: any, args: any): webpack.Configuration {
             new HtmlWebpackPlugin({
                 template: 'index.ejs',
                 favicon: path.resolve(assetsDir, 'favicon.ico')
+            }),
+            new MiniCssExtractPlugin({
+                filename: '[name]-[hash].css',
+                chunkFilename: '[name]-[chunkhash].css'
             })
         ],
 
@@ -76,14 +77,8 @@ function configure(env: any, args: any): webpack.Configuration {
         }
     };
 
-    switch (args.mode) {
-        case 'development':
-            config.devtool = 'inline-source-map';
-            break;
-
-        case 'production':
-            config.plugins!.push(new ExtractTextPlugin('[name]-[contenthash].css'));
-            break;
+    if (args.mode === 'development') {
+        config.devtool = 'inline-source-map';
     }
 
     return config;
