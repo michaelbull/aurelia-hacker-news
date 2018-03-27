@@ -1,15 +1,28 @@
 import * as firebase from 'firebase/app';
 import 'firebase/database';
 import { Item } from '../models/item';
+import { Trie } from '../models/trie';
 import { User } from '../models/user';
 import DataSnapshot = firebase.database.DataSnapshot;
+import Reference = firebase.database.Reference;
 
 const API_URL = 'https://hacker-news.firebaseio.com';
-const API_VERSION = '/v0';
+const API_VERSION = 'v0';
 export const STORIES_PER_PAGE = 30;
 
+async function valueOf(ref: Reference): Promise<any> {
+    let snapshot: DataSnapshot = await ref.once('value');
+    return snapshot.val();
+}
+
 export class HackerNewsApi {
-    private readonly db = firebase.initializeApp({ databaseURL: API_URL }).database().ref(API_VERSION);
+    private readonly db = firebase
+        .initializeApp({ databaseURL: API_URL })
+        .database()
+        .ref(API_VERSION);
+
+    private readonly users = this.db.child('user');
+    private readonly items = this.db.child('item');
 
     fetchItemsOnPage(items: number[], page: number): Promise<Item[]> {
         let start = (page - 1) * STORIES_PER_PAGE;
@@ -32,22 +45,31 @@ export class HackerNewsApi {
     }
 
     fetchItemIds(name: string): Promise<number[]> {
-        return this.fetch(name);
+        return valueOf(this.db.child(name));
     }
 
     fetchItem(id: number): Promise<Item | null> {
-        return this.fetch(`item/${id}`);
+        return valueOf(this.items.child(id.toString()));
     }
 
     fetchUser(id: string): Promise<User | null> {
-        return this.fetch(`user/${id}`);
+        return valueOf(this.users.child(id.toString()));
     }
 
-    private fetch(path: string): Promise<any | null> {
-        return new Promise((resolve: (value: any) => void, reject: (reason: any) => void): void => {
-            this.db.child(path).once('value', (snapshot: DataSnapshot) => {
-                resolve(snapshot.val());
-            }, reject);
-        });
+    async fetchItemTrie(id: number): Promise<Trie<Item> | null> {
+        let value = await this.fetchItem(id);
+        if (value === null) {
+            return null;
+        }
+
+        let children: (Trie<Item> | null)[] = [];
+        if (value.kids !== undefined && value.kids.length > 0) {
+            children = await Promise.all(value.kids.map(kid => this.fetchItemTrie(kid)));
+        }
+
+        return {
+            value,
+            children
+        };
     }
 }

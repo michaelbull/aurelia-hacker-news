@@ -5,33 +5,33 @@
     </template>
 
     <template else>
-      <template if.bind="item.deleted">
+      <template if.bind="item.value.deleted">
         Item ${item.id} has been deleted.
       </template>
 
       <template else>
-        <template if.bind="item.parent !== undefined">
-          <a class="news-item__parent" route-href="route: item; params.bind: { id: item.parent }">View Parent &raquo;</a>
+        <template if.bind="item.value.parent !== undefined">
+          <a class="news-item__parent" route-href="route: item; params.bind: { id: item.value.parent }">View Parent &raquo;</a>
         </template>
 
-        <hn-item-preview item.bind="item"></hn-item-preview>
+        <hn-item-preview item.bind="item.value"></hn-item-preview>
 
         <hn-text
           class="news-item__text"
-          if.bind="item.text"
-          value.bind="item.text">
+          if.bind="item.value.text"
+          value.bind="item.value.text">
         </hn-text>
 
-        <p class="news-item__no-comments" if.bind="item.type === 'story' && comments.length < 1">
+        <p class="news-item__no-comments" if.bind="item.value.type === 'story' && comments.length < 1">
           No comments yet.
         </p>
 
-        <ul class="news-item__comments" if.bind="comments.length > 0">
-          <template repeat.for="comment of comments">
+        <ul class="news-item__comments" if.bind="item.children.length > 0">
+          <template repeat.for="child of item.children">
             <li
-              if.bind="comment !== null && !comment.deleted"
+              if.bind="child !== null && !child.value.deleted"
               as-element="hn-comment"
-              comment.bind="comment"
+              item.bind="child"
               depth.bind="1">
             </li>
           </template>

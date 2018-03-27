@@ -4,6 +4,7 @@ import {
     customElement
 } from 'aurelia-framework';
 import { Item } from '../models/item';
+import { Trie } from '../models/trie';
 import { HackerNewsApi } from '../services/api';
 
 @autoinject()
@@ -11,24 +12,15 @@ import { HackerNewsApi } from '../services/api';
 export class Comment {
     readonly MAX_DEPTH = 6;
 
-    replies: Item[] = [];
     expanded = true;
 
-    @bindable() comment!: Item;
+    @bindable() item!: Trie<Item>;
     @bindable() depth!: number;
 
     private readonly api: HackerNewsApi;
 
     constructor(api: HackerNewsApi) {
         this.api = api;
-    }
-
-    async bind(): Promise<void> {
-        if (this.comment.kids === undefined || this.comment.kids.length < 1) {
-            return;
-        }
-
-        this.replies = await this.api.fetchItems(this.comment.kids);
     }
 
     toggle(): void {

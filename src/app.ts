@@ -15,7 +15,7 @@ import {
 } from 'aurelia-router';
 import * as NProgress from 'nprogress';
 import '../style/index.scss';
-import { ScrollToTopStep } from './services/scroll-to-top-step';
+import { ScrollToTopStep } from './pipelines/scroll-to-top-step';
 
 const MS_FOR_LOADER_BAR_TO_APPEAR = 50;
 
