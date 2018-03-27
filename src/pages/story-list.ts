@@ -20,7 +20,7 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
     protected readonly router: Router;
     readonly route: string;
 
-    constructor(api: HackerNewsApi, router: Router, route: string) {
+    protected constructor(api: HackerNewsApi, router: Router, route: string) {
         this.api = api;
         this.router = router;
         this.route = route;
