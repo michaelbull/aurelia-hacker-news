@@ -22,18 +22,33 @@
     <title>Aurelia HN</title>
   </head>
 
-  <body aurelia-app="main">
-    <div class="loader">
-      <div class="loader__logo">
-        <%= require('svg-inline-loader!./assets/logo.svg') %>
-      </div>
+  <body>
+    <div aurelia-app="main">
 
-      <div class="loader__bars">
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
+      <nav class="nav-bar">
+        <div class="nav-bar__wrapper">
+          <img
+            class="nav-bar__logo-img"
+            src="<%= require('./assets/aurelia-logo-white.png') %>"
+            alt="Aurelia HN"
+            width="40" height="40"
+          />
+          <span class="nav-bar__title">Aurelia&nbsp;HN</span>
+        </div>
+      </nav>
+
+      <div class="loader">
+        <div class="loader__logo">
+          <%= require('svg-inline-loader!./assets/logo.svg') %>
+        </div>
+
+        <div class="loader__bars">
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+        </div>
       </div>
     </div>
   </body>

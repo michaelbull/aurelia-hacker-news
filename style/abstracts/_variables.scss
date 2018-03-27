@@ -1,5 +1,8 @@
 // Breakpoints
+$small-width: 600px;
 $medium-width: 800px;
+
+$small: screen and (min-width $small-width) !default;
 $medium: screen and (min-width $medium-width) !default;
 
 // Colours
@@ -43,4 +46,4 @@ $monospace-font-stack: (
 );
 
 // Components
-$header-height: 56px
+$nav-bar-height: 50px;

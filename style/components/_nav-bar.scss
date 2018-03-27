@@ -1,14 +1,39 @@
 .nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: $nav-bar-height;
+  z-index: $header-z-index;
+
+  user-select: none;
+  background-image: linear-gradient(to right, $torch-red, $purple-pizzazz);
+
+  box-shadow: (
+    0 1px 0 rgba(12, 13, 14, 0.1),
+    0 1px 3px rgba(12, 13, 14, 0.1),
+    0 4px 20px rgba(12, 13, 14, 0.035),
+    0 1px 1px rgba(12, 13, 14, 0.025)
+  );
+}
+
+
+.nav-bar__wrapper {
   display: flex;
   align-items: center;
 
-  padding: 0.5em;
+  padding: {
+    left: 0.25em;
+    right: 0.25em;
+  }
+
   margin: {
     left: auto;
     right: auto;
   }
 
-  min-height: 4em;
+  height: 100%;
   max-width: $medium-width;
 
   font-size: 0.875rem;
@@ -16,22 +41,32 @@
 }
 
 .nav-bar__left {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .nav-bar__right {
-  display: inline-block;
-  margin-left: auto;
+  display: none;
 
+  margin-left: auto;
   color: $white;
   font-size: 0.8125rem;
 
-  @media (max-width: 820px) {
-    display: none;
+  animation: fade-in 500ms;
+
+  @include breakpoint($small) {
+    display: block;
   }
 }
 
 .nav-bar__logo {
+  text-decoration: none;
+}
+
+.nav-bar__logo-img {
+  display: block;
   margin-right: 1em;
 }
 
@@ -48,10 +83,10 @@
 
 .nav-bar__links {
   display: inline;
+  animation: fade-in 500ms;
 
   @media (max-width: 500px) {
     display: block;
-    margin-top: 0.5em;
   }
 }
 

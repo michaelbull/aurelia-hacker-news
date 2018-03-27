@@ -1,6 +1,6 @@
 main {
   margin: {
-    top: $header-height;
+    top: $nav-bar-height;
     left: auto;
     right: auto;
   }
@@ -18,7 +18,7 @@ main {
 
   @include breakpoint($medium) {
     margin: {
-      top: calc(#{$header-height} + 1em);
+      top: calc(#{$nav-bar-height} + 1em);
       bottom: 4em;
     }
   }
