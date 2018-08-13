@@ -10,7 +10,7 @@ import { HackerNewsApi } from '../services/api';
 
 @autoinject()
 export class UserPage implements RoutableComponentCanActivate, RoutableComponentActivate {
-    user: User | null = null;
+    user: User | undefined;
 
     private readonly api: HackerNewsApi;
 

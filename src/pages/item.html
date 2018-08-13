@@ -1,6 +1,6 @@
 <template>
   <div class="news-item">
-    <template if.bind="item === null">
+    <template if.bind="item === undefined">
       No such item.
     </template>
 
@@ -29,7 +29,7 @@
         <ul class="news-item__comments" if.bind="item.children.length > 0">
           <template repeat.for="child of item.children">
             <li
-              if.bind="child !== null && !child.value.deleted"
+              if.bind="child !== undefined && !child.value.deleted"
               as-element="hn-comment"
               item.bind="child"
               depth.bind="1">

@@ -58,7 +58,7 @@ export class Text {
         }
     }
 
-    valueChanged(newValue: string, oldValue: String): void {
+    valueChanged(newValue: string, oldValue: string): void {
         if (oldValue !== undefined && newValue != oldValue) {
             this.unbind();
             this.bind();

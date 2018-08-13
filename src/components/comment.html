@@ -22,7 +22,7 @@
   <ul class="comment__reply" if.bind="item.children.length > 0 && depth < MAX_DEPTH && expanded">
     <template repeat.for="child of item.children">
       <li
-        if.bind="child !== null && !child.value.deleted"
+        if.bind="child !== undefined && !child.value.deleted"
         as-element="hn-comment"
         item.bind="child"
         depth.bind="depth + 1">

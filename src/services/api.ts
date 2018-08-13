@@ -36,7 +36,7 @@ export class HackerNewsApi {
         for (let id of ids) {
             let item = await this.fetchItem(id);
 
-            if (item !== null) {
+            if (item !== undefined) {
                 result.push(item);
             }
         }
@@ -48,21 +48,21 @@ export class HackerNewsApi {
         return valueOf(this.db.child(name));
     }
 
-    fetchItem(id: number): Promise<Item | null> {
+    fetchItem(id: number): Promise<Item | undefined> {
         return valueOf(this.items.child(id.toString()));
     }
 
-    fetchUser(id: string): Promise<User | null> {
+    fetchUser(id: string): Promise<User | undefined> {
         return valueOf(this.users.child(id.toString()));
     }
 
-    async fetchItemTrie(id: number): Promise<Trie<Item> | null> {
+    async fetchItemTrie(id: number): Promise<Trie<Item> | undefined> {
         let value = await this.fetchItem(id);
-        if (value === null) {
-            return null;
+        if (value === undefined) {
+            return undefined;
         }
 
-        let children: (Trie<Item> | null)[] = [];
+        let children: (Trie<Item> | undefined)[] = [];
         if (value.kids !== undefined && value.kids.length > 0) {
             children = await Promise.all(value.kids.map(kid => this.fetchItemTrie(kid)));
         }

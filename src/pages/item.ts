@@ -17,7 +17,7 @@ function decodeHtml(html: string): string {
 
 @autoinject()
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
-    item: Trie<Item> | null = null;
+    item: Trie<Item> | undefined;
 
     private readonly api: HackerNewsApi;
 
@@ -32,7 +32,7 @@ export class ItemPage implements RoutableComponentCanActivate, RoutableComponent
     async activate(params: any, routeConfig: RouteConfig): Promise<void> {
         this.item = await this.api.fetchItemTrie(params.id);
 
-        if (this.item !== null && this.item.value.title !== undefined) {
+        if (this.item !== undefined && this.item.value.title !== undefined) {
             routeConfig.navModel!.setTitle(decodeHtml(this.item.value.title));
         }
     }

@@ -6,5 +6,5 @@ import { User } from '../models/user';
 
 @customElement('hn-user-profile')
 export class UserProfile {
-    @bindable() user: User | null = null;
+    @bindable() user: User | undefined;
 }
