@@ -4,6 +4,7 @@ import {
     Container,
     customElement,
     noView,
+    View,
     ViewCompiler,
     ViewResources,
     ViewSlot
@@ -20,8 +21,10 @@ const URL_PATTERN = new RegExp(
 @customElement('hn-text')
 export class Text {
 
-    @bindable({ defaultBindingMode: bindingMode.oneTime })
+    @bindable({ defaultBindingMode: bindingMode.oneWay })
     value = '';
+
+    private view: View | undefined;
 
     private readonly container: Container;
     private readonly viewCompiler: ViewCompiler;
@@ -40,12 +43,25 @@ export class Text {
         let match = URL_PATTERN.exec(text);
 
         if (match !== null) {
-            let replacement = `<a route-href="route: item; params.bind: { id: ${match[1]} }">#${match[1]}</a>`;
+            let replacement = `<a href="#/item/${match[1]}">#${match[1]}</a>`;
             text = this.value.replace(URL_PATTERN, replacement);
         }
 
         let viewFactory = this.viewCompiler.compile(`<template>${text}</template>`, this.viewResources);
-        let view = viewFactory.create(this.container);
-        this.viewSlot.add(view);
+        this.view = viewFactory.create(this.container);
+        this.viewSlot.add(this.view);
+    }
+
+    unbind(): void {
+        if (this.view !== undefined) {
+            this.viewSlot.remove(this.view);
+        }
+    }
+
+    valueChanged(newValue: string, oldValue: String): void {
+        if (oldValue !== undefined && newValue != oldValue) {
+            this.unbind();
+            this.bind();
+        }
     }
 }
