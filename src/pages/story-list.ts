@@ -5,10 +5,9 @@ import {
     Router
 } from 'aurelia-router';
 import { Item } from '../models/item';
-import {
-    HackerNewsApi,
-    STORIES_PER_PAGE
-} from '../services/api';
+import { ItemService } from '../services/item-service';
+
+const STORIES_PER_PAGE = 30;
 
 export abstract class StoryList implements RoutableComponentCanActivate, RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
     stories: Item[] = [];
@@ -16,13 +15,13 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
     currentPage = 1;
     totalPages = 0;
 
-    protected readonly api: HackerNewsApi;
     protected readonly router: Router;
+    protected readonly itemService: ItemService;
     readonly route: string;
 
-    protected constructor(api: HackerNewsApi, router: Router, route: string) {
-        this.api = api;
+    protected constructor(router: Router, itemService: ItemService, route: string) {
         this.router = router;
+        this.itemService = itemService;
         this.route = route;
     }
 
@@ -39,15 +38,14 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
             this.currentPage = Number(params.page);
         }
 
-        let allStories = await this.api.fetchItemIds(this.route);
+        let allStories = await this.itemService.ids(this.route);
         this.totalPages = Math.ceil(allStories.length / STORIES_PER_PAGE);
 
         if (this.currentPage > this.totalPages) {
             await this.router.navigateToRoute(this.route, { page: this.totalPages });
         } else {
-            this.stories = await this.api.fetchItemsOnPage(allStories, this.currentPage);
+            this.stories = await this.itemService.page(allStories, this.currentPage, STORIES_PER_PAGE);
+            this.offset = STORIES_PER_PAGE * (this.currentPage - 1);
         }
-
-        this.offset = STORIES_PER_PAGE * (this.currentPage - 1);
     }
 }

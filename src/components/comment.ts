@@ -1,11 +1,9 @@
 import {
-    autoinject,
     bindable,
     customElement
 } from 'aurelia-framework';
 import { Item } from '../models/item';
 import { Trie } from '../models/trie';
-import { HackerNewsApi } from '../services/api';
 
 @customElement('hn-comment')
 export class Comment {

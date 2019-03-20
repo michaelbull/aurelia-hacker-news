@@ -34,6 +34,7 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages"
   },
   "devDependencies": {
+    "@types/node": "11.11.4",
     "@types/nprogress": "0.0.29",
     "aurelia-bootstrapper": "2.3.2",
     "aurelia-http-client": "1.3.0",

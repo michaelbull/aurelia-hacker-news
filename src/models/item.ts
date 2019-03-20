@@ -1,3 +1,5 @@
+import { ItemType } from './item-type';
+
 /**
  * Stories, comments, jobs, Ask HNs and even polls are just items.
  * They're identified by their ids, which are unique integers, and live under /v0/item/<id>.
@@ -17,7 +19,7 @@ export interface Item {
     /**
      * The type of item. One of "job", "story", "comment", "poll", or "pollopt".
      */
-    type?: 'job' | 'story' | 'comment' | 'poll' | 'pollopt';
+    type?: ItemType;
 
     /**
      * The username of the item's author.

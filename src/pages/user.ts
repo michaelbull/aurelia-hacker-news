@@ -6,16 +6,16 @@ import {
     RouteConfig
 } from 'aurelia-router';
 import { User } from '../models/user';
-import { HackerNewsApi } from '../services/api';
+import { UserRepository } from '../repository/user-repository';
 
 @autoinject()
 export class UserPage implements RoutableComponentCanActivate, RoutableComponentActivate {
     user?: User;
 
-    private readonly api: HackerNewsApi;
+    private readonly users: UserRepository;
 
-    constructor(api: HackerNewsApi) {
-        this.api = api;
+    constructor(users: UserRepository) {
+        this.users = users;
     }
 
     canActivate(params: any, routeConfig: RouteConfig, navigationInstruction: NavigationInstruction): boolean {
@@ -23,6 +23,6 @@ export class UserPage implements RoutableComponentCanActivate, RoutableComponent
     }
 
     async activate(params: any): Promise<void> {
-        this.user = await this.api.fetchUser(params.id);
+        this.user = await this.users.findById(params.id);
     }
 }

@@ -7,7 +7,7 @@ import {
 } from 'aurelia-router';
 import { Item } from '../models/item';
 import { Trie } from '../models/trie';
-import { HackerNewsApi } from '../services/api';
+import { ItemService } from '../services/item-service';
 
 function decodeHtml(html: string): string {
     let txt = document.createElement('textarea');
@@ -19,10 +19,10 @@ function decodeHtml(html: string): string {
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
     item?: Trie<Item>;
 
-    private readonly api: HackerNewsApi;
+    private readonly itemService: ItemService;
 
-    constructor(api: HackerNewsApi) {
-        this.api = api;
+    constructor(itemService: ItemService) {
+        this.itemService = itemService;
     }
 
     canActivate(params: any, routeConfig: RouteConfig, navigationInstruction: NavigationInstruction): boolean {
@@ -30,7 +30,7 @@ export class ItemPage implements RoutableComponentCanActivate, RoutableComponent
     }
 
     async activate(params: any, routeConfig: RouteConfig): Promise<void> {
-        this.item = await this.api.fetchItemTrie(params.id);
+        this.item = await this.itemService.populate(params.id);
 
         if (this.item !== undefined && this.item.value.title !== undefined) {
             routeConfig.navModel!.setTitle(decodeHtml(this.item.value.title));

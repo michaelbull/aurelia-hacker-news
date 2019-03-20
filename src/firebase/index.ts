@@ -1,4 +1,5 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
+import Reference = firebase.database.Reference;
 
 const API_URL = 'https://hacker-news.firebaseio.com';
 const API_VERSION = 'v0';
@@ -13,4 +14,9 @@ export async function configure(config: FrameworkConfiguration): Promise<void> {
         .ref(API_VERSION);
 
     config.container.registerInstance('database', database);
+}
+
+export async function valueOf(ref: Reference): Promise<any> {
+    let snapshot = await ref.once('value');
+    return snapshot.val();
 }
