@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "sourceMap": true,
+    "stripInternal": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "importHelpers": true,
     "lib": [
-      "es6",
+      "esnext",
       "dom"
     ]
   },
   "exclude": [
     "node_modules",
     "dist",
-    "webpack.config.ts"
+    "webpack.config.js"
   ]
 }

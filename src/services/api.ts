@@ -1,28 +1,26 @@
-import * as firebase from 'firebase/app';
-import 'firebase/database';
+import { inject } from 'aurelia-framework';
 import { Item } from '../models/item';
 import { Trie } from '../models/trie';
 import { User } from '../models/user';
-import DataSnapshot = firebase.database.DataSnapshot;
 import Reference = firebase.database.Reference;
 
-const API_URL = 'https://hacker-news.firebaseio.com';
-const API_VERSION = 'v0';
 export const STORIES_PER_PAGE = 30;
 
 async function valueOf(ref: Reference): Promise<any> {
-    let snapshot: DataSnapshot = await ref.once('value');
+    let snapshot = await ref.once('value');
     return snapshot.val();
 }
 
 export class HackerNewsApi {
-    private readonly db = firebase
-        .initializeApp({ databaseURL: API_URL })
-        .database()
-        .ref(API_VERSION);
+    private readonly database: Reference;
+    private readonly users: Reference;
+    private readonly items: Reference;
 
-    private readonly users = this.db.child('user');
-    private readonly items = this.db.child('item');
+    constructor(@inject('database') database: Reference) {
+        this.database = database;
+        this.users = database.child('user');
+        this.items = database.child('item');
+    }
 
     fetchItemsOnPage(items: number[], page: number): Promise<Item[]> {
         let start = (page - 1) * STORIES_PER_PAGE;
@@ -45,7 +43,7 @@ export class HackerNewsApi {
     }
 
     fetchItemIds(name: string): Promise<number[]> {
-        return valueOf(this.db.child(name));
+        return valueOf(this.database.child(name));
     }
 
     fetchItem(id: number): Promise<Item | undefined> {

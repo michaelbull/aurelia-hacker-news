@@ -1,16 +1,14 @@
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as path from 'path';
-import * as webpack from 'webpack';
-
-const { AureliaPlugin } = require('aurelia-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { AureliaPlugin } = require('aurelia-webpack-plugin');
 
 let srcDir = path.resolve(__dirname, 'src');
 let distDir = path.resolve(__dirname, 'dist');
 let assetsDir = path.resolve(__dirname, 'assets');
 
-function configure(env: any, args: any): webpack.Configuration {
-    let styleLoaders: webpack.Loader[] = [
+function configure(env, args) {
+    let styleLoaders = [
         {
             loader: 'css-loader',
             options: {
@@ -38,7 +36,7 @@ function configure(env: any, args: any): webpack.Configuration {
         }
     ];
 
-    let config: webpack.Configuration = {
+    let config = {
         entry: {
             app: 'aurelia-bootstrapper'
         },
@@ -92,7 +90,9 @@ function configure(env: any, args: any): webpack.Configuration {
             })
         ],
 
-        stats: 'errors-only'
+        devServer: {
+            stats: 'errors-only'
+        }
     };
 
     switch (args.mode) {
@@ -101,7 +101,7 @@ function configure(env: any, args: any): webpack.Configuration {
             break;
 
         case 'production':
-            config.plugins!.push(new MiniCssExtractPlugin({
+            config.plugins.push(new MiniCssExtractPlugin({
                 filename: '[name]-[hash].css',
                 chunkFilename: '[name]-[chunkhash].css'
             }));
@@ -111,4 +111,4 @@ function configure(env: any, args: any): webpack.Configuration {
     return config;
 }
 
-export default configure;
+module.exports = configure;
