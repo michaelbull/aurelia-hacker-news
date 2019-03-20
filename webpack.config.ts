@@ -11,10 +11,31 @@ let assetsDir = path.resolve(__dirname, 'assets');
 
 function configure(env: any, args: any): webpack.Configuration {
     let styleLoaders: webpack.Loader[] = [
-        'css-loader?sourceMap&importLoaders=1',
-        'postcss-loader?sourceMap',
-        'resolve-url-loader?sourceMap',
-        'sass-loader?sourceMap'
+        {
+            loader: 'css-loader',
+            options: {
+                sourceMap: true,
+                importLoaders: 1
+            }
+        },
+        {
+            loader: 'postcss-loader',
+            options: {
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'resolve-url-loader',
+            options: {
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                sourceMap: true
+            }
+        }
     ];
 
     let config: webpack.Configuration = {
@@ -40,7 +61,10 @@ function configure(env: any, args: any): webpack.Configuration {
                 },
                 {
                     test: /\.scss$/,
-                    use: args.mode === 'production' ? [MiniCssExtractPlugin.loader, ...styleLoaders] : ['style-loader', ...styleLoaders]
+                    use: [
+                        args.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+                        ...styleLoaders
+                    ]
                 },
                 {
                     test: /\.(png|jpg|gif)$/,
@@ -65,20 +89,23 @@ function configure(env: any, args: any): webpack.Configuration {
             new HtmlWebpackPlugin({
                 template: 'index.ejs',
                 favicon: path.resolve(assetsDir, 'favicon.ico')
-            }),
-            new MiniCssExtractPlugin({
-                filename: '[name]-[hash].css',
-                chunkFilename: '[name]-[chunkhash].css'
             })
         ],
 
-        devServer: {
-            stats: 'errors-only'
-        }
+        stats: 'errors-only'
     };
 
-    if (args.mode === 'development') {
-        config.devtool = 'inline-source-map';
+    switch (args.mode) {
+        case 'development':
+            config.devtool = 'inline-source-map';
+            break;
+
+        case 'production':
+            config.plugins!.push(new MiniCssExtractPlugin({
+                filename: '[name]-[hash].css',
+                chunkFilename: '[name]-[chunkhash].css'
+            }));
+            break;
     }
 
     return config;
