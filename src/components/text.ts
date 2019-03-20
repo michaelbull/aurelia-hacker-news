@@ -24,7 +24,7 @@ export class Text {
     @bindable({ defaultBindingMode: bindingMode.toView })
     value = '';
 
-    private view: View | undefined;
+    private view?: View;
 
     private readonly container: Container;
     private readonly viewCompiler: ViewCompiler;
