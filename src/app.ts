@@ -5,6 +5,7 @@ import {
 import {
     autoinject,
     ComponentAttached,
+    ComponentDetached,
     PLATFORM
 } from 'aurelia-framework';
 import {
@@ -20,7 +21,7 @@ import { ScrollToTopStep } from './pipelines/scroll-to-top-step';
 const MS_FOR_LOADER_BAR_TO_APPEAR = 50;
 
 @autoinject()
-export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ComponentAttached {
+export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ComponentAttached, ComponentDetached {
     private processingSubscription!: Subscription;
     private completeSubscription!: Subscription;
     private router!: Router;
@@ -109,6 +110,10 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
               </div>
             `
         });
+    }
+
+    detached(): void {
+        NProgress.remove();
     }
 
     private showLoaderBar = (): void => {
