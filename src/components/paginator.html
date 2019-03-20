@@ -1,7 +1,13 @@
 <template class="paginator">
-  <a class="paginator__selector" route-href="route.bind: route; params.bind: { page: current > 2 ? current - 1 : undefined }">&laquo; prev</a>
+  <a class="paginator__selector" route-href="route.bind: route; params.bind: { page: current > 2 ? current - 1 : undefined }">
+    &laquo; prev
+  </a>
 
-  <span class="paginator__current">${current} / ${total}</span>
+  <span class="paginator__current">
+    ${current} / ${total}
+  </span>
 
-  <a class="paginator__selector" route-href="route.bind: route; params.bind: { page: current < total ? current + 1 : total }">next &raquo;</a>
+  <a class="paginator__selector" route-href="route.bind: route; params.bind: { page: current < total ? current + 1 : total }">
+    next &raquo;
+  </a>
 </template>

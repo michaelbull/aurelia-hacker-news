@@ -1,43 +1,41 @@
-<template>
-  <div class="item-preview item-preview--${item.type}">
-    <h1 class="item-preview__title" if.bind="item.url">
-      <a class="item-preview__link"
-         innerhtml.bind="item.title"
-         href.bind="item.url"
-         target="_blank">
+<template class="item-preview item-preview--${item.type}">
+  <h1 class="item-preview__title" if.bind="item.url">
+    <a class="item-preview__link"
+       innerhtml.bind="item.title"
+       href.bind="item.url"
+       target="_blank">
+    </a>
+  </h1>
+
+  <h1 class="item-preview__title" if.bind="!item.url && item.title">
+    <a class="item-preview__link"
+       innerhtml.bind="item.title"
+       route-href="route: item; params.bind: { id: item.id}">
+    </a>
+  </h1>
+
+  <a class="item-preview__site-link">${item.url | hostname}</a>
+
+  <p class="item-preview__info">
+    <template if.bind="item.score">
+      ${item.score} ${item.score | pluralise: 'point'} by
+    </template>
+
+    <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
+
+    ${item.time | timeago}
+
+    <template if.bind="item.type === 'story'">
+      |
+
+      <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id }">
+        <template if.bind="item.descendants">
+          ${item.descendants} ${item.descendants | pluralise: 'comment'}
+        </template>
+        <template else>
+          discuss
+        </template>
       </a>
-    </h1>
-
-    <h1 class="item-preview__title" if.bind="!item.url && item.title">
-      <a class="item-preview__link"
-         innerhtml.bind="item.title"
-         route-href="route: item; params.bind: { id: item.id}">
-      </a>
-    </h1>
-
-    <a class="item-preview__site-link">${item.url | hostname}</a>
-
-    <p class="item-preview__info">
-      <template if.bind="item.score">
-        ${item.score} ${item.score | pluralise: 'point'} by
-      </template>
-
-      <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
-
-      ${item.time | timeago}
-
-      <template if.bind="item.type === 'story'">
-        |
-
-        <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id }">
-          <template if.bind="item.descendants">
-            ${item.descendants} ${item.descendants | pluralise: 'comment'}
-          </template>
-          <template else>
-            discuss
-          </template>
-        </a>
-      </template>
-    </p>
-  </div>
+    </template>
+  </p>
 </template>

@@ -1,8 +1,12 @@
 <template class="comment ${expanded ? '' : 'comment--collapsed'}">
   <div class="comment__author">
-    <a class="comment__author-link" route-href="route: user; params.bind: { id: item.value.by }">${item.value.by}</a>
+    <a class="comment__author-link" route-href="route: user; params.bind: { id: item.value.by }">
+      ${item.value.by}
+    </a>
     &ensp;
-    <a class="comment__link" route-href="route: item; params.bind: { id: item.value.id}">${item.value.time | timeago}</a>
+    <a class="comment__link" route-href="route: item; params.bind: { id: item.value.id}">
+      ${item.value.time | timeago}
+    </a>
   </div>
 
   <button class="comment__toggle ${expanded ? '' : 'comment__toggle--collapsed'}" click.delegate="toggle()">
@@ -16,14 +20,15 @@
   </hn-text>
 
   <template if.bind="depth === MAX_DEPTH">
-    <a class="comment__more-link" route-href="route: item; params.bind: { id: item.value.id}">View more replies…</a>
+    <a class="comment__more-link" route-href="route: item; params.bind: { id: item.value.id}">
+      View more replies…
+    </a>
   </template>
 
   <ul class="comment__reply" if.bind="item.children.length > 0 && depth < MAX_DEPTH && expanded">
     <template repeat.for="child of item.children">
-      <li
+      <li as-element="hn-comment"
         if.bind="child !== undefined && !child.value.deleted"
-        as-element="hn-comment"
         item.bind="child"
         depth.bind="depth + 1">
       </li>

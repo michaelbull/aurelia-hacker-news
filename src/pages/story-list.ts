@@ -43,7 +43,7 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
         this.totalPages = Math.ceil(allStories.length / STORIES_PER_PAGE);
 
         if (this.currentPage > this.totalPages) {
-            this.router.navigateToRoute(this.route, { page: this.totalPages });
+            await this.router.navigateToRoute(this.route, { page: this.totalPages });
         } else {
             this.stories = await this.api.fetchItemsOnPage(allStories, this.currentPage);
         }

@@ -1,11 +1,9 @@
-<template>
-  <div class="story-list">
-    <div class="story-list__item" repeat.for="story of stories">
-      <span class="story-list__index">
-        ${$index + offset + 1}.
-      </span>
+<template class="story-list">
+  <div class="story-list__item" repeat.for="story of stories">
+    <span class="story-list__index">
+      ${$index + offset + 1}.
+    </span>
 
-      <hn-item-preview item.bind="story"></hn-item-preview>
-    </div>
+    <hn-item-preview item.bind="story"></hn-item-preview>
   </div>
 </template>

@@ -21,7 +21,7 @@ const URL_PATTERN = new RegExp(
 @customElement('hn-text')
 export class Text {
 
-    @bindable({ defaultBindingMode: bindingMode.oneWay })
+    @bindable({ defaultBindingMode: bindingMode.toView })
     value = '';
 
     private view: View | undefined;
