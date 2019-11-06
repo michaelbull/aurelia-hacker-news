@@ -9,6 +9,7 @@ import {
     PLATFORM
 } from 'aurelia-framework';
 import {
+    ConfiguresRouter,
     RoutableComponentActivate,
     RoutableComponentDeactivate,
     Router,
@@ -21,11 +22,10 @@ import { ScrollToTopStep } from './pipelines/scroll-to-top-step';
 const MS_FOR_LOADER_BAR_TO_APPEAR = 50;
 
 @autoinject()
-export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ComponentAttached, ComponentDetached {
-    private processingSubscription!: Subscription;
-    private completeSubscription!: Subscription;
-    private router!: Router;
+export class App implements RoutableComponentActivate, RoutableComponentDeactivate, ConfiguresRouter, ComponentAttached, ComponentDetached {
+    private readonly subscriptions: Subscription[] = [];
 
+    private router!: Router;
     private readonly events: EventAggregator;
 
     constructor(events: EventAggregator) {
@@ -33,13 +33,16 @@ export class App implements RoutableComponentActivate, RoutableComponentDeactiva
     }
 
     activate(): void {
-        this.processingSubscription = this.events.subscribe('router:navigation:processing', this.showLoaderBar);
-        this.completeSubscription = this.events.subscribe('router:navigation:complete', NProgress.done);
+        let processingSubscription = this.events.subscribe('router:navigation:processing', this.showLoaderBar);
+        let completeSubscription = this.events.subscribe('router:navigation:complete', NProgress.done);
+
+        this.subscriptions.push(processingSubscription, completeSubscription);
     }
 
     deactivate(): void {
-        this.processingSubscription.dispose();
-        this.completeSubscription.dispose();
+        for (let subscription of this.subscriptions) {
+            subscription.dispose();
+        }
     }
 
     configureRouter(config: RouterConfiguration, router: Router): void {
