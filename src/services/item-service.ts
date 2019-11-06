@@ -1,7 +1,9 @@
+import { autoinject } from 'aurelia-framework';
 import { Item } from '../models/item';
 import { Trie } from '../models/trie';
 import { ItemRepository } from '../repository/item-repository';
 
+@autoinject()
 export class ItemService {
     private readonly repository: ItemRepository;
 
