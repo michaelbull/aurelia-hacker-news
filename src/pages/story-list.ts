@@ -1,4 +1,6 @@
 import {
+    activationStrategy,
+    ActivationStrategyType,
     RoutableComponentActivate,
     RoutableComponentCanActivate,
     RoutableComponentDetermineActivationStrategy,
@@ -25,8 +27,8 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
         this.route = route;
     }
 
-    determineActivationStrategy(): 'no-change' | 'invoke-lifecycle' | 'replace' {
-        return 'replace';
+    determineActivationStrategy(): ActivationStrategyType {
+        return activationStrategy.replace;
     }
 
     canActivate(params: any): boolean {
