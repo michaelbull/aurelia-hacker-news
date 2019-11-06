@@ -8,6 +8,9 @@ let distDir = path.resolve(__dirname, 'dist');
 let assetsDir = path.resolve(__dirname, 'assets');
 
 function configure(env, args) {
+    let mode = args.mode;
+    let production = mode === 'production';
+
     let styleLoaders = [
         {
             loader: 'css-loader',
@@ -43,8 +46,8 @@ function configure(env, args) {
 
         output: {
             path: distDir,
-            filename: '[name]-[hash].js',
-            chunkFilename: '[name]-[chunkhash].js'
+            filename: production ? '[name]-[hash].js' : '[name].js',
+            chunkFilename: production ? '[name]-[hash].js' : '[name].js'
         },
 
         module: {
@@ -60,7 +63,7 @@ function configure(env, args) {
                 {
                     test: /\.scss$/,
                     use: [
-                        args.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+                        production ? MiniCssExtractPlugin.loader : 'style-loader',
                         ...styleLoaders
                     ]
                 },
@@ -103,7 +106,7 @@ function configure(env, args) {
         case 'production':
             config.plugins.push(new MiniCssExtractPlugin({
                 filename: '[name]-[hash].css',
-                chunkFilename: '[name]-[chunkhash].css'
+                chunkFilename: '[name]-[hash].css'
             }));
             break;
     }
