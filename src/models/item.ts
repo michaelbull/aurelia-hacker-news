@@ -44,12 +44,12 @@ export interface Item {
     /**
      * The comment's parent: either another comment or the relevant story.
      */
-    parent?: string;
+    parent?: number;
 
     /**
      * The pollopt's associated poll.
      */
-    poll?: string;
+    poll?: number;
 
     /**
      * The ids of the item's comments, in ranked display order.
@@ -74,7 +74,7 @@ export interface Item {
     /**
      * A list of related pollopts, in display order.
      */
-    parts?: string[];
+    parts?: number[];
 
     /**
      * In the case of stories or polls, the total comment count.
