@@ -9,12 +9,12 @@ import {
 
 @customElement('hn-comment')
 export class Comment {
-    readonly MAX_DEPTH = 6;
 
     expanded = true;
 
     @bindable() item!: Trie<Item>;
     @bindable() depth!: number;
+    @bindable() maxDepth = 6;
 
     toggle(): void {
         this.expanded = !this.expanded;

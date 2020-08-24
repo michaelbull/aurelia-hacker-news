@@ -10,7 +10,7 @@
   </div>
 
   <button class="comment__toggle ${expanded ? '' : 'comment__toggle--collapsed'}" click.delegate="toggle()">
-    [${expanded ? '-' : '+'; }]
+    [${expanded ? '-' : '+' }]
   </button>
 
   <hn-text
@@ -19,18 +19,18 @@
     value.bind="item.value.text">
   </hn-text>
 
-  <template if.bind="depth === MAX_DEPTH">
+  <template if.bind="depth === maxDepth">
     <a class="comment__more-link" route-href="route: item; params.bind: { id: item.value.id}">
       View more replies…
     </a>
   </template>
 
-  <ul class="comment__reply" if.bind="item.children.length > 0 && depth < MAX_DEPTH && expanded">
+  <ul class="comment__reply" if.bind="item.children.length > 0 && depth < maxDepth && expanded">
     <template repeat.for="child of item.children">
       <li as-element="hn-comment"
-        if.bind="child !== undefined && !child.value.deleted"
-        item.bind="child"
-        depth.bind="depth + 1">
+          if.bind="child !== undefined && !child.value.deleted"
+          item.bind="child"
+          depth.bind="depth + 1">
       </li>
     </template>
   </ul>
