@@ -12,7 +12,8 @@ import { ItemService } from '../services/item-service';
 const STORIES_PER_PAGE = 30;
 
 export abstract class StoryList implements RoutableComponentCanActivate, RoutableComponentActivate, RoutableComponentDetermineActivationStrategy {
-    stories: Item[] = [];
+
+    readonly stories: Item[] = [];
     offset = 0;
     currentPage = 1;
     totalPages = 0;
@@ -46,7 +47,8 @@ export abstract class StoryList implements RoutableComponentCanActivate, Routabl
         if (this.currentPage > this.totalPages) {
             await this.router.navigateToRoute(this.route, { page: this.totalPages });
         } else {
-            this.stories = await this.itemService.page(allStories, this.currentPage, STORIES_PER_PAGE);
+            let newStories = await this.itemService.page(allStories, this.currentPage, STORIES_PER_PAGE);
+            this.stories.splice(0, this.stories.length, ...newStories);
             this.offset = STORIES_PER_PAGE * (this.currentPage - 1);
         }
     }

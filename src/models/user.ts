@@ -32,5 +32,5 @@ export interface User {
     /**
      * List of the user's stories, polls and comments.
      */
-    submitted?: number[]
+    submitted?: readonly number[]
 }

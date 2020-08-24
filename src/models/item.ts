@@ -54,7 +54,7 @@ export interface Item {
     /**
      * The ids of the item's comments, in ranked display order.
      */
-    kids?: number[];
+    kids?: readonly number[];
 
     /**
      * The URL of the story.
@@ -74,7 +74,7 @@ export interface Item {
     /**
      * A list of related pollopts, in display order.
      */
-    parts?: number[];
+    parts?: readonly number[];
 
     /**
      * In the case of stories or polls, the total comment count.

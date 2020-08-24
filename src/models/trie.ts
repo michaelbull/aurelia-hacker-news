@@ -1,4 +1,4 @@
 export interface Trie<T> {
     value: T;
-    children: (Trie<T> | undefined)[];
+    children: readonly Trie<T>[];
 }
