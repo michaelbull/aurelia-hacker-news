@@ -28,9 +28,15 @@ export class ItemService {
             return undefined;
         }
 
-        let children: (Trie<Item> | undefined)[] = [];
+        let children: Trie<Item>[] = [];
         if (value.kids !== undefined && value.kids.length > 0) {
-            children = await Promise.all(value.kids.map(kid => this.populate(kid)));
+            let resolved = await Promise.all(value.kids.map(kid => this.populate(kid)));
+
+            for (let child of resolved) {
+                if (child !== undefined) {
+                    children.push(child);
+                }
+            }
         }
 
         return {

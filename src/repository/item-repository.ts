@@ -16,7 +16,8 @@ export class ItemRepository {
         return valueOf(this.items.child(id.toString()));
     }
 
-    findIdsByName(name: string): Promise<number[]> {
-        return valueOf(this.database.child(name));
+    async findIdsByName(name: string): Promise<number[]> {
+        let ids = await valueOf(this.database.child(name));
+        return ids ?? [];
     }
 }
