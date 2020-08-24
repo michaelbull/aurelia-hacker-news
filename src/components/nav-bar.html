@@ -5,14 +5,20 @@
         <img class="nav-bar__logo-img"
              src="../../assets/aurelia-logo-white.png"
              alt="Aurelia HN"
-             width="40" height="40" />
+             width="40"
+             height="40"
+        />
       </a>
 
       <div class="nav-bar__left">
-        <a class="nav-bar__title" route-href="topstories">Aurelia&nbsp;HN</a>
+        <a class="nav-bar__title" route-href="topstories">
+          Aurelia&nbsp;HN
+        </a>
 
         <div class="nav-bar__links">
-          <a repeat.for="nav of navigation" class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}" href.bind="nav.href">${nav.title}</a>
+          <a repeat.for="nav of navigation" class="nav-bar__link ${nav.isActive ? 'nav-bar__link--active' : ''}" href.bind="nav.href">
+            ${nav.title}
+          </a>
         </div>
       </div>
 

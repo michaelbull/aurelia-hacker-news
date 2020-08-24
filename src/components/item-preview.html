@@ -21,7 +21,9 @@
       ${item.score} ${item.score | pluralise: 'point'} by
     </template>
 
-    <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">${item.by}</a>
+    <a class="item-preview__author-link" route-href="route: user; params.bind: { id: item.by }">
+      ${item.by}
+    </a>
 
     ${item.time | timeago}
 
@@ -29,7 +31,7 @@
       |
 
       <a class="item-preview__comments-link" route-href="route: item; params.bind: { id: item.id }">
-        <template if.bind="item.descendants">
+        <template if.bind="item.descendants !== undefined && item.descendants > 0">
           ${item.descendants} ${item.descendants | pluralise: 'comment'}
         </template>
         <template else>

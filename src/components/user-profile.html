@@ -2,15 +2,18 @@
   <template if.bind="user === undefined">
     No such user.
   </template>
+
   <table else class="user-profile__table">
     <tr>
       <td>user:</td>
       <td>${user.id}</td>
     </tr>
+
     <tr>
       <td>created:</td>
       <td>${user.created | timeago}</td>
     </tr>
+
     <tr>
       <td>karma:</td>
       <td>${user.karma}</td>

@@ -11,7 +11,9 @@
 
       <template else>
         <template if.bind="item.value.parent !== undefined">
-          <a class="news-item__parent" route-href="route: item; params.bind: { id: item.value.parent }">View Parent &raquo;</a>
+          <a class="news-item__parent" route-href="route: item; params.bind: { id: item.value.parent }">
+            View Parent &raquo;
+          </a>
         </template>
 
         <hn-item-preview item.bind="item.value"></hn-item-preview>
