@@ -1,6 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { valueOf } from '../firebase';
-import { User } from '../models/user';
+import { User } from '../models';
 import Reference = firebase.database.Reference;
 
 export class UserRepository {

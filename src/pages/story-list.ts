@@ -6,8 +6,8 @@ import {
     RoutableComponentDetermineActivationStrategy,
     Router
 } from 'aurelia-router';
-import { Item } from '../models/item';
-import { ItemService } from '../services/item-service';
+import { Item } from '../models';
+import { ItemService } from '../services';
 
 const STORIES_PER_PAGE = 30;
 

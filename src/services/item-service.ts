@@ -1,7 +1,9 @@
 import { autoinject } from 'aurelia-framework';
-import { Item } from '../models/item';
-import { Trie } from '../models/trie';
-import { ItemRepository } from '../repository/item-repository';
+import {
+    Item,
+    Trie
+} from '../models';
+import { ItemRepository } from '../repository';
 
 @autoinject()
 export class ItemService {

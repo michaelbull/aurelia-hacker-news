@@ -1,6 +1,6 @@
 import { useView } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
-import { ItemService } from '../services/item-service';
+import { ItemService } from '../services';
 import { StoryList } from './story-list';
 
 @useView('./story-list.html')

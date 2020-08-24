@@ -5,10 +5,14 @@ import {
     RoutableComponentCanActivate,
     RouteConfig
 } from 'aurelia-router';
-import { Item } from '../models/item';
-import { Trie } from '../models/trie';
-import { HtmlDecoder } from '../services/html-decoder';
-import { ItemService } from '../services/item-service';
+import {
+    Item,
+    Trie
+} from '../models';
+import {
+    HtmlDecoder,
+    ItemService
+} from '../services';
 
 @autoinject()
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {

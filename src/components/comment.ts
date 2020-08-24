@@ -2,8 +2,10 @@ import {
     bindable,
     customElement
 } from 'aurelia-framework';
-import { Item } from '../models/item';
-import { Trie } from '../models/trie';
+import {
+    Item,
+    Trie
+} from '../models';
 
 @customElement('hn-comment')
 export class Comment {

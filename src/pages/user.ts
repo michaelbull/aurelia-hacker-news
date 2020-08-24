@@ -5,8 +5,8 @@ import {
     RoutableComponentCanActivate,
     RouteConfig
 } from 'aurelia-router';
-import { User } from '../models/user';
-import { UserRepository } from '../repository/user-repository';
+import { User } from '../models';
+import { UserRepository } from '../repository';
 
 @autoinject()
 export class UserPage implements RoutableComponentCanActivate, RoutableComponentActivate {
