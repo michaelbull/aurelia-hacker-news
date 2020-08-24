@@ -7,21 +7,18 @@ import {
 } from 'aurelia-router';
 import { Item } from '../models/item';
 import { Trie } from '../models/trie';
+import { HtmlDecoder } from '../services/html-decoder';
 import { ItemService } from '../services/item-service';
-
-function decodeHtml(html: string): string {
-    let txt = document.createElement('textarea');
-    txt.innerHTML = html;
-    return txt.value;
-}
 
 @autoinject()
 export class ItemPage implements RoutableComponentCanActivate, RoutableComponentActivate {
     item?: Trie<Item>;
 
+    private readonly htmlDecoder: HtmlDecoder;
     private readonly itemService: ItemService;
 
-    constructor(itemService: ItemService) {
+    constructor(htmlDecoder: HtmlDecoder, itemService: ItemService) {
+        this.htmlDecoder = htmlDecoder;
         this.itemService = itemService;
     }
 
@@ -32,8 +29,12 @@ export class ItemPage implements RoutableComponentCanActivate, RoutableComponent
     async activate(params: any, routeConfig: RouteConfig): Promise<void> {
         this.item = await this.itemService.populate(params.id);
 
-        if (this.item !== undefined && this.item.value.title !== undefined) {
-            routeConfig.navModel!.setTitle(decodeHtml(this.item.value.title));
+        let title = this.item?.value?.title;
+        let navModel = routeConfig.navModel;
+
+        if (title !== undefined && navModel !== undefined) {
+            let decodedTitle = this.htmlDecoder.decode(title);
+            navModel.setTitle(decodedTitle);
         }
     }
 }
