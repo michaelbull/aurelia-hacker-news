@@ -1,23 +1,21 @@
 <p align="center">
   <a href="#readme">
-    <img 
+    <img
       src="https://raw.githubusercontent.com/michaelbull/aurelia-hacker-news/master/assets/logo.svg?sanitize=true"
       alt="Aurelia Hacker News"
       width="400"
-      height="200" 
+      height="200"
     />
   </a>
 </p>
 <p align="center">
-  A recreation of the <a href="https://news.ycombinator.com/news" rel="nofollow">Hacker News</a> website written in 
-  <a href="https://www.typescriptlang.org/" rel="nofollow">TypeScript</a> and built with
-  <a href="https://aurelia.io/" rel="nofollow">Aurelia</a>.
+  A recreation of the <a href="https://news.ycombinator.com/news" rel="nofollow">Hacker News</a> website written in <a href="https://www.typescriptlang.org/" rel="nofollow">TypeScript</a> and built with <a href="https://aurelia.io/" rel="nofollow">Aurelia</a>.
 </p>
 <p align="center">
-  <a href="https://michaelbull.github.io/aurelia-hacker-news" rel="nofollow">Demo</a>
+  <a href="https://michaelbull.github.io/aurelia-hacker-news" rel="nofollow"><strong>Demo</strong></a>
 </p>
 <p align="center">
-  <a href="https://david-dm.org/michaelbull/aurelia-hacker-news" title="dependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/status.svg?style=flat-square"/></a> <a href="https://david-dm.org/michaelbull/aurelia-hacker-news?type=dev" title="devDependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/dev-status.svg?style=flat-square"/></a>
+  <a href="https://github.com/michaelbull/aurelia-hacker-news/actions?query=workflow%3Aci" title="ci status" rel="nofollow"><img src="https://github.com/michaelbull/aurelia-hacker-news/workflows/ci/badge.svg"/></a> <a href="https://david-dm.org/michaelbull/aurelia-hacker-news" title="dependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/status.svg"/></a> <a href="https://david-dm.org/michaelbull/aurelia-hacker-news?type=dev" title="devDependencies status" rel="nofollow"><img src="https://david-dm.org/michaelbull/aurelia-hacker-news/dev-status.svg"/></a>
 </p>
 <p align="center">
   <a href="https://michaelbull.github.io/aurelia-hacker-news">
